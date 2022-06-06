@@ -1,0 +1,13 @@
+name = "Eventos PadelMBA"
+license = "MIT"
+licenselink = "https://github.com/frodriguezpmba/eventospmba/blob/master/LICENSE"
+description = "Eventos PadelMBA es una aplicación para gestionar eventos deportivos de padel en España. Construido y desarrollado por Felipe Rodriguez gracias a Hugo"
+homepage = "https://eventos.padelmba.com/"
+demosite = "#"
+tags = ['modern', 'fast', 'minimal', 'education', 'white', 'light', 'sports', 'padel', 'events', 'clinics', 'tournaments'] 
+features = ['responsive', 'seo-friendly', 'company']
+min_version = "0.96.0"
+
+[author]
+  name = "PadelMBA - Felipe Rodriguez"
+  homepage = "https://padelmba.com/"
