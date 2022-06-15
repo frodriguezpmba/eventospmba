@@ -1,0 +1,14 @@
+<!-- page title -->
+<section class="page-title-section overlay" style="background: url('{{ .Params.Bg_image | relURL}}'),url('{{`images/backgrounds/torneos-padelmba.jpg`| relURL}}'), #fff; background-position: center center; background-repeat: no-repeat; background-size: cover;">
+    <div class="container header">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-inline custom-breadcrumb">
+            {{/*  <li class="list-inline-item h2"><a class="text-primary font-secondary" href="{{ site.BaseURL | absLangURL }}">{{ site.Params.home }}</a></li>  */}}            
+            <li class="list-inline-item text-white h2 font-secondary"><i class="ti-cup text-white"></i> {{ .Title }}</li>
+          </ul>
+          <p class="text-white">{{ .Params.Description | markdownify }}</p>
+        </div>
+      </div>
+    </div>
+</section>

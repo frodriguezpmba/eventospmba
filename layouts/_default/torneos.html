@@ -1,0 +1,11 @@
+<div class="card border-1 rounded-0 hover-shadow">
+  <div class="card-img position-relative">
+    <a href="{{ .Permalink }}" title="{{ .Title }}"><img class="card-img-top rounded-0" src="{{ .Params.image | relURL }}" alt="{{ .Title }}"></a>
+    <div class="card-date">{{ .Date | time.Format ":date_full" }}</div>
+  </div>
+  <div class="card-body">
+    <!-- location -->
+    <p><i class="ti-location-pin text-primary mr-2"></i>{{ .Params.Location | markdownify }}</p>
+    <h4 class="card-title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h4>
+  </div>
+</div>

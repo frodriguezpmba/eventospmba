@@ -1,0 +1,35 @@
+{{ define "torneos" }}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/*  En List de root/torneos/  */}}
+<section class="section-first" id="torneo-padelmba">
+<div class="container">
+  <div class="row">
+    {{/*  Contenido del _index.md   */}}
+    {{ .Content | safeHTML }}
+  </div>
+</div>
+</section>
+
+<!-- Listing Torneos PadelMBA -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <!-- Torneo -->            
+      {{/*  Paginacion de Torneos PadelMBA  */}}
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "torneos") }}
+      {{ range $paginator.Pages }}
+      {{/*  {{ range .Paginator.Pages }}  */}}
+      <div class="col-lg-3 col-sm-6 mb-4 mt-4">
+          {{/*  <strong>Entro dentro...</strong>  */}}
+          {{ .Render "torneos" }}
+      </div>      
+      {{ end }}
+      <div class="col-12 mt-5 mb-5">{{ template "_internal/pagination.html" . }}</div>
+    </div>
+  </div>
+</section>
+<!-- /Torneo -->
+
+{{ end }}
