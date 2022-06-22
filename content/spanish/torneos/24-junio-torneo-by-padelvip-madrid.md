@@ -164,9 +164,7 @@ Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder c
 {{< /tab >}}
 {{< tab tabName="Fotos">}}
 
-### Fotos 📸
-
-Próximamente.... 🎾
+{{< gallery dir="images/clinics/2022/06/portugal" />}} {{< load-photoswipe >}}
 
 {{< /tab >}}
 {{< /tabs >}}

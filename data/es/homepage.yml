@@ -1,0 +1,135 @@
+################################# Slider #####################################
+slider:
+  enable : true
+  bg_image : "images/torneos/background-torneos-padelmba.jpg"
+  slider_item:
+    # slider item loop
+    - title : "Torneos de Pádel con PadelMBA"
+      content : "Torneos de competición en Clubs de pádel por toda España. Adaptado a varios niveles, masculino, femenino y mixto. Buen rollo, partidos de calidad, sorteos y premios asegurados en cada evento."
+      animation_in : "left"
+      animation_out : "right"
+      # available animation : left, right, up, down
+      button:
+        enable : true
+        label : "¡Torneos!"
+        link : "/es/torneos"
+
+    # slider item loop
+    - title : "Clinics de Pádel con PadelMBA"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exer"
+      animation_in : "left"
+      animation_out : "right"
+      # available animation : left, right, up, down
+      button:
+        enable : true
+        label : "¡Clinics!"
+        link : "/es/clinics"
+
+    # slider item loop
+    - title : "Campus de Competición - PadelMBA & Padel Point"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exer"
+      animation_in : "left"
+      animation_out : "right"
+      # available animation : left, right, up, down
+      button:
+        enable : true
+        label : "¡Campus de Competición!"
+        link : "#"
+
+
+############################### Banner feature ###############################
+banner_feature:
+  enable : true
+  #image: "images/banner/banner-feature.png"  
+  #image: "images/torneos/manu-martin-isotipo-fondo.jpg"
+  #image: "https://www.padelmba.com/wp-content/uploads/2022/04/Alfonso-Viuda.png"    
+  #image: "https://www.padelmba.com/wp-content/uploads/2021/10/entrenadores-cpc-lp.jpg"
+  #image: "https://www.padelmba.com/wp-content/uploads/2021/06/Perfil-Seba-Nerone.jpg"
+  #image: "https://www.padelmba.com/wp-content/uploads/2022/05/manu-martin-isotipo-min.png"
+  image: "https://www.padelmba.com/wp-content/uploads/2021/05/Promo_presenciales.jpg"
+  #image: "https://www.padelmba.com/wp-content/uploads/2020/11/DaniVita.png"
+  feature_item:
+    # feature item loop
+    - name : "Calidad gracias a PadelMBA"
+      icon : "ti-star" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+    # feature item loop
+    - name : "Competitidad única"
+      icon : "ti-crown" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+    # feature item loop
+    - name : "Premios para todos los jugadores"
+      icon : "ti-cup" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+    # feature item loop
+    - name : "Disponibles por toda España"
+      icon : "ti-world" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+
+############################## about ##################################
+about:
+  enable : false
+  title : "About Educenter"
+  image : "images/about/about-us.jpg"
+  content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur. Excepteur sint occaecat
+
+
+  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem "
+  button:
+    enable : false
+    label : "Learn more"
+    link : "about/"
+
+
+############################# Course ################################
+course:
+  enable : true
+  title : "Our Course"
+  # course item comes from "content/**/course" folder.
+
+########################## Call to action ############################
+cta:
+  enable : true
+  subtitle : "Click to Join the Advance Workshop"
+  title : "Training In Advannce Networking"
+  button:
+    enable : true
+    label : "join now"
+    link : "contact/"
+
+
+######################## Success story #############################
+success_story:
+  enable : true
+  #bg_image : "images/backgrounds/success-story.jpg"
+  bg_image: "https://www.padelmba.com/wp-content/uploads/2022/06/pistas-indoor.jpg"
+  title : "¿Qué son los Torneos y Clinics de PadelMBA"
+  content : "Ejemplo de Torneo PadelMBA by Kuikma... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat pariatur. Excepteur sint occaecat. ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+  # video link
+  video_link : "https://www.youtube.com/watch?v=zV20bOGubR4"
+  #video_link: "https://video.bunnycdn.com/play/26299/214b75ab-e072-41ec-97ca-78dd9fbb1b5f"
+
+
+############################# Torneos Proximos ################################
+torneo:
+  enable : true
+  title : "Torneos próximos"
+  # event item comes from "content/**/torneos" folder.
+
+
+############################# Clinics Proximos ################################
+clinic:
+  enable : true
+  title : "Clinics próximos"
+  # event item comes from "content/**/clinics" folder.  
+
+
+############################# blog ################################
+blog:
+  enable : true
+  title : "Latest News"
+  # blog item comes from "content/**/blog" folder.

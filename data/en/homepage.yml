@@ -1,0 +1,129 @@
+################################# Slider #####################################
+slider:
+  enable : true
+  bg_image : "images/torneos/background-torneos-padelmba.jpg"
+  slider_item:
+    # slider item loop
+    - title : "Padel Tournaments with PadelMBA"
+      content : "Competition tournaments in Padel Clubs all over Spain. Adapted to various levels, male, female and mixed. Good vibes, quality matches, raffles and prizes guaranteed in each event."
+      animation_in : "left"
+      animation_out : "right"
+      # available animation : left, right, up, down
+      button:
+        enable : true
+        label : "Tournaments!"
+        link : "/es/tournaments"
+
+    # slider item loop
+    - title : "Padel Clinics with PadelMBA"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exer"
+      animation_in : "left"
+      animation_out : "right"
+      # available animation : left, right, up, down
+      button:
+        enable : true
+        label : "¡Clinics!"
+        link : "/es/clinics"
+
+    # slider item loop
+    - title : "Competition Campus - PadelMBA & Padel Point"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exer"
+      animation_in : "left"
+      animation_out : "right"
+      # available animation : left, right, up, down
+      button:
+        enable : true
+        label : "¡Competition Campus!"
+        link : "#"
+
+
+############################### Banner feature ###############################
+banner_feature:
+  enable : true
+  #image: "https://www.padelmba.com/wp-content/uploads/2021/05/Promo_presenciales.jpg"
+  image: "https://www.padelmba.com/wp-content/uploads/2020/11/DaniVita.png"
+  feature_item:
+    # feature item loop
+    - name : "Quality thanks to PadelMBA"
+      icon : "ti-star" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+    # feature item loop
+    - name : "Unique competitiveness"
+      icon : "ti-crown" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+    # feature item loop
+    - name : "Prizes for all players"
+      icon : "ti-cup" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+    # feature item loop
+    - name : "Available throughout Spain and Europe"
+      icon : "ti-world" # icon pack : https://themify.me/themify-icons
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
+
+
+############################## about ##################################
+about:
+  enable : false
+  title : "About Educenter"
+  image : "images/about/about-us.jpg"
+  content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat  pariatur. Excepteur sint occaecat
+
+
+  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem "
+  button:
+    enable : false
+    label : "Learn more"
+    link : "about/"
+
+
+############################# Course ################################
+course:
+  enable : true
+  title : "Our Course"
+  # course item comes from "content/**/course" folder.
+
+########################## Call to action ############################
+cta:
+  enable : true
+  subtitle : "Click to Join the Advance Workshop"
+  title : "Training In Advannce Networking"
+  button:
+    enable : true
+    label : "join now"
+    link : "contact/"
+
+
+######################## Success story #############################
+success_story:
+  enable : true
+  #bg_image : "images/backgrounds/success-story.jpg"
+  bg_image: "https://www.padelmba.com/wp-content/uploads/2022/06/pistas-indoor.jpg"
+  title : "What are PadelMBA Tournaments and Clinics?"
+  content : "Example of PadelMBA by Kuikma Tournament... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat pariatur. Excepteur sint occaecat. ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris"
+  # video link
+  video_link : "https://www.youtube.com/watch?v=zV20bOGubR4"
+  #video_link: "https://video.bunnycdn.com/play/26299/214b75ab-e072-41ec-97ca-78dd9fbb1b5f"
+
+
+############################# Torneos Proximos ################################
+torneo:
+  enable : true
+  title : "Upcoming Tournaments"
+  # event item comes from "content/**/torneos" folder.
+
+
+############################# Clinics Proximos ################################
+clinic:
+  enable : true
+  title : "Upcoming Clinics"
+  # event item comes from "content/**/clinics" folder.  
+
+
+############################# blog ################################
+blog:
+  enable : true
+  title : "Latest News"
+  # blog item comes from "content/**/blog" folder.
