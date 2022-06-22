@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 {{- partial "head.html" . -}}
-
 <body>
 	{{- partial "preloader.html" . -}}
 	{{- partial "header.html" . -}}
 	{{- partial "torneos/page-header-torneos.html" . -}}	
 	{{- block "torneos" . }}{{- end }}
+	{{- partial "torneos/scroll-to-up.html" . -}}
 	{{- partial "torneos/footer.html" . -}}
 </body>
-
 </html>

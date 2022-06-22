@@ -16,7 +16,7 @@
 <section class="section-sm">
   <div class="container">
 
-    {{ .Content }}
+    {{/*  {{ .Content }}  */}}
 
     {{/*  <nav>
       <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -27,10 +27,10 @@
       </div>
     </nav>      */}}
 
-    <!-- event info -->
-    <div class="row align-items-center mb-2 mt-4">      
+    <!-- Torneo info. principal row -->
+    <div class="row align-items-center mb-4 mt-2">      
       <div class="col-lg-12">
-        <div class="border-top mt-5 mb-4 border-primary"></div>
+        <div class="border-top mt-2 mb-4 border-primary"></div>
         <ul class="list-inline">
           <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
             <div class="d-flex align-items-center">
@@ -63,11 +63,21 @@
           </li>
           {{/*  <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
             <div class="d-flex align-items-center">
-              <i class="ti-wallet text-primary icon-md mr-2"></i>
+              <i class="ti-view-list-alt text-primary icon-md mr-2"></i>
               <div class="text-left">
-                <h6 class="mb-0">{{ i18n "entry_fee" | upper }}</h6>
-                <a href="#inscripciones" class="btn btn-primary">{{ i18n "apply_now" }}</a>
-                <!-- <p class="mb-0">{{ .Params.Fee | markdownify }}</p> -->
+                <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>
+                  {{ $taxo := "categorias" }}
+                  <div class="bg-white mb-5">
+                  {{ with .Param $taxo }}                      
+                      <ul class="list-inline tag-list">
+                      {{ range $index, $categoria_nombre := . }}        
+                          {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
+                            <li class="list-inline-item mb-2"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
+                          {{- end -}}
+                      {{- end -}}
+                      </ul>
+                  </div>
+                  {{ end }}
               </div>
             </div>
           </li>  */}}
@@ -77,13 +87,73 @@
         <a href="{{ .Params.Apply_url | safeURL }}" class="btn btn-primary">{{ i18n "apply_now" }}</a>
       </div>  */}}
       <!-- border -->
-      <div class="col-12 mt-4 order-4">
+      <div class="col-12 mt-4 mb-4 order-4">
         <div class="border-bottom border-primary"></div>
       </div>
     </div>
 
+{{/*  
+  {{ "<!-- Categorias del Torneo -->" | safeHTML }}
+  <div class="bg-white mb-5">
+    <h4 class="mb-4">{{ i18n "categories" }}</h4>
+    {{- if isset site.Taxonomies "categorias" }}
+    {{- if not (eq (len site.Taxonomies.categorias) 0) }}
+    <ul class="list-inline tag-list">
+      {{- range $name, $items := site.Taxonomies.categorias }}
+      <li class="list-inline-item mb-2"><a href="{{ `categorias/` | relLangURL }}{{ $name | urlize | lower }}/">{{ $name | title | humanize }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div>
+
+  {{ "<!-- Etiquetas del Torneo Me coge TODAS, no las del content .md -->" | safeHTML }}
+  <div class="bg-white mb-5">
+    <h4 class="mb-4">{{ i18n "tags" }}</h4>
+    {{- if isset site.Taxonomies "etiquetas" }}
+    {{- if not (eq (len site.Taxonomies.etiquetas) 0) }}
+    <ul class="list-inline tag-list">
+      {{- range $name, $items := site.Taxonomies.etiquetas }}
+      <li class="list-inline-item mb-2"><a href="{{ `etiquetas/` | relLangURL }}{{ $name | urlize | lower }}/">{{ $name | title | humanize }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    {{- end }}
+  </div>  */}}
+
+<!-- SOLO coge las categorias del mismo .md, asi que bien. -->
+<!-- Funciona BIEN -->
+{{/*  {{ $taxo := "categorias" }}
+<div class="bg-white mb-5">
+{{ with .Param $taxo }}
+    <strong>Categorias SOLO .md &raquo; {{ if gt (len .) 1 }}s{{ end }}:</strong>
+    <ul class="list-inline tag-list">
+    {{ range $index, $categoria_nombre := . }}        
+        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
+          <li class="list-inline-item mb-2"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
+        {{- end -}}
+    {{- end -}}
+    </ul>
+</div>
+{{ end }}  */}}
+
+<!-- SOLO coge las categorias del mismo .md, asi que bien. -->
+{{/*  {{ $taxo := "etiquetas" }}
+<div class="bg-white mb-5">
+{{ with .Param $taxo }}
+    <strong>Etiquetas SOLO .md &raquo; {{ if gt (len .) 1 }}s{{ end }}:</strong>
+    <ul class="list-inline tag-list">
+    {{ range $index, $etiqueta_nombre := . }}        
+        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $etiqueta_nombre) -}}
+          <li class="list-inline-item mb-2"><a href="{{ .Permalink }}">{{ $etiqueta_nombre | title | humanize }}</a></li>        
+        {{- end -}}
+    {{- end -}}
+    </ul>
+</div>
+{{ end }}  */}}
+
     <!-- contenido bien, debajo del row --> 
-    {{/*  {{ .Content }}  */}}
+    {{ .Content }}
 
     <!-- event details -->
     {{/*  <div class="row">
@@ -116,7 +186,50 @@
 
 
   </div>
+
+  {{/*  LLevarme esta seccion, a un partial de Torneos para mostrar SOLO las categorias asociadas  */}}
+  <!-- Categorias debajo de la seccion principal del Torneo -->
+  <div class="align-items-center mb-4 mt-4">      
+    <div class="col-lg-12">
+      <div class="border-top mt-4 mb-4 border-primary"></div>
+          <li class="list-inline-item mb-3 mb-lg-0">
+            <div class="d-flex align-items-center">
+              <i class="ti-list text-primary icon-md mr-4"></i>
+              <div class="text-left">
+                {{/*  <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>  */}}
+                  {{ $taxo := "categorias" }}
+                  <div class="bg-white">
+                  {{ with .Param $taxo }}                      
+                      <ul class="list-inline tag-list">
+                      {{ range $index, $categoria_nombre := . }}        
+                          {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
+                            <li class="list-inline-item"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
+                          {{- end -}}
+                      {{- end -}}
+                      </ul>
+                  </div>
+                  {{ end }}
+              </div>
+            </div>
+          </li>
+    </div>
+  </div>
+
+
+
+
 </section>
+
+{{/*  <a class="text-dark" title="{{ i18n "scroll-up" }}" href="#torneo-padelmba">
+  <div class="scroll-to-up-pmba" class="mb-4" style="text-align: center;">
+    <div class="col-lg-12">
+      &Uarr;
+    </div>
+</div>
+</a>  */}}
+
+
+
 <!-- /event single -->
 
 <!-- more event -->

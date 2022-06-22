@@ -6,12 +6,12 @@
     <div class="container">
       <div class="row">
         <div class="col-md-7 text-md-left text-center">
-          <p class="mb-3 mb-md-0">{{ now.Year }} - {{ site.Params.copyright | markdownify }}</p>
+          <p class="mb-3 mb-md-0">{{ now.Year }} - {{ site.Params.copyright | markdownify }} | Made with 💛 Hugo</p>
         </div>
         <div class="col-md-5 text-md-right text-center">
           <ul class="list-inline">
             {{ range site.Params.social }}
-            <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }} text-primary"></i></a></li>
+            <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL }}" target="_blank"><i class="footer-icons {{ .icon }} text-white"></i></a></li>
             {{ end }}
           </ul>
         </div>
