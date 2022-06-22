@@ -1,0 +1,14 @@
+<!-- page title -->
+<section class="page-title-section overlay" style="background: url('{{ .Params.Bg_image | relURL}}'), #000; background-position: center center; background-repeat: no-repeat; background-size: contain;">
+    <div class="container header">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-inline custom-breadcrumb">
+            <h1 class="list-inline-item text-white"><i class="ti-cup text-white"></i> Categoria de {{ .Title }} | {{ .Site.Title }}</h1>
+          </ul>
+          <p class="text-white">{{ .Params.Description | markdownify }}</p>
+          <p><a class="text-white-50" href="#cat-padelmba">Más Información <i class="bouncing ti-arrow-circle-down text-white-50"></i></a></p>
+        </div>
+      </div>
+    </div>
+</section>

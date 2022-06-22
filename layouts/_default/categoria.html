@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+{{- partial "head.html" . -}}
+
+<body>
+	{{- partial "preloader.html" . -}}
+	{{- partial "header.html" . -}}
+	{{- partial "taxonomy/page-header-taxonomy.html" . -}}	
+	{{- partial "taxonomy/list-taxonomy.html" . -}}
+    {{- partial "taxonomy/scroll-to-up.html" . -}}
+	{{- partial "torneos/footer.html" . -}}
+</body>
+
+</html>
