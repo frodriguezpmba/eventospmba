@@ -31,8 +31,11 @@ link = "plugins/slick/slick.css"
 link = "plugins/animate/animate.css"
 [[params.plugins.css]]
 link = "plugins/venobox/venobox.css"
-[[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
+# [[params.plugins.css]]
+# link = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.css]] # custom icons for events.padelmba.com
+link = "plugins/events-padelmba-icons/style.css"
+
 
 # JS Plugins
 [[params.plugins.js]]
@@ -101,18 +104,28 @@ icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
 link = "https://instagram.com/padelmba"
 
 [[params.social]]
+title = "spotify"
+icon = "ti-spotify"
+link = "https://open.spotify.com/show/243jDg8Ls2JzZDWxsdhQMV"
+
+[[params.social]]
+title = "discord"
+icon = "ti-discord"
+link = "https://discord.gg/mAj4B85kMH"
+
+[[params.social]]
 title = "youtube"
-icon = "ti-youtube" # themify icon : https://themify.me/themify-icons
+icon = "ti-youtube"
 link = "https://www.youtube.com/channel/UC0HztwdNRoQjjIMz4mWnx7g"
 
 [[params.social]]
 title = "facebook"
-icon = "ti-facebook" # themify icon : https://themify.me/themify-icons
+icon = "ti-facebook" 
 link = "https://www.facebook.com/padelmba"
 
 [[params.social]]
 title = "linkedin"
-icon = "ti-linkedin" # themify icon : https://themify.me/themify-icons
+icon = "ti-linkedin"
 link = "https://www.linkedin.com/company/padelmba/"
 
 
