@@ -83,19 +83,14 @@
           <p>Contacta con nosotros para más información:</p>
           <p><a title="Whatsapp sobre {{ .Title }}" href="https://wa.me/34{{ .Params.contacto_wasap }}?text=Duda%20del%20{{ .Title }}"><i class="ti-whatsapp"></i> whatsapp +34 {{ if .Params.contacto_wasap }} {{ .Params.contacto_wasap }} {{else}} 608545790 {{end}}</a></p>
           <p><i class="ti-mail"></i> <a title="Email sobre {{ .Title }}" href="mailto:{{ .Params.contacto_email }}">{{ if .Params.contacto_email}} {{ .Params.contacto_email }} {{else}} eventos@padelmba.com {{end}}</a></p>
-          
-          {{/*  <p>✉️ <a href="mailto:eventos@padelmba.com">eventos@padelmba.com</a></p>
-          <p><img src="/images/torneos/logo/whatsapp-padelmba-torneos.png#wasap" alt="whatsapp"><a href="https://wa.me/34608545790">whatsapp +34 608 54 57 90</a></p>  */}}
         </div>
 
-        <div class="col-12 mt-4 mb-5">
-          <div class="border-bottom border-primary"></div>
-        </div>
+        <div class="col-12 mt-4 mb-5"><div class="border-bottom border-primary"></div></div>
 
         <!-- padel manager -->
         <div class="padel-manager">
           <img class="logo-padel-manager" src="/images/torneos/logo/padel-manager/padel-manager-logo.svg" alt="padel manager logo" />
-          <h3 id="sigue-tu-partido-en-directo--">Sigue tu partido en directo</h3>
+          <h3 id="sigue-tu-partido-en-directo">Sigue tu partido en directo</h3>
           <p>Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder conocer a tus contrincantes y consultar los resultados del torneo.</p>
           <p><a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager Android" href="https://play.google.com/store/apps/details?id=com.padelmanager.padelmanager&amp;hl=es"><img src="/images/torneos/logo/padel-manager/padel-manager-google-play-pmba.svg" alt="padel manager android"></a></p>
           <p><a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager iOS" href="https://apps.apple.com/es/app/padel-manager/id1084646571?l=es"><img src="/images/torneos/logo/padel-manager/padel-manager-apple-store-pmba.svg" alt="padel manager iphone"></a></p>
@@ -106,71 +101,18 @@
         <li class="list-inline-item mb-3 mb-lg-0">
           <div class="padel-manager">
               <h5 id="patrocinadores-torneo"><i class="ti-award1 text-primary icon-md mr-4"></i> PATROCINADORES</h5>
-              {{/*  {{- partial "torneos/carousel.html" (dict "context" . "items" "1" "height" "10" "unit" "%" "duration" "5000") . -}}  */}}
-              
-              {{/*  Listo, funciona bien, cogiendo de la carpeta de cada "page" torneos "patrocinadores", solo buscando imagenes dentro de esa carpeta  */}}
+              {{/*  Listo, funciona bien, cogiendo de la carpeta de cada "page" torneos "patrocinadores", 
+              solo buscando imagenes dentro de esa carpeta  */}}
               {{- partial "torneos/carousel_new.html" . -}}
           </div>
         </li>
 
         <!-- Categorias -->
-        <div class="border-top mt-4 mb-4 border-primary"></div>
-        <li class="list-inline-item mb-3 mb-lg-0">
-          <div class="d-flex align-items-center">
-            <i class="ti-tag text-primary icon-md mr-4"></i>
-            <div class="text-left">
-              {{/*  <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>  */}}
-                {{ $taxo := "categorias" }}
-                <div class="bg-white">
-                {{ with .Param $taxo }}                      
-                    <ul class="list-inline tag-list">
-                    {{ range $index, $categoria_nombre := . }}        
-                        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
-                          <li class="list-inline-item"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
-                        {{- end -}}
-                    {{- end -}}
-                    </ul>
-                </div>
-                {{ end }}
-            </div>
-          </div>
-        </li>
+        {{- partial "torneos/categorias.html" . -}}
 
       </div>
     </div>
 </div>
-
-
-  {{/*  LLevarme esta seccion, a un partial de Torneos para mostrar SOLO las categorias asociadas  */}}
-  <!-- Categorias debajo de la seccion principal del Torneo -->
- <!-- <div class="align-items-center mb-4 mt-4">      
-    <div class="col-lg-12">
-      <div class="border-top mt-4 mb-4 border-primary"></div>
-          <li class="list-inline-item mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-tag text-primary icon-md mr-4"></i>
-              <div class="text-left">
-                {{/*  <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>  */}}
-                  {{ $taxo := "categorias" }}
-                  <div class="bg-white">
-                  {{ with .Param $taxo }}                      
-                      <ul class="list-inline tag-list">
-                      {{ range $index, $categoria_nombre := . }}        
-                          {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
-                            <li class="list-inline-item"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
-                          {{- end -}}
-                      {{- end -}}
-                      </ul>
-                  </div>
-                  {{ end }}
-              </div>
-            </div>
-          </li>
-    </div>
-  </div>
--->
-
-
 
 {{- partial "torneos/share-buttons.html" . -}}
 

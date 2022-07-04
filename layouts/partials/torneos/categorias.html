@@ -1,0 +1,22 @@
+{{/*  Categorias del Torneo  */}}
+<div class="border-top mt-4 mb-4 border-primary"></div>
+<li class="list-inline-item mb-3 mb-lg-0">
+    <div class="d-flex align-items-center">
+        <i class="ti-tag text-primary icon-md mr-4"></i>
+        <div class="text-left">
+        {{/*  <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>  */}}
+            {{ $taxo := "categorias" }}
+            <div class="bg-white">
+            {{ with .Param $taxo }}                      
+                <ul class="list-inline tag-list">
+                {{ range $index, $categoria_nombre := . }}        
+                    {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
+                        <li class="list-inline-item"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
+                    {{- end -}}
+                {{- end -}}
+                </ul>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</li>
