@@ -209,7 +209,6 @@ i {
 }
 .ti-discord:before {
   content: "\e92a";
-  color: #7289da;
 }
 .ti-arrow-circle-down:before {
   content: "\e92b";

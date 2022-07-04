@@ -1,0 +1,21 @@
+{{/*  https://www.regisphilibert.com/blog/2018/01/hugo-page-resources-and-how-to-use-them/#available-methods-for-resources  */}}
+{{/*  https://gohugo.io/content-management/page-resources/#properties  */}}
+<div id="carousel10" class="carousel" duration="3000">
+    <ul>
+        {{/*  Nos recorremos la carpeta externa buscando imágenes de los patrocinadores y listo  */}}
+        {{/*  {{ range $index, $slide := .Resources.ByType "image" }}  */}}
+        {{ range $index, $slide := .Resources.Match "patrocinadores/*" }}
+        <li id="c10_slide{{ add $index 1}}">        
+          <img src="{{ .RelPermalink }}" alt="imagen patrocinador {{ $index }}" />
+        </li>
+        {{ end }}      
+    </ul>
+    <ol>      
+      {{/*  {{ range $index, $slide := .Resources.ByType "image" }}  */}}
+      {{ range $index, $slide := .Resources.Match "patrocinadores/*" }}
+        <li><a href="#c10_slide{{ add $index 1 }}"></a></li>
+      {{ end }}
+    </ol>
+    <div class="prev">&lsaquo;</div>
+    <div class="next">&rsaquo;</div>
+</div>

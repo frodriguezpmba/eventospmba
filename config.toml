@@ -35,6 +35,12 @@ link = "plugins/venobox/venobox.css"
 # link = "plugins/themify-icons/themify-icons.css"
 [[params.plugins.css]] # custom icons for events.padelmba.com
 link = "plugins/events-padelmba-icons/style.css"
+# [[params.plugins.css]] # carrusel fotos patrocinadores
+# link = "plugins/carousel/carousel.css"
+
+# Custom JS for Scroll-Top StickyTabs
+# [[params.plugins.js]]
+# link = "plugins/custom/custom.js"
 
 
 # JS Plugins
@@ -46,8 +52,10 @@ link = "plugins/bootstrap/bootstrap.min.js"
 link = "plugins/slick/slick.min.js"
 [[params.plugins.js]]
 link = "plugins/venobox/venobox.min.js"
-[[params.plugins.js]]
-link = "plugins/filterizr/jquery.filterizr.min.js"
+[[params.plugins.js]] # carrusel fotos patrocinadores
+link = "plugins/carousel/carousel.js"
+# [[params.plugins.js]]
+# link = "plugins/filterizr/jquery.filterizr.min.js"
 [[params.plugins.js]]
 link = "plugins/google-map/gmap.js"
 
@@ -99,32 +107,32 @@ expire_days = 2
   
 ############################# social site ########################
 [[params.social]]
-title = "instagram"
+title = "Instagram"
 icon = "ti-instagram" # themify icon : https://themify.me/themify-icons
 link = "https://instagram.com/padelmba"
 
 [[params.social]]
-title = "spotify"
+title = "Spotify"
 icon = "ti-spotify"
 link = "https://open.spotify.com/show/243jDg8Ls2JzZDWxsdhQMV"
 
 [[params.social]]
-title = "discord"
+title = "Discord"
 icon = "ti-discord"
 link = "https://discord.gg/mAj4B85kMH"
 
 [[params.social]]
-title = "youtube"
+title = "Youtube"
 icon = "ti-youtube"
 link = "https://www.youtube.com/channel/UC0HztwdNRoQjjIMz4mWnx7g"
 
 [[params.social]]
-title = "facebook"
+title = "Facebook"
 icon = "ti-facebook" 
 link = "https://www.facebook.com/padelmba"
 
 [[params.social]]
-title = "linkedin"
+title = "Linkedin"
 icon = "ti-linkedin"
 link = "https://www.linkedin.com/company/padelmba/"
 

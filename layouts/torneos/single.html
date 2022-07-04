@@ -12,189 +12,143 @@
   </ol>
 </nav>
 
-<!-- event single -->
+<!-- Torneo 2cols single -->
 <section class="section-sm">
-  <div class="container">
-
-    {{/*  {{ .Content }}  */}}
-
-    {{/*  <nav>
-      <div class="nav nav-tabs" id="nav-tab" role="tablist">
-        <a class="nav-item nav-link active" id="torneo-general-tab" data-toggle="tab" href="#torneo-general" role="tab" aria-controls="torneo-general" aria-selected="true">General</a>
-        <a class="nav-item nav-link" id="torneo-inscripciones-tab" data-toggle="tab" href="#torneo-inscripciones" role="tab" aria-controls="torneo-inscripciones" aria-selected="false">Inscripciones</a>
-        <a class="nav-item nav-link" id="torneo-premios-tab" data-toggle="tab" href="#torneo-premios" role="tab" aria-controls="torneo-premios" aria-selected="false">Premios</a>
-        <a class="nav-item nav-link" id="torneo-contacto-tab" data-toggle="tab" href="#torneo-contacto" role="tab" aria-controls="torneo-contacto" aria-selected="false">Contacto</a>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9 first-column">
+        {{/*  columna 1  */}}
+        <!-- contenido markdown bien, columna 1 izquierda --> 
+        {{ .Content }}
       </div>
-    </nav>      */}}
-
-    <!-- Torneo info. principal row -->
-    <div class="row align-items-center mb-4 mt-2">      
-      <div class="col-lg-12">
-        <div class="border-top mt-2 mb-4 border-primary"></div>
-        <ul class="list-inline">
-          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-location-pin text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">{{ i18n "location" | upper}}</h6>
-                <p class="mb-0"><a href="{{ .Params.location_url | safeURL }}" target="_blank" rel="noopener">{{ .Params.Location | markdownify }} &raquo;</a></p>
-              </div>
-            </div>
-          </li>
-          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-calendar text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">{{ i18n "date" | upper}}</h6>
-                <p class="mb-0">{{ .Date | time.Format ":date_full" }}</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-time text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">{{ i18n "time" | upper }}</h6>
-                {{/*  <p class="mb-0">{{ .Date.Format "15:04"}}</p>  */}}
-                <p class="mb-0">{{ .Params.horario }}</p>
-                {{/*  https://stackoverflow.com/questions/71387017/hugo-how-to-set-date-language  */}}
-              </div>
-            </div>
-          </li>
-          {{/*  <li class="list-inline-item mr-xl-5 mr-4 mb-3 mb-lg-0">
-            <div class="d-flex align-items-center">
-              <i class="ti-view-list-alt text-primary icon-md mr-2"></i>
-              <div class="text-left">
-                <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>
-                  {{ $taxo := "categorias" }}
-                  <div class="bg-white mb-5">
-                  {{ with .Param $taxo }}                      
-                      <ul class="list-inline tag-list">
-                      {{ range $index, $categoria_nombre := . }}        
-                          {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
-                            <li class="list-inline-item mb-2"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
-                          {{- end -}}
-                      {{- end -}}
-                      </ul>
+      <div class="col-lg-3 second-column">
+        {{/*  Columna 2  */}}
+        
+        <!-- Torneo info. principal row -->
+        <div class="row align-items-center mb-4 mt-2">
+          <div class="col-lg-12">
+            <div class="border-top mt-2 mb-4 border-primary"></div>
+            <ul class="list-inline">
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-location text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "location" | upper}}</h6>
+                    <p class="mb-0"><a title="Localización de {{ .Params.Location }}" href="{{ .Params.location_url | safeURL }}" target="_blank" rel="noopener">{{ .Params.Location | markdownify }} &raquo;</a></p>
                   </div>
-                  {{ end }}
-              </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-calendar text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "date" | upper}}</h6>
+                    <p class="mb-0">{{ .Date | time.Format ":date_full" }}</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-clock text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "time" | upper }}</h6>
+                    {{/*  <p class="mb-0">{{ .Date.Format "15:04"}}</p>  */}}
+                    <p class="mb-0">{{ .Params.horario }}</p>
+                    {{/*  https://stackoverflow.com/questions/71387017/hugo-how-to-set-date-language  */}}
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-info text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">NORMATIVA</h6>                    
+                    <p class="mb-0"><a title="Normativa del {{ .Title }}" href="/normativa/normativa-torneos-padelmba.pdf">Normativa del Torneo &raquo;</a></p>
+                  </div>
+                </div>
+              </li> 
+
+            </ul>
+          </div>
+          <!-- border-bottom -->
+          <div class="col-12 mt-2 mb-2 order-4">
+            <div class="border-bottom border-primary"></div>
+          </div>
+        </div>
+
+        <!-- seccion contacto del torneo -->
+        <div class="tab-pane fade show active" id="fdaceb" role="tabpanel" aria-labelledby="nav-1">
+          <h5 id="necesitas-más-información">¿NECESITAS MÁS INFORMACIÓN?</h5>
+          <p>Contacta con nosotros para más información:</p>
+          <p><a title="Whatsapp sobre {{ .Title }}" href="https://wa.me/34{{ .Params.contacto_wasap }}?text=Duda%20del%20{{ .Title }}"><i class="ti-whatsapp"></i> whatsapp +34 {{ if .Params.contacto_wasap }} {{ .Params.contacto_wasap }} {{else}} 608545790 {{end}}</a></p>
+          <p><i class="ti-mail"></i> <a title="Email sobre {{ .Title }}" href="mailto:{{ .Params.contacto_email }}">{{ if .Params.contacto_email}} {{ .Params.contacto_email }} {{else}} eventos@padelmba.com {{end}}</a></p>
+          
+          {{/*  <p>✉️ <a href="mailto:eventos@padelmba.com">eventos@padelmba.com</a></p>
+          <p><img src="/images/torneos/logo/whatsapp-padelmba-torneos.png#wasap" alt="whatsapp"><a href="https://wa.me/34608545790">whatsapp +34 608 54 57 90</a></p>  */}}
+        </div>
+
+        <div class="col-12 mt-4 mb-5">
+          <div class="border-bottom border-primary"></div>
+        </div>
+
+        <!-- padel manager -->
+        <div class="padel-manager">
+          <img class="logo-padel-manager" src="/images/torneos/logo/padel-manager/padel-manager-logo.svg" alt="padel manager logo" />
+          <h3 id="sigue-tu-partido-en-directo--">Sigue tu partido en directo</h3>
+          <p>Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder conocer a tus contrincantes y consultar los resultados del torneo.</p>
+          <p><a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager Android" href="https://play.google.com/store/apps/details?id=com.padelmanager.padelmanager&amp;hl=es"><img src="/images/torneos/logo/padel-manager/padel-manager-google-play-pmba.svg" alt="padel manager android"></a></p>
+          <p><a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager iOS" href="https://apps.apple.com/es/app/padel-manager/id1084646571?l=es"><img src="/images/torneos/logo/padel-manager/padel-manager-apple-store-pmba.svg" alt="padel manager iphone"></a></p>
+        </div>
+
+        <!-- Patrocinadores -->
+        <div class="border-top mt-4 mb-4 border-primary"></div>
+        <li class="list-inline-item mb-3 mb-lg-0">
+          <div class="padel-manager">
+              <h5 id="patrocinadores-torneo"><i class="ti-award1 text-primary icon-md mr-4"></i> PATROCINADORES</h5>
+              {{/*  {{- partial "torneos/carousel.html" (dict "context" . "items" "1" "height" "10" "unit" "%" "duration" "5000") . -}}  */}}
+              
+              {{/*  Listo, funciona bien, cogiendo de la carpeta de cada "page" torneos "patrocinadores", solo buscando imagenes dentro de esa carpeta  */}}
+              {{- partial "torneos/carousel_new.html" . -}}
+          </div>
+        </li>
+
+        <!-- Categorias -->
+        <div class="border-top mt-4 mb-4 border-primary"></div>
+        <li class="list-inline-item mb-3 mb-lg-0">
+          <div class="d-flex align-items-center">
+            <i class="ti-tag text-primary icon-md mr-4"></i>
+            <div class="text-left">
+              {{/*  <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>  */}}
+                {{ $taxo := "categorias" }}
+                <div class="bg-white">
+                {{ with .Param $taxo }}                      
+                    <ul class="list-inline tag-list">
+                    {{ range $index, $categoria_nombre := . }}        
+                        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
+                          <li class="list-inline-item"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
+                        {{- end -}}
+                    {{- end -}}
+                    </ul>
+                </div>
+                {{ end }}
             </div>
-          </li>  */}}
-        </ul>
-      </div>
-      {{/*  <div class="col-lg-3 text-lg-right text-left">
-        <a href="{{ .Params.Apply_url | safeURL }}" class="btn btn-primary">{{ i18n "apply_now" }}</a>
-      </div>  */}}
-      <!-- border -->
-      <div class="col-12 mt-4 mb-4 order-4">
-        <div class="border-bottom border-primary"></div>
+          </div>
+        </li>
+
       </div>
     </div>
-
-{{/*  
-  {{ "<!-- Categorias del Torneo -->" | safeHTML }}
-  <div class="bg-white mb-5">
-    <h4 class="mb-4">{{ i18n "categories" }}</h4>
-    {{- if isset site.Taxonomies "categorias" }}
-    {{- if not (eq (len site.Taxonomies.categorias) 0) }}
-    <ul class="list-inline tag-list">
-      {{- range $name, $items := site.Taxonomies.categorias }}
-      <li class="list-inline-item mb-2"><a href="{{ `categorias/` | relLangURL }}{{ $name | urlize | lower }}/">{{ $name | title | humanize }}</a></li>
-      {{- end }}
-    </ul>
-    {{- end }}
-    {{- end }}
-  </div>
-
-  {{ "<!-- Etiquetas del Torneo Me coge TODAS, no las del content .md -->" | safeHTML }}
-  <div class="bg-white mb-5">
-    <h4 class="mb-4">{{ i18n "tags" }}</h4>
-    {{- if isset site.Taxonomies "etiquetas" }}
-    {{- if not (eq (len site.Taxonomies.etiquetas) 0) }}
-    <ul class="list-inline tag-list">
-      {{- range $name, $items := site.Taxonomies.etiquetas }}
-      <li class="list-inline-item mb-2"><a href="{{ `etiquetas/` | relLangURL }}{{ $name | urlize | lower }}/">{{ $name | title | humanize }}</a></li>
-      {{- end }}
-    </ul>
-    {{- end }}
-    {{- end }}
-  </div>  */}}
-
-<!-- SOLO coge las categorias del mismo .md, asi que bien. -->
-<!-- Funciona BIEN -->
-{{/*  {{ $taxo := "categorias" }}
-<div class="bg-white mb-5">
-{{ with .Param $taxo }}
-    <strong>Categorias SOLO .md &raquo; {{ if gt (len .) 1 }}s{{ end }}:</strong>
-    <ul class="list-inline tag-list">
-    {{ range $index, $categoria_nombre := . }}        
-        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $categoria_nombre) -}}
-          <li class="list-inline-item mb-2"><a href="{{ .Permalink }}">{{ $categoria_nombre | title | humanize }}</a></li>        
-        {{- end -}}
-    {{- end -}}
-    </ul>
 </div>
-{{ end }}  */}}
 
-<!-- SOLO coge las categorias del mismo .md, asi que bien. -->
-{{/*  {{ $taxo := "etiquetas" }}
-<div class="bg-white mb-5">
-{{ with .Param $taxo }}
-    <strong>Etiquetas SOLO .md &raquo; {{ if gt (len .) 1 }}s{{ end }}:</strong>
-    <ul class="list-inline tag-list">
-    {{ range $index, $etiqueta_nombre := . }}        
-        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $etiqueta_nombre) -}}
-          <li class="list-inline-item mb-2"><a href="{{ .Permalink }}">{{ $etiqueta_nombre | title | humanize }}</a></li>        
-        {{- end -}}
-    {{- end -}}
-    </ul>
-</div>
-{{ end }}  */}}
-
-    <!-- contenido bien, debajo del row --> 
-    {{ .Content }}
-
-    <!-- event details -->
-    {{/*  <div class="row">
-      <div class="col-12 mb-50 content">  */}}
-
-        
-
-        {{/*  <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="torneo-general" role="tabpanel" aria-labelledby="torneo-general-tab">{{ .Content }}</div>
-          <div class="tab-pane fade" id="torneo-inscripciones" role="tabpanel" aria-labelledby="torneo-inscripciones-tab">
-            999999999
-
-            <script src="https://cdn.weemss.com/compiled/js/integration-embed.js?v1.7"></script><iframe src="https://event.gg/17195/form" id="weemss_integration_17195" frameBorder="0" width="100%" height="450" scrolling="no"></iframe>
-            
-          </div>
-          <div class="tab-pane fade" id="torneo-premios" role="tabpanel" aria-labelledby="torneo-premios-tab">3333</div>
-          <div class="tab-pane fade" id="torneo-contacto" role="tabpanel" aria-labelledby="torneo-contacto-tab">
-            <h5>¿NECESITAS MÁS INFORMACIÓN?</h5>
-            <p>Contáctanos con nosotros para más información</p>
-            <p><i class="ti-email text-primary icon-md mr-2"></i> <a href="mailto:eventos@padelmba.com">eventos@padelmba.com</a></p>
-            <p><i class="ti-mobile text-primary icon-md mr-2"></i> <a href="tel:+34608545790">+34 608 54 57 90</a></p>
-          </div>
-        </div>  */}}
-
-      {{/*  </div>
-    </div>  */}}
-
-
-
-
-
-  </div>
 
   {{/*  LLevarme esta seccion, a un partial de Torneos para mostrar SOLO las categorias asociadas  */}}
   <!-- Categorias debajo de la seccion principal del Torneo -->
-  <div class="align-items-center mb-4 mt-4">      
+ <!-- <div class="align-items-center mb-4 mt-4">      
     <div class="col-lg-12">
       <div class="border-top mt-4 mb-4 border-primary"></div>
           <li class="list-inline-item mb-3 mb-lg-0">
             <div class="d-flex align-items-center">
-              <i class="ti-list text-primary icon-md mr-4"></i>
+              <i class="ti-tag text-primary icon-md mr-4"></i>
               <div class="text-left">
                 {{/*  <h6 class="mb-0">{{ i18n "categories" | upper }}</h6>  */}}
                   {{ $taxo := "categorias" }}
@@ -214,44 +168,13 @@
           </li>
     </div>
   </div>
+-->
 
 
 
+{{- partial "torneos/share-buttons.html" . -}}
 
 </section>
-
-{{/*  <a class="text-dark" title="{{ i18n "scroll-up" }}" href="#torneo-padelmba">
-  <div class="scroll-to-up-pmba" class="mb-4" style="text-align: center;">
-    <div class="col-lg-12">
-      &Uarr;
-    </div>
-</div>
-</a>  */}}
-
-
-
-<!-- /event single -->
-
-<!-- more event -->
-{{/*  <section class="section pt-0">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="section-title">{{ i18n "more_event" }}</h2>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <!-- event -->
-      {{ $related := (where site.RegularPages "Type" "torneo") | intersect (where site.Pages ".Title" "!=" .Title) | union (site.RegularPages.Related . ) | shuffle | first 3}}
-      {{ range first 3 $related }}
-      <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-        <!-- RENDERIZA ESTE TEMPLATE: layouts\_default\torneos.html -->
-        {{ .Render "torneos" }}
-      </div>
-      {{ end }}
-    </div>
-  </div>
-</section>  */}}
-<!-- /more event -->
+<!-- /Torneo 2cols single -->
 
 {{ end }}

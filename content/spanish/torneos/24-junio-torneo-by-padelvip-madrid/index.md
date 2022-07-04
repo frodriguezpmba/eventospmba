@@ -151,7 +151,7 @@ Contacta con nosotros para más información:
 {{< /tab >}}
 {{< tab tabName="Padel Manager">}}
 
-![padel manager logo](/images/torneos/logo/padel-manager/padel-manager-logo.svg)
+![padel manager logo](/images/torneos/logo/padel-manager/padel-manager-logo2.svg)
 ### Sigue tu partido en directo 📹 :tennis: 
 
 Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder conocer a tus contrincantes y consultar los resultados del torneo.

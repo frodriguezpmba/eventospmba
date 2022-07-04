@@ -1,0 +1,42 @@
+{{ .context.Scratch.Set "items" .items }}
+{{ .context.Scratch.Set "height" .height }}
+{{ .context.Scratch.Set "unit" .unit }}
+
+{{ $patrocinadores := ( $.Page.Resources.GetMatch "patrocinador*" ) }}
+{{/*  {{ $patrocinadores := ( $.Page.Resources.GetMatch (.Get 0) ) }}  */}}
+
+{{/*  .context.Site.Data.es.carousel.images  */}}
+{{/*  site.Params.copyright  */}}
+{{/*  $carousel := carousel{{ site.Params.numero_patrocinador }}  */}}
+
+{{/*  {{ $carousel_id = $.Page.Params.numero_patrocinador }}  */}}
+
+{{/*  {{ $carousel := "carousel1" }}  */}}
+
+{{/*  {{ $carousel := (partial (printf "%s" $.Page.Params.numero_patrocinador )) }}
+{{ $carousel }}  */}}
+
+
+{{/*  {{ .Params.horario }}  */}}
+{{/*  patrocinadores
+imagen_patrocinador  */}}
+{{/*  {{ rang $index, $categoria_nombre := . }}          */}}
+
+<div id="carousel10" class="carousel" duration="{{ .duration }}" items="{{ .items }}">
+    <ul>
+        {{ range $index, $slide := .context.Site.Data.es.patrocinadores.carousel1.patrocinadores }}
+        {{/*  {{ range $index, $slide := $patrocinadores }}  */}}
+          <li id="c10_slide{{ add $index 1}}">
+              {{/*  <img src="{{ .RelPermalink }}" alt="imagen patrocinador {{ $index }}" />  */}}
+              <img src="{{ $slide.logo }}" alt="imagen patrocinador {{ $index }}" />
+          </li>
+        {{ end }}
+    </ul>
+    <ol>
+      {{ range $index, $page := .context.Site.Data.es.patrocinadores.carousel2.patrocinadores }}
+        <li><a href="#c10_slide{{ add $index 1 }}"></a></li>
+      {{ end }}
+    </ol>
+    <div class="prev">&lsaquo;</div>
+    <div class="next">&rsaquo;</div>
+</div>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-{{- partial "head.html" . -}}
+{{- partial "torneos/head.html" . -}}
 <body>
 	{{- partial "preloader.html" . -}}
 	{{- partial "header.html" . -}}
 	{{- partial "torneos/page-header-torneos.html" . -}}	
-	{{- block "torneos" . }}{{- end }}
-	{{- partial "torneos/scroll-to-up.html" . -}}
+	{{- block "torneos" . }}{{- end }}	
+	{{/*  {{- partial "torneos/share-buttons.html" . -}}  */}}
+	{{/*  {{- partial "torneos/carousel.html" (dict "context" . "items" "1" "height" "60" "unit" "%" "duration" "7000") . -}}  */}}
 	{{- partial "torneos/footer.html" . -}}
 </body>
 </html>
