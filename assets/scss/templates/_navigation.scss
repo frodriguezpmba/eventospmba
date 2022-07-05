@@ -1,4 +1,4 @@
-.margin-left { margin-left: 23%; }
+.margin-left { margin-left: 30%; }
 
 .top-header {
   font-size: 12px;
@@ -21,8 +21,11 @@
 
     .navbar-brand {
       padding: 12px 0;
+      margin: 0.5rem;
     }
   }
+
+  @include mobile { .navbar-brand  {margin: 0.3rem; padding: 0; } .img-fluid { width: 200px; } }
 }
 
 .navbar-collapse{
@@ -32,8 +35,8 @@
 }
 
 .navbar-nav {
-  padding-left: 50px;
-  background: $primary-color;
+  // padding-left: 50px;
+  // background: $primary-color;
 
   @include desktop {
     padding-left: 0;
@@ -46,6 +49,40 @@
   background-color: $secondary-color;
 }
 
+//Nav-item-menu para el menu superior
+.nav-item-menu {
+  .nav-link {
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  margin: 0 15px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    content: "";
+    background: $white;
+    // background-color: $primary-color;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .3s ease;
+  }
+
+  &:hover,
+  &.active {
+    &::before {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+  }
+}
+
+// Nav-item para las TABS
 .nav-item {
   .nav-link {
     text-transform: uppercase;

@@ -15,19 +15,36 @@
 <!-- Listing Torneos PadelMBA -->
 <section class="section">
   <div class="container">
-    <div class="row">
+    {{/*  <div class="row">  */}}
       <!-- Torneo -->            
       {{/*  Paginacion de Torneos PadelMBA  */}}
-      {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "torneos") }}
-      {{ range $paginator.Pages }}
-      {{/*  {{ range .Paginator.Pages }}  */}}
-      <div class="col-lg-3 col-sm-6 mb-4 mt-4">
-          {{/*  <strong>Entro dentro...</strong>  */}}
-          {{ .Render "torneos" }}
-      </div>      
-      {{ end }}
-      <div class="col-12 mt-5 mb-5">{{ template "_internal/pagination.html" . }}</div>
-    </div>
+      {{/*  {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "torneos") }}  */}}
+      
+      {{/*  {{ $paginator := .Paginate (where .Data.Pages.GroupByDate "Type" "torneos") }}  */}}
+
+      {{/*  {{ range .Data.Pages.GroupByDate "2006-01" }}
+      <h3>{{ .Key }}</h3>
+      {{ range .Pages }}  */}}
+
+      {{/*  {{ range .Site.RegularPages.GroupByDate "2006-01" }}  */}}
+      {{/*  https://github.com/gohugoio/hugo/commit/1a94148d062beb6e45d5eeef3447d0308e496718  */}}
+      {{/*  https://digitaldrummerj.me/hugo-view-post-grouped-by-month/  */}}
+      {{/*  Funciona con el GroupByDate  */}}
+      {{/*  {{ range .Data.Pages.GroupByDate "January 2006" "Type" "torneos" }}  */}}
+      {{/*  https://github.com/gohugoio/hugo/issues/6992#issuecomment-713100986  */}}
+      {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "Type" "torneos") 6 ).PageGroups }}
+      <h3 class="mes-pmba">{{ .Key }}</h3>
+      <div class="row">
+          {{/*  {{ range .Paginator.Pages }}        */}}        
+          {{ range .Pages }}
+          <div class="col-lg-3 col-sm-6 mb-4 mt-4">            
+              {{ .Render "torneos" }}
+          </div>
+          {{ end }}
+        {{ end }}
+
+        <div class="col-12 mt-5 mb-3">{{ template "_internal/pagination.html" . }}</div>
+      </div>
   </div>
 </section>
 <!-- /Torneo -->

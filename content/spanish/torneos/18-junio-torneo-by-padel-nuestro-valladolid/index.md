@@ -15,6 +15,11 @@ draft: false
 bg_image: "images/torneos/logo/padel-nuestro.png"
 # Event image
 image: "images/torneos/padel-nuestro/torneo-padelnuestro-2022-06-18.jpg"
+
+# Torneo imagen composicion
+imagen_torneo_top: "images/torneos/logo/padel-nuestro.png"
+imagen_torneo_bottom: "images/torneos/logo/club/vip-padel.png"
+
 # location
 location: "Club VIP PADEL (Valladolid)"
 location_url: "https://goo.gl/maps/SgrDP8W4NBtKR65J7"

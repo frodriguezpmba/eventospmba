@@ -1,6 +1,12 @@
 <div class="card border-1 rounded-0 hover-shadow">
   <div class="card-img position-relative">
-    <a href="{{ .Permalink }}" title="{{ .Title }}"><img class="card-img-top rounded-0" src="{{ .Params.image | relURL }}" alt="{{ .Title }}"></a>
+    <a href="{{ .Permalink }}" title="{{ .Title }}">
+      <div class="imagen-torneo">
+        <img src="{{ .Params.imagen_torneo_top | relURL }}" alt="logo torneo by padelmba" class="imagen-torneo-top" />
+        <img src="{{ .Params.imagen_torneo_bottom | relURL }}" alt="logo club torneo" class="imagen-torneo-bottom" />
+      </div>
+    </a>
+      {{/*  <img class="card-img-top rounded-0" src="{{ .Params.image | relURL }}" alt="{{ .Title }}"></a>  */}}
     <div class="card-date">{{ .Date | time.Format ":date_full" }}</div>
   </div>
   <div class="card-body">

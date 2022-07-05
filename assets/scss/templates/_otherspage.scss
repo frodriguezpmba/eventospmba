@@ -1,0 +1,118 @@
+.filter-controls{
+  li{
+    cursor: pointer;
+    transition: .1s ease;
+    &.active{
+      font-weight: 600;
+      color: $primary-color;
+    }
+    &:hover{
+      color: $primary-color;
+    }
+  }
+}
+
+.tag-list{
+  a{
+    display: block;
+    padding: 6px;
+    background: $light;
+    color: $text-color-dark;    
+    text-transform: capitalize;
+    font-size: $categorias-text-size;
+    border: 1px solid $text-color-dark;
+    border-radius: 0.5rem;
+    &:hover{
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+.media a:hover h5 {
+  color: $primary-color;
+  transition: 0.3s;
+}
+
+.scroll-to-up-pmba {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 12px;
+  font-size: 35px;
+  &:hover{
+    background: $primary-color;
+    color: $white;
+  }
+}
+
+// Footer icons custom
+i.footer-icons {
+  color: $white;    
+  transition: 0.3s;
+  &:hover {
+    color: $primary-color !important;
+  }
+}
+
+.fixed-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 10%;
+  filter:grayscale(95%);
+  border: 1px solid $text-color-light;
+}
+
+.custom-border-image-taxonomy {
+  border-radius: 55% 32% 34% 55% / 43% 47% 44% 50%;
+}
+
+.badge-primary {
+  color: $white;
+  background-color: $primary-color;
+}
+
+.list-taxonomy-pmba{ list-style: circle inside; }
+.capitalize-text { text-transform: capitalize; }
+
+.make-me-sticky {
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+  background-color: white;
+}
+
+.sticky-pmba-tabs {
+  position: sticky;
+  top: 78px;
+  background-color: white;
+  z-index: 2;
+  padding: 5px 0;
+}
+
+.padel-manager {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  align-items: center;
+}
+
+a#back-top-footer {
+  top: -225px;
+  position: relative;
+  font-size: 45px;
+  display: flow-root;
+  margin-left: auto;
+  margin-right: auto;  
+  text-align: center;
+  vertical-align: middle;
+  color: #52526B;
+
+  @include desktop { top: -150px; font-size: 35px; }
+  @include tablet { top: -100px; font-size: 35px; }
+  @include mobile { top: -100px; font-size: 33px; }
+}

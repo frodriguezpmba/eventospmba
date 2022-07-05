@@ -18,6 +18,11 @@ draft: false
 bg_image: "images/torneos/logo/padelvip.png"
 # Event image
 image: "images/torneos/padelvip/torneo-padelvip-2022-06-24.jpg"
+
+# Torneo imagen composicion
+imagen_torneo_top: "images/torneos/logo/padel-vip.png"
+imagen_torneo_bottom: "images/torneos/logo/club/madrid-central-padel.png"
+
 # location
 location: "Madrid Central Padel (Madrid)"
 location_url: "https://g.page/madridcentralpadel"

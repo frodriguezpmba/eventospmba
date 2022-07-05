@@ -16,6 +16,11 @@ draft: false
 bg_image: "images/torneos/logo/monkey-padel.png"
 # Event image
 image: "images/torneos/monkey-padel/torneo-monkey-padel-2022-06-11.jpg"
+
+# Torneo imagen composicion
+imagen_torneo_top: "images/torneos/logo/monkey-padel.png"
+imagen_torneo_bottom: "images/torneos/logo/club/seven-padel.png"
+
 # location
 location: "Seven Padel (Madrid)"
 

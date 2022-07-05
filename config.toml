@@ -142,7 +142,7 @@ link = "https://www.linkedin.com/company/padelmba/"
 languageName = "En"
 languageCode = "en-us"
 contentDir = "content/english"
-weight = 1
+weight = 2
 home = "Home"
 # copyright
 copyright = "Events PadelMBA &copy; | All rights reserved"
@@ -230,7 +230,7 @@ url = "research/"
 languageName = "Es"
 languageCode = "es-es"
 contentDir = "content/spanish"
-# weight = 1
+weight = 1
 # home = "Inicio"
 # copyright
 copyright = "Events PadelMBA &copy; | Todos los derechos reservados."

@@ -15,6 +15,11 @@ draft: false
 bg_image: "images/torneos/logo/padel-nuestro.png"
 # Event image
 image: "images/torneos/padel-nuestro/torneo-padelnuestro-2022-05-14-madrid.jpg"
+
+# Torneo imagen composicion
+imagen_torneo_top: "images/torneos/logo/padel-nuestro.png"
+imagen_torneo_bottom: "images/torneos/logo/club/ptraining.png"
+
 # location
 location: "Padel Training Inddor Club (Rivas-Vaciamadrid, Madrid)"
 

@@ -15,6 +15,11 @@ draft: false
 bg_image: "images/torneos/logo/padel-nuestro.png"
 # Event image
 image: "images/torneos/padel-nuestro/torneo-padelnuestro-2022-06-12.jpg"
+
+# Torneo imagen composicion
+imagen_torneo_top: "images/torneos/logo/padel-nuestro.png"
+imagen_torneo_bottom: "images/torneos/logo/club/pozuelo.png"
+
 # location
 location: "Pozuelo Pádel Club (Madrid)"
 

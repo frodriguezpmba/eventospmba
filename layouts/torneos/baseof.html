@@ -4,10 +4,8 @@
 <body>
 	{{- partial "preloader.html" . -}}
 	{{- partial "header.html" . -}}
-	{{- partial "torneos/page-header-torneos.html" . -}}	
+	{{- partial "torneos/page-header-torneos.html" . -}}
 	{{- block "torneos" . }}{{- end }}	
-	{{/*  {{- partial "torneos/share-buttons.html" . -}}  */}}
-	{{/*  {{- partial "torneos/carousel.html" (dict "context" . "items" "1" "height" "60" "unit" "%" "duration" "7000") . -}}  */}}
 	{{- partial "torneos/footer.html" . -}}
 </body>
 </html>
