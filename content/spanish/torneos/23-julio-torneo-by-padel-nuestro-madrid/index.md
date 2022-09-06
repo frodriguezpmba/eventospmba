@@ -52,6 +52,13 @@ torneo_suspendido: false
 categorias: ["Torneo", "Boadilla-del-Monte", "Padel-Nuestro", "Vita10"]
 etiquetas: ["Padel-Vip", "Julio", "Madrid-Central-Padel", "etiqueta"]
 
+# Contacto Email/Wasap del Torneo
+contacto_wasap: "666112233"
+contacto_email: "pepito@gmail.com"
+
+# PadelManager ID del torneo
+padelmanager_id: 6553
+
 # type
 type: "torneos"
 ---
@@ -59,25 +66,26 @@ type: "torneos"
 {{< tabs tabTotal="3">}}
 {{< tab tabName="Información" >}}
 
-#### Formato de Juego
+{{< cats/cats >}}
+{{< cats/cats-torneo "Masculino" "A" "Categoria 2 - 1" "nivel 3,5" >}}
+{{< cats/cats-torneo "Femenino" "C" "Categoría 3ª - 4ª" "hasta 4" >}}
+{{< cats/cats-torneo "Mixto" "C" "Categoria 5" "hasta 2,5" >}}
+{{< /cats/cats >}}
 
-🏆 PARTIDOS A 1 SET ( 5 -5 TIE BREAK) CON PUNTO DE ORO.
-🔹 FASE DE GRUPOS + CUADRO CLASIFICATORIO - (Cuadro principal y consolación)
-🎾 Mínimo 4 partidos asegurados - (Jugarás un mínimo de cuatro partidos)
+{{< ins/ins >}}
+{{< ins/ins-torneo "/images/torneos/padelvip/inscripcion/welcome-pack-inscripcion-padelvip-24-junio.png" "Bronce" "25" >}}{{% ins/lista1 %}}{{< /ins/ins-torneo >}}
 
-#### El Torneo incluye
+{{< ins/ins-torneo "/images/torneos/padelvip/inscripcion/welcome-pack-inscripcion-padelvip-24-junio.png" "Bronce" "35" >}}{{% ins/lista2 %}}{{< /ins/ins-torneo >}}
 
-**WELCOME PACK:** MOCHILA DE CUERDAS | CURSO ONLINE | OVERGRIP
-![welcome pack torneo 24 junio](/images/torneos/padelvip/inscripcion/welcome-pack-inscripcion-padelvip-24-junio.png)
+{{< ins/ins-torneo "/images/torneos/padelvip/inscripcion/welcome-pack-inscripcion-padelvip-24-junio.png" "Bronce" "45" >}}{{% ins/lista3 %}}{{< /ins/ins-torneo >}}
+{{< /ins/ins >}}
 
-**SORTEO:** ADDICTIVE | SHOCKOUT | APEX | SIUX
-![welcome pack torneo 24 junio](/images/torneos/padelvip/inscripcion/sorteo-torneo-padelvip-24-junio.png)
-
-**CATERING:** FRUTOS SECOS | CHUCHERÍAS
-![welcome pack torneo 24 junio](/images/torneos/padelvip/inscripcion/catering-torneo-padelvip.png)
+{{% formato/formato-juego %}}
+{{% sorteos/sorteos-pascal "https://www.padelmba.com/wp-content/uploads/2022/04/sorteo-clinic-madrid-2022-06-11-min.png" %}}
+{{% catering/catering-redbull "https://www.padelmba.com/wp-content/uploads/2021/12/catering-torneo-padelnuestro-22-01.png" %}}
 
 {{< /tab >}}
-{{< tab tabName="Premios" >}}
+{{< tab tabName="Premios">}}
 
 {{< premios >}}
 {{< premio premioImagen="https://www.padelmba.com/wp-content/uploads/2022/06/torneo-portugal-agueda-22-06-12-campeonas-min.png" premioCampeones="Campeones" premioCategoria="masculino" premioPala="x2 Palas Siux" premioNombrePala="Diablo Revolution" premioPrecio="450€" premioTipoCategoria="A" >}}

@@ -1,0 +1,42 @@
+<!-- Clinic Page title -->
+<section class="page-title-section overlay" style="background:linear-gradient(107.47deg, hsl(192deg 100% 28% / 80%) 1.16%, #141414 100%), url('{{ .Params.Bg_image | relURL}}');background-position: center center; background-repeat: no-repeat; background-size: cover; {{ if .Params.torneo_suspendido }}filter: grayscale(100%);{{ end }}">
+    <div class="container header">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="list-inline custom-breadcrumb">
+                {{if ne .RelPermalink "/clinics/" }}
+                    <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Torneo PadelMBA by {{.Params.nombre_torneo}}:
+                    <span class="date-tournament-pmba">{{ .Date | time.Format "Monday" }}, {{ .Date.Day }} de {{ index .Site.Data.es.months (.Date.Format "1") | lower }} - {{ .Params.ciudad_torneo }}</span></h1>
+                    {{/*  https://mertbakir.gitlab.io/hugo/convert-dates-into-your-language/  */}}
+                    {{/*  {{ .Date | time.Format ":date_full" }}  */}}
+                {{else}}
+                    <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Listado de Clinics PadelMBA</h1>
+                {{ end }}
+
+                </ul>
+                {{if ne .RelPermalink "/clinics/" }}
+                    <p class="text-white mb-4 subtitle">Clinic de pádel realizado en {{.Params.club_nombre_torneo}} ({{.Params.ciudad_torneo}}), by {{.Params.nombre_torneo}}.
+                    Organizado gracias a PadelMBA, lider en formacion online de pádel.
+                    ¡Inscríbete! El evento incluye sorteos y catering.</p>
+                {{ end }}
+
+                {{if ne .RelPermalink "/clinics/" }}
+                <div class="text-state-pmba">
+                
+                {{ if .Params.torneo_suspendido }}
+                    <span class="pmba-torneo-suspendido">&times; Suspendido</span>
+                {{ else }}
+                    {{ if .Date.Before now }}
+                        <span class="pmba-torneo-cerrado">&times; Cerrado</span>
+                    {{else}}
+                        <span class="pmba-torneo-abierto">&check; Abierto</span>
+                    {{end}}
+                {{end}}
+
+                </div>
+                {{end}}
+
+            </div>
+        </div>
+    </div>
+</section>

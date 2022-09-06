@@ -9,7 +9,8 @@
         <div class="col-md-12">
           <ul class="list-inline custom-breadcrumb">
             
-            {{if ne .RelPermalink "/es/torneos/" }}
+            {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
+            {{if ne .RelPermalink "/torneos/" }}
               <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Torneo PadelMBA by {{.Params.nombre_torneo}}:
               <span class="date-tournament-pmba">{{ .Date | time.Format "Monday" }}, {{ .Date.Day }} de {{ index .Site.Data.es.months (.Date.Format "1") | lower }} - {{ .Params.ciudad_torneo }}</span></h1>
               {{/*  https://mertbakir.gitlab.io/hugo/convert-dates-into-your-language/  */}}
@@ -21,7 +22,8 @@
             {{ end }}
             
           </ul>
-          {{if ne .RelPermalink "/es/torneos/" }}
+          {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
+          {{if ne .RelPermalink "/torneos/" }}
             <p class="text-white mb-4 subtitle">Torneo de pádel realizado en {{.Params.club_nombre_torneo}} ({{.Params.ciudad_torneo}}), by {{.Params.nombre_torneo}}.
             Organizado gracias a PadelMBA, lider en formacion online de pádel.
             ¡Inscríbete! El evento incluye sorteos y catering.</p>
@@ -40,7 +42,8 @@
           
 
 
-          {{if ne .RelPermalink "/es/torneos/" }}
+          {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
+          {{if ne .RelPermalink "/torneos/" }}
           {{/*  {{ if ne .Section "torneos" }}  */}}
           <div class="text-state-pmba">
           {{/*  {{ $active := eq $.RelPermalink (.URL | relLangURL) }}

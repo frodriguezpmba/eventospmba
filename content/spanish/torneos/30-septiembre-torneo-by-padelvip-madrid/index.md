@@ -18,7 +18,7 @@ bg_image: "images/torneos/logo/club/madrid-central-padel-bg.jpg"
 # Event image
 image: "images/torneos/padelvip/torneo-padelvip-2022-06-24.jpg"
  
-# Torneo imagen composicion
+# Torneo imagen composicion Card Listado
 imagen_torneo_top: "images/torneos/logo/padel-vip.png"
 imagen_torneo_bottom: "images/torneos/logo/club/madrid-central-padel-blanco.png"
 
@@ -28,7 +28,6 @@ imagen_club_torneo: "madrid-central-padel.png"
 # location
 location: "Madrid Central Padel (Madrid)"
 location_url: "https://g.page/madridcentralpadel"
-# finalizado: true
 
 # Genero Torneo
 genero: "Mixto"
@@ -46,18 +45,19 @@ club_nombre_torneo: "Madrid Central Padel"
 # Precio desde del Torneo
 precio_desde_torneo: 25
 
-#Weemss ID de los tickets de inscripcion
-weemss_id: 17202
-
-# PadelManager ID del torneo
-padelmanager_id: 6553
-
 # Check a TRUE (verdadero) si el Torneo se suspende
 torneo_suspendido: false
 
 # Taxonomy
 categorias: ["Torneo", "Madrid", "Padel-Vip", "Madrid-Central-Padel"]
 etiquetas: ["Padel-Vip", "Junio", "Madrid-Central-Padel", "etiqueta"]
+
+#Contacto Email/Wasap del Torneo
+contacto_wasap: ""
+contacto_email: "prueba@gmail.com"
+
+# PadelManager ID del torneo
+padelmanager_id: 6553
 
 # type
 type: "torneos"

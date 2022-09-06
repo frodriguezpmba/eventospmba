@@ -9,4 +9,4 @@ draft: false
 
 ## Clinics disponibles
 
-Listado de los últimos Clinics disponibles para apuntarse y disfrutar compitiendo jugando al pádel. Los Clinics PadelMBA están ubicados por muchas ciudades y clubs de toda España y Europa. Selecciona del listado el que te gustaría inscribirte y jugar! Cualquier duda o pregunta, puedes contactar con nosotros en la [sección de contacto](/es/contacto/).
+Listado de los últimos Clinics disponibles para apuntarse y disfrutar compitiendo jugando al pádel. Los Clinics PadelMBA están ubicados por muchas ciudades y clubs de toda España y Europa. Selecciona del listado el que te gustaría inscribirte y jugar! Cualquier duda o pregunta, puedes contactar con nosotros.

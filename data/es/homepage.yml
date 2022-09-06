@@ -12,7 +12,8 @@ slider:
       button:
         enable : true
         label : "¡Torneos!"
-        link : "/es/torneos"
+        link : "/torneos"
+        # link : "/es/torneos"
 
     # slider item loop
     - title : "Clinics de Pádel con PadelMBA"
@@ -23,7 +24,7 @@ slider:
       button:
         enable : true
         label : "¡Clinics!"
-        link : "/es/clinics"
+        link : "#"
 
     # slider item loop
     - title : "Campus de Competición - PadelMBA & Padel Point"
@@ -40,33 +41,27 @@ slider:
 ############################### Banner feature ###############################
 banner_feature:
   enable : true
-  #image: "images/banner/banner-feature.png"  
-  #image: "images/torneos/manu-martin-isotipo-fondo.jpg"
-  #image: "https://www.padelmba.com/wp-content/uploads/2022/04/Alfonso-Viuda.png"    
-  #image: "https://www.padelmba.com/wp-content/uploads/2021/10/entrenadores-cpc-lp.jpg"
-  #image: "https://www.padelmba.com/wp-content/uploads/2021/06/Perfil-Seba-Nerone.jpg"
   #image: "https://www.padelmba.com/wp-content/uploads/2022/05/manu-martin-isotipo-min.png"
   image: "https://www.padelmba.com/wp-content/uploads/2021/05/Promo_presenciales.jpg"
-  #image: "https://www.padelmba.com/wp-content/uploads/2020/11/DaniVita.png"
   feature_item:
     # feature item loop
     - name : "Calidad gracias a PadelMBA"
-      icon : "ti-star-empty" # icon pack : https://themify.me/themify-icons
+      icon : "ti-star-empty"
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
 
     # feature item loop
     - name : "Competitidad única"
-      icon : "ti-medal" # icon pack : https://themify.me/themify-icons
+      icon : "ti-medal" 
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
 
     # feature item loop
     - name : "Premios para todos los jugadores"
-      icon : "ti-cup" # icon pack : https://themify.me/themify-icons
+      icon : "ti-cup"
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
 
     # feature item loop
     - name : "Disponibles por toda España"
-      icon : "ti-world" # icon pack : https://themify.me/themify-icons
+      icon : "ti-world"
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
 
 
