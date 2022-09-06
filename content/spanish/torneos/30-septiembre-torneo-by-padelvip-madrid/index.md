@@ -33,6 +33,10 @@ location_url: "https://g.page/madridcentralpadel"
 # Genero Torneo
 genero: "Mixto"
 
+# Contacto Email/Wasap del Torneo
+contacto_email: ""
+contacto_wasap: ""
+
 # Ciudad del Torneo
 ciudad_torneo: "Madrid"
 # Nombre del Torneo

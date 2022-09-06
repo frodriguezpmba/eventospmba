@@ -1,24 +1,26 @@
 ######################## default configuration ####################
 baseURL = "https://events.padelmba.com/"
-title = "Torneos de competición de Pádel en España - by PadelMBA"
-# defaultContentLanguage = "es"
+title = "Torneos, Clinics y Campus de competición de Pádel en España/Europa - by PadelMBA, lider en formación de pádel online"
+languageCode = "es-es"
+defaultContentLanguage = "es"
 # defaultContentLang = "es"
 #theme = "padelmba"
 # post pagination
-paginate = "4"
+paginate = "6"
+enableInlineShortcodes = true
 # post excerpt
 summaryLength = "10"
 # disqus short name
 disqusShortname = "xxxxxx" # get your shortname form here : https://disqus.com
 # disable language
-disableLanguages = ["fr"] # desable language from here
+disableLanguages = ["fr", "en"] # disable language from here
 date_format = "02 Jan 2006"
 enableEmoji = true
+enableRobotsTXT = false
 # Taxonomias para usar en Torneos PadelMBA
 [taxonomies]
   categoria = "categorias"
   etiqueta = "etiquetas"
-
 
 ############################# Plugins ##############################
 
@@ -31,13 +33,14 @@ link = "plugins/slick/slick.css"
 link = "plugins/animate/animate.css"
 [[params.plugins.css]]
 link = "plugins/venobox/venobox.css"
-# [[params.plugins.css]]
-# link = "plugins/themify-icons/themify-icons.css"
+[[params.plugins.css]] # https://swiperjs.com/get-started#use-swiper-from-cdn
+link = "plugins/swiper/swiper-bundle.min.css"
 [[params.plugins.css]] # custom icons for events.padelmba.com
 link = "plugins/events-padelmba-icons/style.css"
 # [[params.plugins.css]] # carrusel fotos patrocinadores
 # link = "plugins/carousel/carousel.css"
-
+# [[params.plugins.css]]
+# link = "plugins/themify-icons/themify-icons.css"
 # Custom JS for Scroll-Top StickyTabs
 # [[params.plugins.js]]
 # link = "plugins/custom/custom.js"
@@ -54,16 +57,20 @@ link = "plugins/slick/slick.min.js"
 link = "plugins/venobox/venobox.min.js"
 [[params.plugins.js]] # carrusel fotos patrocinadores
 link = "plugins/carousel/carousel.js"
+[[params.plugins.js]] # https://swiperjs.com/get-started#use-swiper-from-cdn
+link = "plugins/swiper/swiper-bundle.min.js"
 # [[params.plugins.js]]
-# link = "plugins/filterizr/jquery.filterizr.min.js"
-[[params.plugins.js]]
-link = "plugins/google-map/gmap.js"
+# link = "plugins/google-map/gmap.js"
 
 
 #################### default parameters ################################
 [params]
-#logo = "images/logo-eventos-fondo-negro.svg"
-logo = "images/logo-padelmba-eventos.svg"
+noindex = true
+### Contacto email y movil fijo de PadelMBA Eventos (Aguado)
+contacto_email_eventos = "aguado@padelmba.com"
+contacto_wasap_eventos = "608545790"
+# Logotipo
+logo = "images/logo-padelmba-eventos-2022.svg"
 # Meta data
 description = "This is meta description SEO, pendiente"
 author = "PadelMBA"
@@ -81,7 +88,7 @@ top_header = false
 # Preloader
 [params.preloader]
 enable = true
-preloader = "images/preloader-pmba.png" # use jpg, png, svg or gif format.
+preloader = "images/preloader-white-pmba-2022-final.png"
 
 
 # Subscription
@@ -96,8 +103,8 @@ mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074" # replace this co
 [params.map]
 enable = true
 gmap_api = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"
-map_latitude = "51.5223477"
-map_longitude = "-0.1622023"
+map_latitude = "40.3923732"
+map_longitude = "-3.8400133"
 map_marker = "images/marker.png" # marker size 37*55 px
 
 # cookies
@@ -136,105 +143,15 @@ title = "Linkedin"
 icon = "ti-linkedin"
 link = "https://www.linkedin.com/company/padelmba/"
 
-
-################################### English language #####################################
-[Languages.en]
-languageName = "En"
-languageCode = "en-us"
-contentDir = "content/english"
-weight = 2
-home = "Home"
-# copyright
-copyright = "Events PadelMBA &copy; | All rights reserved"
-#copyright = "Copyright &copy; 2021 a hugo theme by [Themefisher](https://themefisher.com/hugo-themes/)"
-
-
-
-################### English navigation ####################
-
-# main menu
-[[Languages.en.menu.main]]
-name = "About"
-url = "about/"
-weight = 1
-
-[[Languages.en.menu.main]]
-name = "course"
-url = "course/"
-weight = 2
-
-[[Languages.en.menu.main]]
-weight = 3
-name = "Pages"
-hasChildren = true
-
-  [[Languages.en.menu.main]]
-  parent = "Pages"
-  name = "teacher"
-  url = "teacher/"
-  weight = 3
-
-  [[Languages.en.menu.main]]
-  parent = "Pages"
-  name = "notice"
-  url = "notice/"
-  weight = 1
-
-  [[Languages.en.menu.main]]
-  parent = "Pages"
-  name = "event"
-  url = "event/"
-  weight = 2
-  
-  
-[[Languages.en.menu.main]]
-name = "blog"
-url = "blog/"
-weight = 4
-  
-[[Languages.en.menu.main]]
-name = "Contact"
-url = "contact/"
-weight = 5
-
-
-# footer menu
-
-[[Languages.en.menu.footer]]
-name = "teacher"
-url = "teacher/"
-
-[[Languages.en.menu.footer]]
-name = "notice"
-url = "notice/"
-
-[[Languages.en.menu.footer]]
-name = "event"
-url = "event/"
-
-[[Languages.en.menu.footer]]
-name = "scholarship"
-url = "scholarship/"
-
-[[Languages.en.menu.footer]]
-name = "research"
-url = "research/"
-
-
-
-
-
-
 ################################### Spanish language #####################################
 [Languages.es]
-languageName = "Es"
+languageName = "es"
 languageCode = "es-es"
 contentDir = "content/spanish"
 weight = 1
 # home = "Inicio"
 # copyright
 copyright = "Events PadelMBA &copy; | Todos los derechos reservados."
-
 
 
 ################### Spanish navigation ####################
@@ -245,26 +162,68 @@ copyright = "Events PadelMBA &copy; | Todos los derechos reservados."
 # url = "acerca-de/"
 # weight = 1
 
-
 [[Languages.es.menu.main]]
+lang = "es"
 name = "Torneos"
 url = "torneos/"
 weight = 2
 
 [[Languages.es.menu.main]]
-name = "Clinics"
+lang = "es"
+name = "Clinics y MasterClass"
 url = "clinics/"
 weight = 3
 
 [[Languages.es.menu.main]]
-name = "Campus"
-url = "campus/"
+lang = "es"
+name = "Campus de Competición"
+url = "#"
 weight = 4
 
-[[Languages.es.menu.main]]
-name = "Contacto"
-url = "contacto/"
-weight = 5
+# [[Languages.es.menu.main]]
+# name = "Ranking"
+# url = "ranking/"
+# weight = 6
+
+
+################################### English language #####################################
+# [Languages.en]
+# languageName = "En"
+# languageCode = "en-us"
+# contentDir = "content/english"
+# weight = 2
+# home = "Home"
+# # copyright
+# copyright = "Events PadelMBA &copy; | All rights reserved"
+
+
+# ################### English navigation ####################
+
+# [[Languages.en.menu.main]]
+# name = "Tournaments"
+# url = "#"
+# weight = 2
+
+# [[Languages.en.menu.main]]
+# name = "Clinics"
+# url = "#"
+# weight = 3
+
+# [[Languages.en.menu.main]]
+# name = "Campus"
+# url = "#"
+# weight = 4
+
+# [[Languages.en.menu.main]]
+# name = "Contact"
+# url = "#"
+# weight = 5
+
+
+# [markup]
+#   [markup.goldmark]
+#     [markup.goldmark.renderer]
+#       unsafe = true
 
 
 # [[Languages.es.menu.main]]
