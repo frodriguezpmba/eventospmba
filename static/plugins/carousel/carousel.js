@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const setSelected = function() {
         bullets.forEach(function(bullet) {
-           bullet.classList.remove('selected');
+          bullet.classList.remove('selected');
         });
         let nthchild = (Math.round((ele.scrollLeft/scrolllength)+1));
         carousel.querySelector('ol li:nth-child('+nthchild+')').classList.add('selected'); 
@@ -55,11 +55,12 @@ document.addEventListener('DOMContentLoaded', function() {
     //setInterval for autoplay
     if(carousel.getAttribute('duration')) {
       setInterval(function(){ 
-      if (ele != document.querySelector(".carousel:hover ul")) {
+      if (ele != document.querySelector(".carousel:hover ul")) {          
           nextarrow.click();
       }
       }, carousel.getAttribute('duration'));
     }
+
     
   }); //end foreach
   

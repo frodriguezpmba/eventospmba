@@ -7,6 +7,6 @@ draft: false
 # layout: torneos
 ---
 
-## Torneos disponibles
+## Torneos PadelMBA disponibles
 
 Listado de los últimos Torneos disponibles para apuntarse y disfrutar compitiendo jugando al pádel. Los Torneos PadelMBA están ubicados por muchas ciudades y clubs de toda España. Selecciona del listado el que te gustaría inscribirte y jugar! Cualquier duda o pregunta, puedes contactar con nosotros en la [sección de contacto](/es/contacto/).

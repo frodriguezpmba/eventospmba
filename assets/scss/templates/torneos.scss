@@ -1,3 +1,16 @@
+/* Media-Query CSS Tablet/Mobile para aplicar a cualquier clase o estilo */
+/* --------------------------------------------------------------------- */
+
+// @include tablet {
+//   img.catering-padelmba {margin-bottom: 30px;}
+// }
+
+// @include mobile {
+//   img.catering-padelmba {margin-bottom: 30px;}
+// }
+
+
+
 .imagen-torneo {
   display: grid;  
   // grid-auto-flow: column;
@@ -7,19 +20,22 @@
   // grid-template-columns: repeat(3, 1fr);
   background-image: linear-gradient(180deg, #141414 0%, #007591 100%);  
   justify-items: center;
-  // height: auto;
-  align-content: space-around;
-  height: 480px;
+  align-content: space-evenly;
+  align-items: center;
+  height: 25vh;
+  // height: inherit;
+  // height: auto;  
+  // height: 400px;
     
-  @include tablet { align-content: space-evenly; height: 300px; }
-  @include mobile { height:fit-content; }
+  @include tablet { align-content: center; height: 22vh; }
+  @include mobile { height: 24vh; }
 }
 
 .imagen-torneo-top {
   // max-width: 100%;
   // height: auto;
-  max-width: 100%;
-  height: auto;
+  max-width: 80%;
+  height: fit-content;
   width:fit-content;
   padding: 20px;
 
@@ -30,12 +46,12 @@
 
 .imagen-torneo-bottom {
   max-width: 80%;
-  height: 90%;
+  height: fit-content;
   width:fit-content;
-  padding: 20px;
+  // padding: 10px;
 
   @include tablet { max-width:95%; height:fit-content; }
-  @include mobile { width: 75%; max-width:fit-content; height:fit-content; }
+  @include mobile { width: 80%; max-width:fit-content; height:fit-content; }
 }
 
 
@@ -56,11 +72,906 @@
   width: -webkit-fill-available;
   display: inline-block;
   vertical-align: middle;
-  text-shadow: 1px 1px 2px hsla(0, 0%, 0%, 0.93);  
+  text-shadow: 1px 1px 2px hsla(0, 0%, 0%, 0.93);
 
   span { font-size: 40px; }
 }
 
+.card-date-finalizado {
+  position: inherit;
+  background-color: $finalizado-bg-color;  
+  font-family: $secondary-font;
+  border-top: 1px solid $border-color-card-date;
+  text-align: center;
+  padding: 15px;
+  color: $white;
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  width: -webkit-fill-available;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 1px 1px 2px hsla(0, 0%, 0%, 0.93);
+
+  span { font-size: 40px; }
+}
+
+.card-date-disponible {
+  position: inherit;
+  background-color: $disponible-bg-color;  
+  font-family: $secondary-font;
+  border-top: 1px solid $border-color-card-date;
+  text-align: center;
+  padding: 15px;
+  color: $white;
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 20px;
+  width: -webkit-fill-available;
+  display: inline-block;
+  vertical-align: middle;
+  text-shadow: 1px 1px 2px hsla(0, 0%, 0%, 0.93);
+
+  span { font-size: 40px; }
+}
+
+
+
+
 li.page-item.disabled { display: none; }
 h3.mes-pmba { text-transform: capitalize; }
-h4.card-title { font-size: 22px; }
+h4.card-title { font-size: 24px; }
+
+
+
+/** Torneos v2 Figma CSS **/
+.sombra-rounded {
+  box-shadow: 0px 0px 16px -4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.card-date2 {
+  position: absolute;
+  background: white;
+  font-family: inherit;
+  text-align: center;
+  padding: 10px;
+  color: black;
+  top: 0;
+  left: 0;
+  text-transform: uppercase;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 15px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  font-weight: bold;
+
+  // span { font-size: 40px; }
+}
+
+.border-imagen-torneo{ border-top-right-radius: 15px; border-top-left-radius: 15px; }
+
+.genero-torneo {
+  position: absolute;
+  background: white;
+  font-family: inherit;
+  text-align: center;
+  padding: 10px;
+  color: black;
+  top: 0;
+  right: 0;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  // padding: 13px;
+  margin: 15px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  font-weight: bold;
+
+  &.masculino { color: $color-texto-genero-masculino; }
+  &.femenino  { color: $color-texto-genero-femenino; }
+  &.mixto     { color: $color-texto-genero-mixto; }
+}
+
+.show-precio-torneo {
+  display: flex;
+  float: right;
+  flex-direction: column;
+  align-items: center;
+}
+.precio-torneo { float:right; font-weight: 600; font-size: 30px; color: $black; }
+
+// .row.margin-pmba { padding-top: 100px; @include tablet { padding-top: none; } @include mobile { padding-top: none; } }
+div#nav-tab-content { padding-top: 15px; }
+
+// Efecto HOVER en los Torneos
+.card{transition: all .4s cubic-bezier(0.68, -0.55, 0.27, 1.55);}
+.card:hover{ transform: scale(1.05); }
+  // box-shadow: 0px 0px 16px -4px hsl(192, 100%, 28%); border: 1px solid $primary-color;
+
+
+.text-state-pmba {
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+    max-width: fit-content;
+    // border: 1px white solid;
+    // padding: 10px;
+    // border-radius: 1rem;
+    text-align: center;
+  
+  @include tablet { max-width:fit-content; width: 80%; }
+  @include mobile { max-width:fit-content; width: 80%; } 
+}
+
+.pmba-torneo { font-weight: 700; font-size: 18px; }
+.pmba-torneo.abierto { float:right; color: $estado-torneo-abierto; }
+.pmba-torneo-abierto { color: $estado-torneo-abierto; border: 2px $estado-torneo-abierto solid; padding: 10px; border-radius: 10px; }
+
+.pmba-torneo.cerrado { float:right; color: $estado-torneo-cerrado; }
+.pmba-torneo-cerrado { color: $estado-torneo-cerrado; border: 2px $estado-torneo-cerrado solid; padding: 10px; border-radius: 10px; }
+
+.pmba-torneo.suspendido { float:right; color: $estado-torneo-suspendido; }
+.pmba-torneo-suspendido { color: $estado-torneo-suspendido; border: 2px $estado-torneo-suspendido solid; padding: 10px; border-radius: 10px; }
+
+
+.col-lg-7.first-column  { 
+  margin-right: 10%; 
+  background: white;
+  box-shadow: 0px -2.81831px 15.9704px hsla(0, 0%, 0%, 0.1);
+  border-radius: 12px;
+  padding: 0 15px 20px 15px;
+}
+
+// .col-lg-8.first-column  { 
+div#nav-tab-content{
+  background: white;
+  box-shadow: 0px -2.81831px 15.9704px hsla(0, 0%, 0%, 0.1);
+  border-radius: 12px;
+  padding: 30px;
+
+  @include mobile {padding: 10px;}
+}
+
+.col-lg-3.second-column {
+  background: white;
+  box-shadow: 0px -3.00564px 17.032px hsla(0, 0%, 0%, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  // margin-top: -80px;
+  height: fit-content;
+  overflow: hidden;
+  
+  // position: fixed;
+  position: sticky;
+  margin-top: -465px;
+  right: 40px;
+  z-index: 4;
+  top: 112px;
+
+  // position: sticky;
+  // order: 4;
+  // top: 90px;
+
+  @include desktop {order:0; position: unset; right: none; margin-bottom:20px; margin-top:-45px; }
+  @include tablet  {order:0; position: unset; right: none; margin-bottom:20px; margin-top:-50px; }
+  @include mobile  {order:0; position: unset; right: none; margin-bottom:20px; margin-top:-50px; }
+
+  // Para hacer fijo como en buddyboss, meterle JS para cambiar el margin-top dinámicamente cierto scroll
+  // position: fixed;
+  // margin-top: -450px;
+  // right: 40px;
+  // z-index: 1;
+  // max-height: calc(100vh - 2rem * 2);
+  // max-height: 500px;
+  // overflow-y: auto;
+}
+
+.modal-backdrop {z-index:unset;}
+
+.sticky-pmba-tabs {
+  position: sticky;
+  background-color: $bg-color-gris-pmba;
+  z-index: 4;
+
+  // @include desktop { top: 110px; }
+  // @include tablet  { top: 90px; }
+  // @include mobile  { top: 95px; }
+}
+
+.nav-tabs { margin-bottom: 0; border-bottom: 0; }
+
+.nav-tabs .nav-link { 
+  width: 33.3%;
+  text-align: center;
+  border-color: #e9ecef #e9ecef #dee2e6;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; 
+
+  @include tablet { font-size: 18px; }
+  @include mobile { font-size: 14px; padding: 1rem 0.5rem; }
+}
+
+.nav-tabs .nav-link:first-child, .nav-tabs .nav-link.active:first-child { border-bottom-left-radius: 0.75rem;  }
+.nav-tabs .nav-link:last-child, .nav-tabs .nav-link.active:last-child { border-bottom-right-radius: 0.75rem; }
+
+/* Block info torneo padelmba */
+.carousel-patrocinadores {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  // align-content: flex-end;
+  align-items: center;
+  background-color: $bg-color-gris-pmba;
+  padding: 50px 40px;
+  // padding: 0 40px 50px 40px;
+
+  @include tablet {padding: 40px 10px;} 
+  .carousel ul li {min-width: fit-content; @include tablet {min-width: 50%;}  @include mobile {min-width: 50%;} } 
+  .carousel ul li > img { @include tablet {object-fit: fill;} } 
+  .carousel ul li > * {@include tablet{width: 95%; height: auto;} @include mobile{width: 90%; height: auto;}}
+  @include mobile {padding: 40px 10px;}
+}
+
+.padel-manager {
+  display: flex;
+  align-items: center;
+  background-color: $bg-color-gris-pmba;
+  padding: 0 40px;
+  justify-content: space-evenly;
+  flex-direction: row;
+  background-color: white;
+
+  @include desktop { display: flex; flex-direction: column; padding: 0 20px; padding-top: 0 !important; }
+  @include tablet  { display: flex; flex-direction: column; padding: 0 20px; padding-top: 0 !important; }
+  @include mobile { display: flex; flex-direction: column; padding: 0 20px; padding-top: 0 !important; }
+}
+
+.logos-padel-manager { padding: 30px; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center;
+
+  @include tablet { padding: 0; }
+}
+
+.logos-padel-manager img {
+  @include tablet {width: 95%;}
+  @include tablet {width: 95%;}
+}
+
+.logos-padel-manager > a:first-child { padding-right: 30px; 
+
+  @include tablet { padding-right: 25px; }
+}
+
+.stack-padel-manager {
+  width: 65%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+
+  @include desktop { display: flex; flex-direction: column; align-items: center; width: 100%; }
+  @include tablet { display: flex; flex-direction: column; align-items: center; width: 100%; }
+}
+
+.stack-padel-manager2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @include desktop { display: flex; flex-direction: column; align-items: center; width: 100%; }
+  @include tablet { display: flex; flex-direction: column; align-items: center; width: 100%; }
+}
+
+p.text-padel-manager { text-align: left; 
+
+  @include tablet { text-align: center; font-size: 15px;  }
+  @include mobile { text-align: center; font-size: 15px; }
+}
+
+img.logo-club {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  max-width: 55%;
+  margin-bottom: 10px;
+
+  @include desktop { max-width: 35%; }
+  @include tablet { max-width: 35%; }
+  @include mobile { max-width: 35%; }
+}
+
+.block-info-torneo-padelmba {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  row-gap: 10px;
+}
+
+p.horario-torneo {
+  line-height: 1.5;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.btn-primary:hover { border: none; }
+
+span.date-day { font-size: 24px; }
+
+ul.list-inline.date {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-inline-item:not(:last-child){ margin-right: 0; margin-bottom: 0.5rem;}
+
+.item-date-pmba {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.item-date-pmba2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.col-lg-9.first-column { padding-right: 3%; 
+  @include tablet  {padding: 0;}
+  @include mobile  {padding: 0;}
+  @include desktop {padding: 0;}
+}
+
+.btn {white-space: break-spaces; text-transform: none;}
+i.ti-info.align-middle.icon-md.mr-2:hover { color: white; }
+
+img.logo-padel-manager { width: 20%; 
+  @include tablet { width: 30%; margin-bottom: 30px; }
+  @include mobile { width: 30%; margin-bottom: 30px; }
+}
+
+// https://codepen.io/jpost-design/pen/EKZLzK
+@keyframes glowing {
+  0% { box-shadow: 0 0 -15px #424242; }
+  40% { box-shadow: 0 0 20px #424242; }
+  60% { box-shadow: 0 0 25px #424242; }
+  100% { box-shadow: 0 0 -15px #424242; }
+}
+.efecto-boton-pmba { animation: glowing 5000ms infinite; }
+
+.effect {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+  /* background-color: - add your own background-color */
+  font: {
+    family: "Montserrat", sans-serif; /* put your font-family */
+    size: 18px;
+  }
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.effect.effect-2 {
+  transition: all 0.2s linear 0s;
+  
+  &:before {
+    content: "\e90c";
+    font-family: events-padelmba-icons;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -33px;
+    width: 33px;
+    height: 100%;
+    background-color: rgba(#fff,0.3);
+    border-radius: 0px 6px 6px 0px;
+    transition: all 0.2s linear 0s;
+    text-align: center;
+  }
+  
+  &:hover {
+    text-indent: -20px;
+    
+    &:before {
+      right: 0;
+      text-indent: 0px;
+    }
+  }
+}
+
+.a.btn.btn-primary.btn-lg.mt-4.pulse:hover, 
+.a.btn.btn-primary.btn-lg.mt-4.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #ef6eae; }
+}
+
+h1.custom-h1-header-pmba {
+  white-space: pre-line;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+
+  @include tablet {font-size: 30px;}
+  @include mobile {font-size: 30px;}
+}
+
+.modal {
+  backdrop-filter: blur(5px);
+  background-color: hsla(0, 0%, 0%, 0.7);
+}
+
+p.subtitle { white-space: pre-line; line-height: 2.1rem; }
+
+.row-tickets {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.info-bottom-tickets-pmba{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: white;
+  border-top: 1px solid $secondary-color;
+  z-index: 3;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px -3px 17px hsla(0, 0%, 0%, 0.15);  
+  // flex-direction: row;
+  // justify-content: center;
+  // align-items: center;
+}
+
+.tickets-cta{
+  display: grid;
+  // grid-template-columns: auto auto auto;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-items: center;
+  margin-bottom: 10px;
+
+  @include desktop { margin-bottom: 0; }
+  @include tablet  { margin-bottom: 0; }
+  @include mobile  { margin-bottom: 0; }
+}
+
+.tickets-cta2{
+  grid-area: 2 / 1 / 2 / 4;
+  text-align: center;
+  height: -webkit-fill-available;
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #004c5e !important;
+  }
+}
+
+.ticket-cta-item{
+  text-align: center;
+  // grid-area: 1 / 1 / 2 / 4;
+}
+
+.tickets-cta-date-clock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+p.text-tickets-cta-date-clock{
+  color: $secondary-color;
+  text-align: left;
+  margin-bottom: 0;
+  line-height: normal;
+  font-size: 16px;
+}
+
+p.only-text-tickets-cta-date-clock{
+  font-weight: 600;
+  color: $secondary-color;
+  text-align: left;
+  margin-bottom: 0;
+  line-height: normal;
+  font-size: 16px;
+}
+
+img.tickets-cta-logo-club {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  max-width: 45%;
+  margin: 15px 0;
+
+  @include desktop { max-width: 60%; }
+  @include tablet { max-width: 65%; }
+  @include mobile { max-width: 70%; }
+}
+
+.copyright {
+  padding: 3rem 0;
+
+  @include desktop { padding: 2rem 0 10rem 0; }
+  @include tablet  { padding: 2rem 0 10rem 0; }
+  @include mobile  { padding: 2rem 0 10rem 0; }
+}
+
+.copyright2 {
+  padding: 3rem 0;
+
+  @include desktop { padding: 2rem 0; }
+  @include tablet  { padding: 2rem 0; }
+  @include mobile  { padding: 2rem 0; }
+}
+
+
+.modal-header--sticky {
+  position: sticky;
+  top: 0;
+  background-color: inherit;
+  z-index: 1055;
+}
+
+span.date-tournament-pmba {
+  font-size: 37px;
+  opacity: 0.8;
+  color: lightblue;
+
+  @include desktop { font-size: 28px; }
+  @include tablet { font-size: 24px; }
+  @include mobile { font-size: 20px; }
+}
+
+.navbar-brand { margin: 0; }
+.tickets-cta2-classes{
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: unset;
+
+  &:hover{
+    background-color: unset !important;
+    transition: none !important;
+  }
+
+  &:focus, &:active{
+    background-color: unset !important;
+    border:none !important;
+    transition: none !important;
+  }
+}
+
+// Mostrramos siempre en Desktop-LG el mapa, y solo lo ocultamos en mobile, tablet.
+.mapa.mt-3{
+  display: block;
+
+  @include desktop {display: none;}
+  @include tablet  {display: none;}
+  @include mobile  {display: none;}
+}
+
+.border-secondary { border-color: $secondary-color !important; width: 90%; margin: 0 auto; }
+
+
+/* Share Icons en Torneos */
+#share-buttons { display: flex; align-items: center; justify-content: center; }
+#share-buttons > div {
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid $primary-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition-property: box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+#share-buttons > div:not(:last-child) { margin-right: 15px; }
+#share-buttons > div > svg {height: 22px; fill: $primary-color;}
+#share-buttons > div:hover {cursor: pointer; transform: scale(1.2);}
+#share-buttons > div.whatsapp:hover > svg, #share-buttons > div.twitter:hover > svg, #share-buttons > div.telegram:hover > svg, #share-buttons > div.facebook:hover > svg {fill: white;}
+#share-buttons > div:hover { color: white;}
+#share-buttons > div.whatsapp:is(:hover, :focus) {  border: 1px solid #25d366; background-color: #25d366; box-shadow: 0 0 0 6px #25d366; }
+#share-buttons > div.twitter:is(:hover, :focus)  {  border: 1px solid #55ACEE; background-color: #55ACEE; box-shadow: 0 0 0 6px #55ACEE; }
+#share-buttons > div.telegram:is(:hover, :focus) {  border: 1px solid #0396DE; background-color: #0396DE; box-shadow: 0 0 0 6px #0396DE; }
+#share-buttons > div.facebook:is(:hover, :focus) {  border: 1px solid #3B5998; background-color: #3B5998; box-shadow: 0 0 0 6px #3B5998; }
+
+
+/* Swiper CSS Premios Torneos */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: none;
+  // background: #fff;
+  height: 400px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  @include tablet { height: 450px; }
+  @include mobile { height: 420px;}
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.swiper-button-next, .swiper-button-prev { color: $primary-color; }
+.swiper-pagination-bullet-active { background: $primary-color; opacity: unset; }
+
+
+// Swiper Inscripciones
+.swiper-inscripciones {
+  width: 240px;
+  height: 320px;
+}
+
+.swiper-slide-inscripciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.wrapper-inscripciones{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  border: 2px solid black;
+  height: 90%;
+  border-radius: 5rem;
+}
+.wrapper-inscripciones:nth-child(1n) { background-color: hsl(192, 100%, 28%); }
+.wrapper-inscripciones:nth-child(2n) { background-color: hsl(0, 0%, 57%); }
+.wrapper-inscripciones:nth-child(3n) { background-color: hsl(0, 0%, 57%); }
+
+img.wrapper-inscripciones-img{width: 20%;}
+
+.swiper-slide-shadow { display: none; }
+
+
+.premio-imagen { 
+  width: 40vh; 
+  @include tablet { width: 20vh; }
+  @include tablet { width: 20vh; }
+}
+.premio-descripcion {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  white-space: break-spaces;
+
+  @include tablet { margin-bottom: 40px; }
+  @include tablet { margin-bottom: 40px; }
+}
+
+
+p.texto-premio-campeones {
+  margin-bottom: auto;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+  color: $secondary-color;
+  text-align: center;
+
+  @include tablet {font-size: 25px;}
+  @include mobile {font-size: 20px;}
+}
+
+p.texto-premio-categoria {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 34px;
+  color: $primary-color;
+  margin-bottom:30px;
+
+  @include tablet {font-size: 20px;}
+  @include mobile {font-size: 20px;}
+}
+
+p.texto-premio-pala, .texto-premio-nombre, .precio-premio {  
+  margin-bottom: auto;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 30px;
+  color: $secondary-color;
+}
+
+.precio-premio { opacity: 0.5;}
+
+.premio-categoria-tipo {
+  font-style: italic;
+  font-weight: 800;
+  font-size: 270px;
+  // text-align: right;
+  width: 40vh;
+  text-align: -webkit-center;
+  color: hsla(192, 100%, 28%, 0.1);
+
+  @include tablet {font-size: 100px; display: none;}
+  @include mobile {font-size: 100px; display: none;}
+}
+
+.swiper-slide {
+  @include tablet{flex-direction: column;}
+}
+
+p.texto-premio-categoria.masculino, span.cat-tipo.masculino {color: $color-categoria-premio-torneo-masculino;}
+p.texto-premio-categoria.femenino, span.cat-tipo.femenino  { color: $color-categoria-premio-torneo-femenino; }
+p.texto-premio-categoria.mixto, span.cat-tipo.mixto     { color: $color-categoria-premio-torneo-mixto; }
+
+// Shortcode CATEGORIAS de Torneos
+
+.categorias-torneo{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 25px;
+  justify-content: space-evenly;
+
+  // scroll-snap-type: x mandatory;
+  @include tablet {flex-direction: column; align-items: center; }
+  @include mobile {flex-direction: column; align-items: center; }
+}
+
+.cat-torneo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 1px;
+}
+.cat-tipo{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+span.cats-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 43px;
+  color: $secondary-color;
+
+  @include tablet {font-size: 20px;}
+  @include mobile {font-size: 20px;}
+}
+
+/* Inscripciones Torneo */
+
+img.inscripcion { width: 40%;
+  @include tablet {width: 50%;}
+  @include mobile {width: 50%;}
+}
+
+.wrapper-ins{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 15px;
+}
+span.ins-tipo{
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+span.cats-name {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 43px;
+  color: $secondary-color;
+
+  @include tablet {font-size: 20px;}
+  @include mobile {font-size: 20px;}
+}
+
+span.ins-price {  
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 34px;
+  color: $secondary-color;
+}
+
+span.ins-content { 
+  white-space: break-spaces; 
+  height: 115px;
+  line-height: 30px;
+  @include tablet {height: fit-content;}
+  @include mobile {height: fit-content;}
+}
+
+ul.list-formato-juego {
+  list-style-type: circle;
+  line-height: 40px;
+}
+
+.wrapper-sorteo-pascal {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet { flex-direction: column-reverse; align-items: baseline; }
+  @include mobile { flex-direction: column-reverse; align-items: baseline; }
+}
+
+img.imagen-sorteo, img.catering-padelmba {
+  width: 20%; 
+  @include tablet { width: 40%; margin: 30px 0; }
+  @include mobile { width: 50%; margin: 30px 0; }
+}
+
+span.info-padelmanager {
+
+  @include tablet { margin-bottom: 35px;}
+  @include mobile { margin-bottom: 35px;}
+}
+
+// filetes?
+// .premios-torneos-pmba:not(:last-child) { border-bottom: 1px solid #14141473; }
+
+
+// .swiper-pagination-bullet {background: $bg-color-bullets-pmba; opacity: unset;}

@@ -45,7 +45,7 @@ banner_feature:
   feature_item:
     # feature item loop
     - name : "Quality thanks to PadelMBA"
-      icon : "ti-star" # icon pack : https://themify.me/themify-icons
+      icon : "ti-star-empty" # icon pack : https://themify.me/themify-icons
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
 
     # feature item loop

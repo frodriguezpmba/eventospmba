@@ -1,0 +1,25 @@
+{{/*  {{ $NumPremiosTotal := .Get "NumPremiosTotal" }}  */}}
+{{ $premioImagen        := .Get "premioImagen" }}
+{{ $premioCampeones     := .Get "premioCampeones" }}
+{{ $premioCategoria     := .Get "premioCategoria" }}
+{{ $premioPala          := .Get "premioPala" }}
+{{ $premioNombrePala    := .Get "premioNombrePala" }}
+{{ $premioPrecio        := .Get "premioPrecio" }}
+{{ $premioTipoCategoria := .Get "premioTipoCategoria" }}
+		
+        {{/*  {{ .Inner | safeHTML }}  */}}
+        {{/*  {{ range $i, $sequence := (seq $NumPremiosTotal) }}  */}}
+        <div class="swiper-slide">
+            <div class="premio-imagen">
+                <img class="" src="{{ $premioImagen }}" alt="" />
+            </div>
+            <div class="premio-descripcion">
+                <p class="texto-premio-campeones">{{ $premioCampeones}}</p>
+                <p class="texto-premio-categoria {{ $premioCategoria }}">({{ $premioCategoria | humanize }} {{ $premioTipoCategoria }})</p>
+                <p class="texto-premio-pala">{{ $premioPala }}</p>
+                <p class="texto-premio-nombre">{{ $premioNombrePala }}</p>
+                <p class="precio-premio">(PVP {{ $premioPrecio }} /ud.)</p>
+            </div>
+            <div class="premio-categoria-tipo">{{ $premioTipoCategoria }}</div>
+        </div>
+        {{/*  {{ end }}  */}}

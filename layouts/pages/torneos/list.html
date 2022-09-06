@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+<!-- events -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <!-- event -->
+      {{/*  {{ range .Data.Pages }}  */}}
+      {{/*  Paginacion de Torneos PadelMBA  */}}
+      {{ $paginator := .Paginate ( where .Data.Pages "Type" "torneo") }}
+      {{ range $paginator.Pages }}
+      <div class="col-lg-4 col-sm-6 mb-5">
+          {{ .Render "torneo" }}
+      </div>      
+      {{ end }}
+      <div class="col-12 mt-4">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /events -->
+
+{{ end }}

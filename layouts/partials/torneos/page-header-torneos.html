@@ -1,13 +1,69 @@
 <!-- page title -->
-<section class="page-title-section overlay" style="background: url('{{ .Params.Bg_image | relURL}}'), #000; background-position: center center; background-repeat: no-repeat; background-size: contain;">
+<section class="page-title-section overlay" style="background:linear-gradient(107.47deg, hsl(192deg 100% 28% / 80%) 1.16%, #141414 100%), url('{{ .Params.Bg_image | relURL}}');background-position: center center; background-repeat: no-repeat; background-size: cover; {{ if .Params.torneo_suspendido }}filter: grayscale(100%);{{ end }}">
+
+  {{/*  antiguo felipe--> linear-gradient(0deg, rgba(0, 0, 0, 100%), rgba(0, 114, 143, 70%))  */}}
+  {{/*  linear-gradient(107.47deg, #007591 1.16%, #141414 100%)  */}}
+
     <div class="container header">
       <div class="row">
         <div class="col-md-12">
           <ul class="list-inline custom-breadcrumb">
-            <h1 class="list-inline-item text-white"><i class="ti-cup text-white"></i> {{ .Title }}</h1>
+            
+            {{if ne .RelPermalink "/es/torneos/" }}
+              <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Torneo PadelMBA by {{.Params.nombre_torneo}}:
+              <span class="date-tournament-pmba">{{ .Date | time.Format "Monday" }}, {{ .Date.Day }} de {{ index .Site.Data.es.months (.Date.Format "1") | lower }} - {{ .Params.ciudad_torneo }}</span></h1>
+              {{/*  https://mertbakir.gitlab.io/hugo/convert-dates-into-your-language/  */}}
+              {{/*  {{ .Date | time.Format ":date_full" }}  */}}    
+              
+              {{/* span inside h1 sin problema -> https://webmasters.stackexchange.com/questions/6990/seo-of-span-in-h1-header  */}}
+            {{else}}
+              <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Listado de Torneos PadelMBA</h1>
+            {{ end }}
+            
           </ul>
-          <p class="text-white">{{ .Params.Description | markdownify }}</p>
-          <p><a class="text-white-50" href="#torneo-padelmba">Más Información <i class="bouncing ti-arrow-circle-down text-white-50"></i></a></p>
+          {{if ne .RelPermalink "/es/torneos/" }}
+            <p class="text-white mb-4 subtitle">Torneo de pádel realizado en {{.Params.club_nombre_torneo}} ({{.Params.ciudad_torneo}}), by {{.Params.nombre_torneo}}.
+            Organizado gracias a PadelMBA, lider en formacion online de pádel.
+            ¡Inscríbete! El evento incluye sorteos y catering.</p>
+          {{ end }}
+
+          {{/*  {{.CurrentSection}} <br />
+          {{.FirstSection}}<br />
+          {{.Section}} <br />
+          {{.IsSection}} <br />
+          {{.Parent}} <br />
+          {{.Kind}} <br />
+          {{.Name}} <br />
+          {{.Permalink}} <br />  */}}
+
+          {{/*  eq .Permalink (.Permalink | relLangURL)  */}}
+          
+
+
+          {{if ne .RelPermalink "/es/torneos/" }}
+          {{/*  {{ if ne .Section "torneos" }}  */}}
+          <div class="text-state-pmba">
+          {{/*  {{ $active := eq $.RelPermalink (.URL | relLangURL) }}
+          {{ $active = or $active (eq $.Section (lower .Name)) }}
+          {{ if not $active }}  */}}
+          
+            {{ if .Params.torneo_suspendido }}
+              <span class="pmba-torneo-suspendido">&times; Suspendido</span>
+            {{ else }}
+              {{ if .Date.Before now }}
+                <span class="pmba-torneo-cerrado">&times; Cerrado</span>
+              {{else}}
+                <span class="pmba-torneo-abierto">&check; Abierto</span>
+              {{end}}
+            {{end}}
+          
+
+          {{/*  {{ end }}  */}}
+
+          </div>
+
+          {{end}}
+
         </div>
       </div>
     </div>

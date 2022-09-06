@@ -1,0 +1,15 @@
+{{/*  {{ $NumPremiosTotal := .Get "NumPremiosTotal" }}
+No hace falta coger el numero de premios total, ya que se pone una slide por premio dentro del PREMIOS shortcode padre :)  */}}
+
+<!-- Swiper Premios PMBA -->
+<div class="swiper premios-torneos-pmba">
+    <div class="swiper-wrapper">
+        {{/*  {{ range $i, $sequence := (seq $NumPremiosTotal) }}  */}}
+            {{ .Inner }}
+            {{/*  https://gohugo.io/templates/shortcode-templates/#inner  */}}
+        {{/*  {{ end }}  */}}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>

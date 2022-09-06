@@ -12,10 +12,12 @@
 
 
   <!-- copyright -->
-  <div class="copyright py-4 bg-footer">
+  <div class="copyright pt-4 py-4 bg-footer">
     <div class="container">
 
-      <a id="back-top-footer" title="{{ i18n "scroll-up" }}" href="#torneo-padelmba">&Uarr;</a>
+      {{ if .Site.GetPage "section" "torneos" }}
+        <a id="back-top-footer" title="{{ i18n "scroll-up" }}" href="#torneo-padelmba">&Uarr;</a>
+      {{ end }}
 
       <div class="row">
 

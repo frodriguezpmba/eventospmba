@@ -4,9 +4,9 @@ title: "Torneo PadelMBA: 25 JUNIO - TORNEO BY PADEL NUESTRO - MADRID"
 description: "Torneo de pádel en Club Vita 10, Boadilla del Monte, Madrid, el dia 25 de Junio 2022 by Padel Nuestro. Organizado gracias a PadelMBA, lider en formacion online de pádel."
 
 # Schedule page publish date
-publishDate: "2019-01-01T00:00:00Z"
+publishDate: "2022-06-25T00:00:00Z"
 # event date
-date: "2022-06-25T15:27:17+06:00"
+date: "2022-06-25T15:27:17+02:00"
 # Hora del Evento
 horario: "Desde las 15:00h"
 # post save as draft
@@ -20,8 +20,31 @@ image: "images/torneos/padel-nuestro/torneo-padelnuestro-2022-06-25.jpg"
 imagen_torneo_top: "images/torneos/logo/padel-nuestro.png"
 imagen_torneo_bottom: "images/torneos/logo/club/vita10.png"
 
+# Caja derecha Logo + Mapa + Boton, etc., del Torneo
+imagen_club_torneo: "vita10-color.png"
+
 # location
 location: "Vita 10 - Boadilla del Monte (Madrid)"
+location_url: "https://g.page/madridcentralpadel"
+# finalizado: true
+
+# Genero Torneo
+genero: "Masculino"
+
+# Ciudad del Torneo
+ciudad_torneo: "Boadilla del Monte"
+# Nombre del Torneo
+nombre_torneo: "Torneo Padel Nuestro"
+# Club nombre del Torneo
+club_nombre_torneo: "Vita 10"
+# Precio desde del Torneo
+precio_desde_torneo: 23
+
+#Weemss ID de los tickets de inscripcion
+weemss_id: 17183
+
+# Check a TRUE (verdadero) si el Torneo se suspende
+torneo_suspendido: false
 
 # Taxonomy del Torneo
 categorias: ["Torneo", "Madrid", "Vita-10"]
@@ -35,8 +58,8 @@ contacto_email: "test@padelmba.com"
 type: "torneos"
 ---
 
-{{< tabs tabTotal="4">}}
-{{< tab tabName="General" >}}
+{{< tabs tabTotal="3">}}
+{{< tab tabName="Información" >}}
 
 ### Torneo en Vita 10 - Boadilla del Monte (Madrid)
 
@@ -68,61 +91,13 @@ MEDIO - BAJO (Hasta 3,7)
 ![welcome pack torneo 24 junio](/images/torneos/padelvip/inscripcion/catering-torneo-padelvip.png)
 
 {{< /tab >}}
-
-{{< tab tabName="Inscripciones" >}}
-
-{{< weemss 17180 >}}
-
-{{< /tab >}}
 {{< tab tabName="Premios">}}
 
-### Premios
-
-#### Masculino B
-
-- CAMPEONES
-
-xxxx_foto_xxxx
-x2 Pala Siux Diablo Revolution 24K (PVP 450€ /ud.)
-
-- SUBCAMPEONES
-
-xxxx_foto_xxxx
-x2 Paletero Siux Mastercombi (PVP 79,95€ /ud.)
-
-- CAMPEONES (CONSOLACIÓN)
-
-xxxx_foto_xxxx
-x2 Mochila Siux Fusion (PVP 29,95€ /ud.)
-
-- SUBCAMPEONES (CONSOLACIÓN)
-
-xxxx_foto_xxxx
-x2 Neceser Orygen (PVP 14,95€ /ud.)
-
-#### Masculino C
-- CAMPEONES
-
-xxxx_foto_xxxx
-x2 Pala Siux Origen (PVP 350€ /ud.)
-
-- SUBCAMPEONES
-
-xxxx_foto_xxxx
-x2 Paletero Siux Mastercombi (PVP 79,95€ /ud.)
-
-- CAMPEONES (CONSOLACIÓN)
-
-xxxx_foto_xxxx
-x2 Mochila Siux Fusion (PVP 29,95€ /ud.)
-
-- SUBCAMPEONES (CONSOLACIÓN)
-
-xxxx_foto_xxxx
-x2 Neceser Orygen (PVP 14,95€ /ud.)
+{{< categoria-torneo "Masculino B" "Medio (hasta 4,5)" "Desde las 21:00h" >}}
+{{< categoria-torneo "Masculino C" "Medio (hasta 3,7)" "Desde las 15:00h" >}}
 
 {{< /tab >}}
-{{< tab tabName="Fotos">}}
+{{< tab tabName="Multimedia">}}
 
 {{< gallery dir="fotos/torneo/padel-nuestro/2022/06" />}} {{< load-photoswipe >}}
 

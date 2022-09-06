@@ -85,21 +85,17 @@ i.footer-icons {
   background-color: white;
 }
 
-.sticky-pmba-tabs {
-  position: sticky;
-  top: 78px;
-  background-color: white;
-  z-index: 2;
-  padding: 5px 0;
-}
 
-.padel-manager {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: flex-end;
-  align-items: center;
-}
+
+
+// .padel-manager {
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
+//   align-content: flex-end;
+//   align-items: center;
+//   background-color: #F5F5F5;
+// }
 
 a#back-top-footer {
   top: -225px;

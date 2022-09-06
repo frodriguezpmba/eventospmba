@@ -1,0 +1,63 @@
+<div class="card border-1 sombra-rounded">
+  <div class="card-img border-imagen-torneo position-relative">
+    <a href="{{ .Permalink }}" title="{{ .Title }}">
+        {{/*  <img class="card-img-top border-imagen-torneo" src="{{ .Params.image | relURL }}" alt="{{ .Title }}"></a>  */}}
+        <div class="border-imagen-torneo imagen-torneo">
+          {{/*  <img src="{{ .Params.imagen_torneo_top | relURL }}" alt="logo torneo by padelmba" class="imagen-torneo-top" />  */}}
+          <img src="{{ .Params.imagen_torneo_bottom | relURL }}" alt="logo club torneo" class="imagen-torneo-bottom" />
+        </div>
+    </a>
+    {{/*  https://discourse.gohugo.io/t/dates-only-in-english/1317/4  */}}
+
+    {{/*  Compare time in Hugo -> https://gohugohq.com/howto/compare-date-strings-in-hugo/  */}}
+    {{/*  {{ if .Date.Before now }}
+      <div class="card-date-finalizado">Finalizado</div>
+    {{end}}  */}}
+    {{/*  {{else}}
+      <div class="card-date-disponible">Disponible</div>
+    {{ end }}  */}}
+
+    {{/*  <div class="card-date">{{ if .Date.Before now }} Finalizado {{else}} Disponible {{end}}</div>  */}}
+    <div class="card-date2"><span class="date-day">{{ .Date.Day }}</span><br />{{ .Date.Format "Jan" }}.</div>
+    <div class="genero-torneo {{ .Params.genero | lower }}">{{ .Params.genero }}</div>    
+  </div> 
+  <div class="card-body">
+    <!-- Marcar el evento como finalizado automaticamente cuando llegue la fecha -->
+    {{ if .Params.torneo_suspendido }}
+      <div class="pmba-torneo suspendido">&times; Suspendido</div>
+    {{ else }}
+      {{ if .Date.Before now }}
+        <div class="pmba-torneo cerrado">&times; Cerrado</div>
+      {{else}}
+        <div class="pmba-torneo abierto">&check; Abierto</div>
+      {{end}}
+    {{end}}
+
+
+    {{/*  {{ if .Date.Before now }}
+      <div class="pmba-torneo cerrado">&otimes; Cerrado</div>
+    {{else}}
+      {{ if .Params.torneo_suspendido }}
+        <div class="pmba-torneo suspendido"># Suspendido #</div>
+      {{ else }}
+        <div class="pmba-torneo disponible">&diams; Disponible</div>
+      {{end}}
+    {{end}}  */}}
+
+    {{/*  {{ if .Params.torneo_suspendido }}
+      <div class="pmba-torneo suspendido">&diams; Suspendido</div>
+    {{ end }}  */}}
+
+    <!-- location -->
+    <p><i class="ti-location-full text-primary mr-2"></i>{{ .Params.ciudad_torneo | markdownify }}</p>
+    <a href="{{ .Permalink }}" title="{{ .Title }}"><h4 class="card-title">{{ .Params.nombre_torneo }}</h4></a>
+    <div class="mb-5 mt-2">{{ .Params.club_nombre_torneo }}</div>
+
+    <a href="{{ .Permalink }}" title="{{ .Title }}"><button type="button" class="btn btn-outline-primary btn-sm">Ver detalles</button></a>
+
+      <div class="show-precio-torneo">
+        <div>Desde:</div>
+        <div class="precio-torneo">{{ .Params.precio_desde_torneo }} &euro;</div>
+      </div>
+  </div>
+</div>

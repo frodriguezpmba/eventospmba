@@ -1,4 +1,4 @@
-.margin-left { margin-left: 30%; }
+.margin-left { margin-left: 10%; }
 
 .top-header {
   font-size: 12px;
@@ -12,52 +12,10 @@
   }
 }
 
-.navigation {
-  background: linear-gradient(to right, transparent 50%, $primary-color 50%);
-  transition: .2s ease;
-
-  @include desktop {
-    background: $secondary-color;
-
-    .navbar-brand {
-      padding: 12px 0;
-      margin: 0.5rem;
-    }
-  }
-
-  @include mobile { .navbar-brand  {margin: 0.3rem; padding: 0; } .img-fluid { width: 200px; } }
-}
-
-.navbar-collapse{
-  @include desktop {
-    background: $secondary-color;
-  }
-}
-
-.navbar-nav {
-  // padding-left: 50px;
-  // background: $primary-color;
-
-  @include desktop {
-    padding-left: 0;
-    background: $secondary-color;
-    margin-left: auto;
-  }
-}
-
-.nav-bg {
-  background-color: $secondary-color;
-}
-
-//Nav-item-menu para el menu superior
-.nav-item-menu {
-  .nav-link {
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-
-  margin: 0 15px;
-  position: relative;
+// CSS para Menu activo en Hugo :)
+a.nav-link.active  {  
+  color:$primary-color;
+  font-weight: 700;
 
   &::before {
     position: absolute;
@@ -66,7 +24,156 @@
     height: 6px;
     width: 100%;
     content: "";
-    background: $white;
+    background: none;
+    // background: $primary-color;    
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .3s ease;
+  }
+
+  &:hover,
+  &.active {
+    &::before {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+  }  
+
+}
+
+a.nav-link-menu.active  {  
+  color:$primary-color;
+  font-weight: 700;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    content: "";
+    background: none;
+    background: $primary-color;    
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .3s ease;
+  }
+
+  &:hover,
+  &.active {
+    &::before {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+  }  
+
+}
+
+.navbar-expand-lg .navbar-nav .nav-link-menu { padding: 40px 0px; }
+
+.nav-item-menu .nav-link-menu {
+  text-transform: none;
+  font-weight: 600;
+  line-height: 17px;
+}
+
+.nav-link-menu {
+  display: block;
+  padding: 1.5rem 2rem;
+}
+
+.navigation {
+  // background: linear-gradient(to right, transparent 50%, $primary-color 50%);
+  background: $white;  
+  transition: .2s ease;
+  box-shadow: 0px -3px 17px rgba(0, 0, 0, 0.25);
+  backdrop-filter: saturate(180%) blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+
+  @include desktop {
+    // background: $secondary-color;
+    // background: $white;
+    backdrop-filter: saturate(180%) blur(10px);
+    background-color: rgba(255, 255, 255, 0.95);
+
+    .navbar-brand {
+      // padding: 12px 0;
+      padding: unset;
+      margin: 0.5rem;
+    }
+  }
+
+  @include mobile { .navbar-brand  {margin: 0.3rem; padding: 0; } .img-fluid { width: 200px; } }
+}
+
+.navbar-collapse{  
+  overflow: hidden;
+  touch-action: none;
+
+}
+
+
+@include desktop {
+  .navbar-collapse {height: 100vh;}  
+}
+
+@include tablet {
+  .navbar-collapse {height: 100vh;}  
+}
+
+@include mobile {
+  .navbar-collapse {height: 100vh;}  
+}
+
+
+
+.navbar-nav {
+  // padding-left: 50px;
+  // background: $primary-color;
+
+  @include desktop {
+    padding-left: 0;
+    // background: $secondary-color;
+    // background: $white;
+    background: inherit;
+    color: $black;
+    margin-left: auto;
+  }
+}
+
+.nav-bg { background-color: $secondary-color; }
+
+//Nav-item-menu para el menu superior
+
+.nav-item-menu:last-child {
+  margin-right: 0;
+}
+
+
+.nav-item-menu {
+  .nav-link {
+    text-transform: none;
+    // text-transform: uppercase;
+    font-weight: 600;
+    line-height: 17px;
+  }
+
+  margin: 0 15px;
+  position: relative;
+  margin-right: 3rem;
+
+  @include desktop {margin: 0;}
+  @include tablet {margin: 0;}
+  @include mobile {margin: 0;}
+
+  &::before {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 6px;
+    width: 100%;
+    content: "";
+    background: $primary-color;
     // background-color: $primary-color;
     transform: scaleY(0);
     transform-origin: top;
@@ -83,13 +190,13 @@
 }
 
 // Nav-item para las TABS
-.nav-item {
+.nav-item-tab {
   .nav-link {
     text-transform: uppercase;
     font-weight: 600;
   }
 
-  margin: 0 15px;
+  // margin: 0 15px;
   position: relative;
 
   &::before {
@@ -117,6 +224,10 @@
 
 .navbar-dark .navbar-nav .nav-link {
   color: $white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: $black;
 }
 
 link:focus,

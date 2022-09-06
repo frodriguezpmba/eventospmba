@@ -1,0 +1,119 @@
+{{ define "torneos" }}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+<!-- Migas de pan -->
+<!-- breadcrumb -->
+<nav aria-label="breadcrumb" id="torneo-padelmba">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ site.BaseURL | relLangURL }}" title="PadelMBA Eventos">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="{{ site.BaseURL | relLangURL }}/clinics" title="Clinics de Pádel | PadelMBA">Clinics</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ .Title }} | {{ .Params.horario }}</li>
+  </ol>
+</nav>
+
+<!-- Torneo 2cols single -->
+<section class="section-sm">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9 first-column">
+        <!-- contenido markdown bien, columna 1 izquierda -->
+        {{ .Content }}
+      </div>
+      <div class="col-lg-3 second-column">
+        <!-- Torneo info. principal row -->
+        <div class="row align-items-center mb-4 mt-2">
+          <div class="col-lg-12">
+            <div class="border-top mt-2 mb-4 border-primary"></div>
+            <ul class="list-inline">
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-location text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "location" | upper}}</h6>
+                    <p class="mb-0"><a title="Localización de {{ .Params.Location }}" href="{{ .Params.location_url | safeURL }}" target="_blank" rel="noopener">{{ .Params.Location | markdownify }} &raquo;</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-calendar text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "date" | upper}}</h6>
+                    <p class="mb-0">{{ .Date | time.Format ":date_full" }}</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-clock text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "time" | upper }}</h6>
+                    {{/*  <p class="mb-0">{{ .Date.Format "15:04"}}</p>  */}}
+                    <p class="mb-0">{{ .Params.horario }}</p>
+                    {{/*  https://stackoverflow.com/questions/71387017/hugo-how-to-set-date-language  */}}
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-info text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">NORMATIVA</h6>                    
+                    <p class="mb-0"><a title="Normativa del {{ .Title }}" href="/normativa/normativa-torneos-padelmba.pdf">Normativa del Torneo &raquo;</a></p>
+                  </div>
+                </div>
+              </li> 
+
+            </ul>
+          </div>
+          <!-- border-bottom -->
+          <div class="col-12 mt-2 mb-2 order-4">
+            <div class="border-bottom border-secondary"></div>
+          </div>
+        </div>
+
+        <!-- seccion contacto del torneo -->
+        <div class="tab-pane fade show active" id="fdaceb" role="tabpanel" aria-labelledby="nav-1">
+          <h5 id="necesitas-más-información">¿NECESITAS MÁS INFORMACIÓN?</h5>
+          <p>Contacta con nosotros para más información:</p>
+          <p><a title="Whatsapp sobre {{ .Title }}" href="https://wa.me/34{{ if .Params.contacto_wasap }}{{ .Params.contacto_wasap }}{{else}}608545790{{end}}?text=Duda%20del%20{{ .Title }}"><i class="ti-whatsapp"></i> whatsapp +34 {{ if .Params.contacto_wasap }} {{ .Params.contacto_wasap }} {{else}} 608545790 {{end}}</a></p>
+          <p><i class="ti-mail"></i> <a title="Email sobre {{ .Title }}" href="mailto:{{ .Params.contacto_email }}">{{ if .Params.contacto_email}} {{ .Params.contacto_email }} {{else}} eventos@padelmba.com {{end}}</a></p>
+        </div>
+
+        {{/*  <div class="col-12 mt-4 mb-5"><div class="border-bottom border-primary"></div></div>  */}}
+
+        <!-- padel manager -->
+        {{/*  <div class="padel-manager">
+          <img class="logo-padel-manager" src="/images/torneos/logo/padel-manager/padel-manager-logo.svg" alt="padel manager logo" />
+          <h3 id="sigue-tu-partido-en-directo">Sigue tu partido en directo</h3>
+          <p>Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder conocer a tus contrincantes y consultar los resultados del torneo.</p>
+          <p><a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager Android" href="https://play.google.com/store/apps/details?id=com.padelmanager.padelmanager&amp;hl=es"><img src="/images/torneos/logo/padel-manager/padel-manager-google-play-pmba.svg" alt="padel manager android"></a></p>
+          <p><a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager iOS" href="https://apps.apple.com/es/app/padel-manager/id1084646571?l=es"><img src="/images/torneos/logo/padel-manager/padel-manager-apple-store-pmba.svg" alt="padel manager iphone"></a></p>
+        </div>  */}}
+
+        <!-- Patrocinadores -->
+        <div class="border-top mt-4 mb-4 border-secondary"></div>
+        <li class="list-inline-item mb-3 mb-lg-0">
+          <div class="padel-manager">
+              <h5 id="patrocinadores-torneo"><i class="ti-award1 text-primary icon-md mr-4"></i> PATROCINADORES</h5>
+              {{/*  Listo, funciona bien, cogiendo de la carpeta de cada "page" torneos "patrocinadores", 
+              solo buscando imagenes dentro de esa carpeta  */}}
+              {{- partial "torneos/carousel_new.html" . -}}
+          </div>
+        </li>
+
+        <!-- Categorias -->
+        {{- partial "torneos/categorias.html" . -}}
+
+      </div>
+    </div>
+</div>
+
+{{- partial "torneos/share-buttons.html" . -}}
+
+</section>
+<!-- /Torneo 2cols single -->
+
+{{ end }}

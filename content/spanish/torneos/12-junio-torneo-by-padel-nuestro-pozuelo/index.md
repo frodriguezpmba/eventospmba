@@ -4,9 +4,9 @@ title: "Torneo PadelMBA - 12 JUNIO - TORNEO BY PADEL NUESTRO - POZUELO"
 description: "Torneo de pádel en Pozuelo Padel Club, Madrid, el día 12 de Junio 2022 by Padel Nuestro. Organizado gracias a PadelMBA, lider en formacion online de pádel."
 
 # Schedule page publish date
-publishDate: "2019-01-01T00:00:00Z"
+publishDate: "2022-06-12T00:00:00Z"
 # event date
-date: "2022-06-12T15:27:17+06:00"
+date: "2022-06-12"
 # Hora del Evento
 horario: "Desde las 16:00h"
 # post save as draft
@@ -20,8 +20,29 @@ image: "images/torneos/padel-nuestro/torneo-padelnuestro-2022-06-12.jpg"
 imagen_torneo_top: "images/torneos/logo/padel-nuestro.png"
 imagen_torneo_bottom: "images/torneos/logo/club/pozuelo.png"
 
+# Caja derecha Logo + Mapa + Boton, etc., del Torneo
+imagen_club_torneo: "pozuelo.png"
+
 # location
 location: "Pozuelo Pádel Club (Madrid)"
+
+# Genero Torneo
+genero: "Femenino"
+
+# Ciudad del Torneo
+ciudad_torneo: "Pozuelo de Alarcón"
+# Nombre del Torneo
+nombre_torneo: "Torneo Padel Nuestro"
+# Club nombre del Torneo
+club_nombre_torneo: "Pozuelo Padel Club"
+# Precio desde del Torneo
+precio_desde_torneo: 22
+
+#Weemss ID de los tickets de inscripcion
+weemss_id: 17152
+
+# Check a TRUE (verdadero) si el Torneo se suspende
+torneo_suspendido: false
 
 # Taxonomy
 categorias: ["Torneo", "Madrid"]
@@ -31,12 +52,12 @@ etiquetas: ["Padel Nuestro", "Junio", "Pozuelo Padel Club"]
 type: "torneos"
 ---
 
-{{< tabs tabTotal="6">}}
-{{< tab tabName="General" >}}
+{{< tabs tabTotal="3">}}
+{{< tab tabName="Información" >}}
 
 ### Torneo en Pozuelo Pádel Club (Madrid)
 
-#### Formato de Juego:
+#### Formato de Juego
 
 🏆 PARTIDOS A 1 SET ( 5 -5 TIE BREAK) CON PUNTO DE ORO.
 🔹 FASE DE GRUPOS + CUADRO CLASIFICATORIO - (Cuadro principal y consolación)
@@ -46,14 +67,14 @@ type: "torneos"
 #### Categorías
 
 - MASCULINO B
-MEDIO (Hasta 4,5) 
+MEDIO (Hasta 4,5)
 🕘DESDE LAS 21:00h
 
 - MASCULINO C
 MEDIO - BAJO (Hasta 3,7)
 🕘DESDE LAS 21:00h
 
-#### El Torneo incluye:
+#### El Torneo incluye
 
 **WELCOME PACK:** MOCHILA DE CUERDAS | CURSO ONLINE | OVERGRIP
 ![welcome pack torneo 12 junio](/images/torneos/padelvip/inscripcion/welcome-pack-inscripcion-padelvip-24-junio.png)
@@ -65,81 +86,15 @@ MEDIO - BAJO (Hasta 3,7)
 ![welcome pack torneo 12 junio](/images/torneos/padelvip/inscripcion/catering-torneo-padelvip.png)
 
 {{< /tab >}}
-
-{{< tab tabName="Inscripciones" >}}
-
-{{< weemss 17180 >}}
-
-{{< /tab >}}
 {{< tab tabName="Premios">}}
 
-### Premios
-
-#### Masculino B
-
-- CAMPEONES
-xxxx_foto_xxxx
-x2 Pala Siux Diablo Revolution 24K (PVP 450€ /ud.)
-
-- SUBCAMPEONES
-xxxx_foto_xxxx
-x2 Paletero Siux Mastercombi (PVP 79,95€ /ud.)
-
-- CAMPEONES (CONSOLACIÓN)
-xxxx_foto_xxxx
-x2 Mochila Siux Fusion (PVP 29,95€ /ud.)
-
-- SUBCAMPEONES (CONSOLACIÓN)
-xxxx_foto_xxxx
-x2 Neceser Orygen (PVP 14,95€ /ud.)
-
-
-#### Masculino C
-- CAMPEONES
-
-xxxx_foto_xxxx
-x2 Pala Siux Origen (PVP 350€ /ud.)
-
-- SUBCAMPEONES
-xxxx_foto_xxxx
-x2 Paletero Siux Mastercombi (PVP 79,95€ /ud.)
-
-- CAMPEONES (CONSOLACIÓN)
-xxxx_foto_xxxx
-x2 Mochila Siux Fusion (PVP 29,95€ /ud.)
-
-- SUBCAMPEONES (CONSOLACIÓN)
-xxxx_foto_xxxx
-x2 Neceser Orygen (PVP 14,95€ /ud.)
+{{< categoria-torneo "Masculino B" "Medio (hasta 4,5)" "Desde las 21:00h" >}}
+{{< categoria-torneo "Masculino C" "Medio (hasta 3,7)" "Desde las 15:00h" >}}
 
 {{< /tab >}}
-{{< tab tabName="Contacto">}}
+{{< tab tabName="Multimedia">}}
 
-##### ¿NECESITAS MÁS INFORMACIÓN?
-
-Contacta con nosotros para más información:
-
-✉️ [eventos@padelmba.com](mailto:eventos@padelmba.com)
-
-![whatsapp](/images/torneos/logo/whatsapp-padelmba-torneos.png#wasap)[whatsapp +34 608 54 57 90](https://wa.me/34608545790)
-
-{{< /tab >}}
-{{< tab tabName="Padel Manager">}}
-
-![padel manager logo](/images/torneos/logo/padel-manager/padel-manager-logo.svg)
-### Sigue tu partido en directo 📹 :tennis: 
-
-Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder conocer a tus contrincantes y consultar los resultados del torneo.
-
-[![padel manager android](/images/torneos/logo/padel-manager/padel-manager-google-play-badge-pmba.png)](https://play.google.com/store/apps/details?id=com.padelmanager.padelmanager&hl=es)
-
-[![padel manager iphone](/images/torneos/logo/padel-manager/padel-manager-apple-store-badge-pmba.png)](https://apps.apple.com/es/app/padel-manager/id1084646571?l=es)
-
-
-{{< /tab >}}
-{{< tab tabName="Fotos">}}
-
-{{< gallery dir="fotos/torneo/padel-nuestro/2022/06" />}} {{< load-photoswipe >}}
+{{< gallery dir="images/clinics/2022/06/portugal" />}} {{< load-photoswipe >}}
 
 {{< /tab >}}
 {{< /tabs >}}

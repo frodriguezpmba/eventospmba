@@ -1,6 +1,7 @@
 // Color Variables
 $primary-color: #007591;
 $secondary-color: #141414;
+$text-color-body: #000;
 $text-color: #5c5c77;
 $text-color-light: #8585a4;
 $text-color-dark: #1e1e4b;
@@ -11,6 +12,8 @@ $white: #fff;
 $light: #f8f9fe;
 $gray: #f8f8f8;
 $border-color-card-date: #2c2c2c;
+$bg-color-gris-pmba: #F5F5F5;
+$bg-color-bullets-pmba: #9e9e9e;
 
 
 // Font Variables
@@ -30,3 +33,21 @@ $size-text-h6: 16px;
 
 $categorias-text-size: 15px;
 
+// Figma new variables
+$color-texto-genero-masculino: #269CDE;
+$color-texto-genero-femenino: #EE3074;
+$color-texto-genero-mixto: #2BD78F;
+
+// Card-date bg color disponible/finalizado
+$finalizado-bg-color: rgb(192, 1, 1);
+$disponible-bg-color: rgb(3, 110, 3);
+
+// Colores estado del torneo
+$estado-torneo-abierto: #5EF268;
+$estado-torneo-cerrado: #F20519;
+$estado-torneo-suspendido: #B7B9BB;
+
+// Torneos Tipo de Categoria para Premios
+$color-categoria-premio-torneo-masculino: $primary-color;
+$color-categoria-premio-torneo-femenino: #B319FF;
+$color-categoria-premio-torneo-mixto: #2E947C;

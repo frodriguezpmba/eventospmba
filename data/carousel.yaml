@@ -1,0 +1,11 @@
+images: 
+  - image: "/images/torneos/logo/patrocinadores/addictive-carrusel.png"
+    content_html: "1"
+  - image: "/images/torneos/logo/patrocinadores/apex-carrusel.png"
+    content_html: "2"
+  - image: "/images/torneos/logo/patrocinadores/padel-nuestro-carrusel.png"
+    content_html: "3"
+  - image: "/images/torneos/logo/patrocinadores/padelvip-eventos-carrusel.png"
+    content_html: "4"
+  - image: "/images/torneos/logo/patrocinadores/pascal-box-carrusel.png"
+    content_html: "5"

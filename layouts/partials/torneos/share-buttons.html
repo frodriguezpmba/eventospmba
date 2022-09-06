@@ -1,17 +1,17 @@
 {{ $pageurl := .Permalink }}
 
-<style>
+{{/*  <style>
 #share-buttons {display: inline-block; vertical-align: middle; }
 #share-buttons:after {content: ""; display: block; clear: both;}
 #share-buttons > div {
 position: relative;
 text-align: left; 
-height: 36px; 
-width: 32px; 
+height: 25px; 
+width: 35px; 
 float: left; 
 text-align: center;
 }
-#share-buttons > div > svg {height: 16px; fill: #007591; margin-top: 10px;}
+#share-buttons > div > svg {height: 20px; fill: #007591;}
 #share-buttons > div:hover {cursor: pointer;}
 #share-buttons > div.facebook:hover > svg {fill: #3B5998;}
 #share-buttons > div.telegram:hover > svg {fill: #0396DE;}
@@ -20,21 +20,19 @@ text-align: center;
 #share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
 #share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
 #share-buttons > div.mail:hover > svg {fill: #CB2027;}
-#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
-#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
-#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
-#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
-#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
-</style>
+#share-buttons > div.facebook > svg {height: 20px;}
+#share-buttons > div.twitter > svg {height: 20px;}
+#share-buttons > div.linkedin > svg {height: 20px;}
+#share-buttons > div.pinterest > svg {height: 20px;}
+#share-buttons > div.mail > svg {height: 18px;}
+</style>  */}}
 
-
-<span style="padding-left: 20px; color: #007591;">Compártelo:</span>
 <div id="share-buttons">
-    <div class="facebook" title="Compártelo en Facebook" onclick="window.open('http://www.facebook.com/share.php?u={{ $pageurl }}');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="whatsapp" title="Compártelo en Whatsapp" onclick="window.open('https://api.whatsapp.com/send?text={{.Title}}%0A%0A{{ $pageurl }}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.01 2a10 10 0 0 0-8.65 14.98L2 22l5.23-1.24A10 10 0 1 0 12.01 2zm0 2A7.95 7.95 0 0 1 20 12a8 8 0 0 1-11.8 7l-.68-.36-.75.18-1.97.46.49-1.78.21-.8-.41-.72A7.98 7.98 0 0 1 12 4zM8.48 7.38a.92.92 0 0 0-.67.3c-.23.26-.87.86-.87 2.09s.89 2.41 1.02 2.58c.12.17 1.72 2.77 4.26 3.77 2.1.83 2.53.66 3 .62.45-.04 1.47-.6 1.68-1.19.2-.58.2-1.08.14-1.18-.06-.1-.22-.17-.47-.3-.25-.12-1.48-.72-1.7-.8-.24-.09-.4-.13-.57.12-.17.25-.64.81-.79.98-.15.16-.3.19-.54.06-.25-.12-1.06-.39-2-1.24a7.52 7.52 0 0 1-1.4-1.73c-.14-.24-.01-.38.11-.5s.25-.3.38-.44c.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.07-.12-.55-1.35-.77-1.85-.2-.41-.39-.42-.57-.43h-.47z"/></svg></div>
     <div class="twitter" title="Compártelo en Twitter" onclick="window.open('http://twitter.com/intent/tweet?text={{.Title}}&url={{ $pageurl }}');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
     <div class="telegram" title="Compártelo en Telegram" onclick="window.open('https://telegram.me/share/url?url={{ $pageurl }}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M26.07 3.996a2.974 2.974 0 0 0-.933.223h-.004c-.285.113-1.64.683-3.7 1.547l-7.382 3.109c-5.297 2.23-10.504 4.426-10.504 4.426l.062-.024s-.359.118-.734.375a2.03 2.03 0 0 0-.586.567c-.184.27-.332.683-.277 1.11.09.722.558 1.155.894 1.394.34.242.664.355.664.355h.008l4.883 1.645c.219.703 1.488 4.875 1.793 5.836.18.574.355.933.574 1.207.106.14.23.257.379.351a1.119 1.119 0 0 0 .246.106l-.05-.012c.015.004.027.016.038.02.04.011.067.015.118.023.773.234 1.394-.246 1.394-.246l.035-.028 2.883-2.625 4.832 3.707.11.047c1.007.442 2.027.196 2.566-.238.543-.437.754-.996.754-.996l.035-.09 3.734-19.129c.106-.472.133-.914.016-1.343a1.807 1.807 0 0 0-.781-1.047 1.872 1.872 0 0 0-1.067-.27Zm-.101 2.05c-.004.063.008.056-.02.177v.011l-3.699 18.93c-.016.027-.043.086-.117.145-.078.062-.14.101-.465-.028l-5.91-4.531-3.57 3.254.75-4.79 9.656-9c.398-.37.265-.448.265-.448.028-.454-.601-.133-.601-.133l-12.176 7.543-.004-.02-5.836-1.965v-.004l-.015-.003a.27.27 0 0 0 .03-.012l.032-.016.031-.011s5.211-2.196 10.508-4.426c2.652-1.117 5.324-2.242 7.379-3.11 2.055-.863 3.574-1.496 3.66-1.53.082-.032.043-.032.102-.032Z"/></svg></div>
-    <div class="whatsapp" title="Compártelo en Whatsapp" onclick="window.open('https://api.whatsapp.com/send?text={{.Title}}%0A%0A{{ $pageurl }}')"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.01 2a10 10 0 0 0-8.65 14.98L2 22l5.23-1.24A10 10 0 1 0 12.01 2zm0 2A7.95 7.95 0 0 1 20 12a8 8 0 0 1-11.8 7l-.68-.36-.75.18-1.97.46.49-1.78.21-.8-.41-.72A7.98 7.98 0 0 1 12 4zM8.48 7.38a.92.92 0 0 0-.67.3c-.23.26-.87.86-.87 2.09s.89 2.41 1.02 2.58c.12.17 1.72 2.77 4.26 3.77 2.1.83 2.53.66 3 .62.45-.04 1.47-.6 1.68-1.19.2-.58.2-1.08.14-1.18-.06-.1-.22-.17-.47-.3-.25-.12-1.48-.72-1.7-.8-.24-.09-.4-.13-.57.12-.17.25-.64.81-.79.98-.15.16-.3.19-.54.06-.25-.12-1.06-.39-2-1.24a7.52 7.52 0 0 1-1.4-1.73c-.14-.24-.01-.38.11-.5s.25-.3.38-.44c.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.07-.12-.55-1.35-.77-1.85-.2-.41-.39-.42-.57-.43h-.47z"/></svg></div>
+    <div class="facebook" title="Compártelo en Facebook" onclick="window.open('http://www.facebook.com/share.php?u={{ $pageurl }}');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
     {{/*  <div class="linkedin" title="Compártelo en Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url={{ $pageurl }}&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>  */}}
     {{/*  {{ if .Params.image }}<div class="pinterest" title="Share this on Pinterest" onclick="window.open('https://pinterest.com/pin/create/button/?url=&media={{ .Params.image }}&description=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M256 597q0-108 37.5-203.5t103.5-166.5 152-123 185-78 202-26q158 0 294 66.5t221 193.5 85 287q0 96-19 188t-60 177-100 149.5-145 103-189 38.5q-68 0-135-32t-96-88q-10 39-28 112.5t-23.5 95-20.5 71-26 71-32 62.5-46 77.5-62 86.5l-14 5-9-10q-15-157-15-188 0-92 21.5-206.5t66.5-287.5 52-203q-32-65-32-169 0-83 52-156t132-73q61 0 95 40.5t34 102.5q0 66-44 191t-44 187q0 63 45 104.5t109 41.5q55 0 102-25t78.5-68 56-95 38-110.5 20-111 6.5-99.5q0-173-109.5-269.5t-285.5-96.5q-200 0-334 129.5t-134 328.5q0 44 12.5 85t27 65 27 45.5 12.5 30.5q0 28-15 73t-37 45q-2 0-17-3-51-15-90.5-56t-61-94.5-32.5-108-11-106.5z"/></svg></div>{{ end }}  */}}
-    <div class="mail" title="Compártelo por Email" onclick="window.open('mailto:?&body={{ $pageurl }}');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+    {{/*  <div class="mail" title="Compártelo por Email" onclick="window.open('mailto:?&body={{ $pageurl }}');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>  */}}
 </div>

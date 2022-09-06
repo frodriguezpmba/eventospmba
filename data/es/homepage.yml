@@ -51,12 +51,12 @@ banner_feature:
   feature_item:
     # feature item loop
     - name : "Calidad gracias a PadelMBA"
-      icon : "ti-star" # icon pack : https://themify.me/themify-icons
+      icon : "ti-star-empty" # icon pack : https://themify.me/themify-icons
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
 
     # feature item loop
     - name : "Competitidad única"
-      icon : "ti-crown" # icon pack : https://themify.me/themify-icons
+      icon : "ti-medal" # icon pack : https://themify.me/themify-icons
       content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  dolore magna aliqua. Ut enim ad"
 
     # feature item loop
@@ -123,7 +123,7 @@ torneo:
 
 ############################# Clinics Proximos ################################
 clinic:
-  enable : true
+  enable : false
   title : "Clinics próximos"
   # event item comes from "content/**/clinics" folder.  
 

@@ -3,18 +3,33 @@
 {{ .Parent.Scratch.Add "tabName" (slice $tabName) }}
 {{ .Parent.Scratch.Add "tabID" (slice $tabID) }}
 
-<div class="tab-pane fade show {{ if eq .Ordinal 0 }}active {{ end }}" id="{{ $tabID }}" role="tabpanel" aria-labelledby="nav-1">
+<div class="tab-pane fade show {{ if eq .Ordinal 0 }}active {{ end }}" id="{{ $tabID }}" role="tabpanel" aria-labelledby="nav-{{ $tabID }}">
+	{{/*  Mostramos TODO como HTML, ya que usamos en cada pestaña, shortcodes  */}}
+	{{ .Inner | safeHTML }}
+
+	{{/*  {{ if ne .RelPermalink "/es/torneos/30-septiembre-torneo-by-padelvip-madrid/" }}
+		{{ if or (eq .Ordinal 1) (eq .Ordinal 2) }}
+			{{ .Inner | safeHTML }}
+		{{else}}
+			{{ .Inner | markdownify }}
+			<!-- mostramos el contenmido del markdown tal cual -->
+		{{ end }}
+	{{else}}
+		{{ .Inner | safeHTML }}
+	{{ end }}  */}}
+	
+	
+
 	{{/*  {{ $.Inner | markdownify }}  */}}
 
 	{{/* Si lo "markdownificamos", hace que el iframe NO salga :(  */}}
-	{{ if eq .Ordinal 1 }}
+	{{/* Tab 2 (ord 1) = premios Tab 3 (ord 2) = PhotoSwipe */}}
+	{{/*  {{ if or (eq .Ordinal 1) (eq .Ordinal 2) }}
 		{{ .Inner | safeHTML }}
-	{{ end }}
-	
-	{{/* Cargamos PhotoSwipe si hay 6 tabs configuradas, mostrando el safeHTML */}}
-	{{ if eq .Ordinal 5 }}
-		{{ .Inner | safeHTML }}
-	{{ else }}
+	{{else}}
 		{{ .Inner | markdownify }}
-	{{ end }}
+		<!-- mostramos el contenmido del markdown tal cual -->
+	{{ end }}  */}}
+
 </div>
+  

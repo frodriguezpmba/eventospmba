@@ -228,10 +228,4 @@
   }
 }
 
-.copyright p {
-  color: $white;
-  //color: #8996a7;  
-  //text-transform: capitalize;
-}
-
-/* /footer */
+.copyright p, .copyright2 p { color: $white; }

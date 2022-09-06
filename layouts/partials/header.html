@@ -27,12 +27,16 @@
   <!-- navbar -->
   <div class="navigation w-100 {{ if site.Params.top_header }} top-hider {{ end }}">
     <div class="container">
-      <nav class="navbar navbar-expand-lg navbar-dark p-0">
+      <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}"><img class="img-fluid"
             src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" width="300px" ></a>
-        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+        <button class="navbar-toggler navbar-light rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
+          <div id="navbar-close" class="hidden">
+            <i class="ti-x-circle"></i>
+            {{/*  <span class="navbar-toggler-icon-close"></span>  */}}
+          </div>
         </button>
 
         <div class="collapse navbar-collapse text-center" id="navigation">
@@ -42,7 +46,7 @@
             </li>  */}}
             {{ range site.Menus.main }}
             {{ if .HasChildren }}
-            <li class="nav-item dropdown">
+            <li class="nav-item-menu dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                 {{ .Name }}
               </a>
@@ -53,16 +57,19 @@
               </div>
             </li>
             {{ else }}
-            <li class="nav-item">
-              <a class="nav-link" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
-            </li>
+            {{/*  Menu active item: https://discourse.gohugo.io/t/another-way-to-make-a-menu-item-active/17029/17  */}}
+              {{ $active := eq $.RelPermalink (.URL | relLangURL) }}
+              {{ $active = or $active (eq $.Section (lower .Name)) }}
+                <li class="nav-item-menu">
+                  <a class="nav-link-menu {{ if $active }}active{{ end }}" title="{{ .Name }} | PadelMBA" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                </li>
             {{ end }}
             {{ end }}
           </ul>
 
           <!-- Language List -->
           {{ if .IsTranslated }}
-          <select class="m-2 border-0 mb-5 mb-lg-2" id="select-language" onchange="location = this.value;">
+          <select class="m-2 ml-5 border-0 mb-5 mb-lg-2" id="select-language" onchange="location = this.value;">
             {{ $siteLanguages := site.Languages}}
             {{ $pageLang := .Page.Lang}}
             {{ range .Page.AllTranslations }}

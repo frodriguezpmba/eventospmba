@@ -4,8 +4,8 @@
   font-family: $primary-font;
   text-transform: capitalize;
   padding: 15px 40px;
-  border-radius: 0;
-  font-weight: 500;
+  border-radius: 6px;
+  font-weight: 600;
   border: 0;
   position: relative;
   z-index: 1;
@@ -13,18 +13,18 @@
   overflow: hidden;
   white-space: nowrap;
 
-  &::before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: transform .2s ease-in-out;
-    transform-origin: top;
-    transform: scaleY(0);
-  }
+  // &::before {
+  //   position: absolute;
+  //   content: "";
+  //   height: 100%;
+  //   width: 100%;
+  //   left: 0;
+  //   bottom: 0;
+  //   z-index: -1;
+  //   transition: transform .2s ease-in-out;
+  //   transform-origin: top;
+  //   transform: scaleY(0);
+  // }
 
   &:active,
   &:hover,
@@ -43,7 +43,7 @@
 
 .btn-sm {
   font-size: 14px;
-  padding: 10px 35px;
+  padding: 11px 21px;
 }
 
 .btn-xs {
@@ -64,7 +64,7 @@
   &.focus,
   &:focus,
   &.active {
-    color: $primary-color !important;
+    color: $white !important;
     background-color: darken($color: $primary-color, $amount: 10) !important;
     // border-color: darken($color: $primary-color, $amount: 10) !important;
     border: 1px solid darken($color: $primary-color, $amount: 10);;
@@ -85,9 +85,33 @@
   &.focus,
   &:focus,
   &.active {
-    color: $primary-color !important;
+    color: $white !important;
     background-color: $primary-color !important;
     border-color: $primary-color !important;
+    // color: $primary-color !important;
+    // background-color: $primary-color !important;
+    // border-color: $primary-color !important;
+  }
+}
+
+.btn-outline-black-pmba {
+  color: $secondary-color;
+  background-color: transparent;
+  border: 1px solid $secondary-color;
+  padding: 10px;
+
+  &::before {
+    background-color: $white;
+  }
+
+  &:active,
+  &:hover,
+  &.focus,
+  &:focus,
+  &.active {
+    color: $white !important;
+    background-color: $secondary-color !important;
+    border-color: $secondary-color !important;
   }
 }
 

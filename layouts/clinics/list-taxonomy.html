@@ -1,0 +1,29 @@
+<section class="section" id="cat-padelmba">
+    <div class="container">
+      <div class="row">
+        
+        <section class="col-lg-12 order-1 order-lg-2">
+            {{ "<!-- categorias -->" | safeHTML }}
+            <div class="bg-white mb-5">
+              <h4 class="mb-4">{{ i18n "categories" }} Clinics | PadelMBA</h4>
+              {{- if isset site.Taxonomies "categorias" }}
+              {{- if not (eq (len site.Taxonomies.categorias) 0) }}
+              <ul class="list-unstyled">
+                {{- range $name, $items := site.Taxonomies.categorias }}
+                <li class="border-bottom mb-3 capitalize-text"><strong><a title="Cat - {{ $name | title | humanize }} | PadelMBA" href="{{ `categorias/` | relLangURL }}{{ $name | urlize | lower }}/" class="d-block pb-2 mt-4"><span class="badge badge-primary badge-pill">{{ $items.Count }}</span> {{ $name | title | humanize }}</a></strong></li>
+                {{- range $items.Pages }}
+                    <li class="list-taxonomy-pmba" hugo-nav="{{ .RelPermalink}}"><a title="{{ .Title }}" href="{{ .Permalink}}"> {{ .LinkTitle }}</a></li>
+                {{- end }}
+                {{- end }}
+              </ul>
+              {{- end }}
+              {{- end }}
+            </div>
+
+            <img class="img-fluid custom-border-image-taxonomy fixed-image" loading="lazy" type="image/jpg" 
+            src="https://www.padelmba.com/wp-content/uploads/2021/08/outdoors-paddle-tennis-court-with-racket-and-balls.jpg" alt="taxonomias categorias padelmba" />
+        </section>
+
+      </div>
+    </div>
+</section>

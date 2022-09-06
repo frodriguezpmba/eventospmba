@@ -19,6 +19,9 @@
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+    font-size: 25px;
+    color: #007591;
+    /* cambia el color de TODOS los iconos */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -116,6 +119,9 @@ i {
 .ti-info:before {
   content: "\e910";
 }
+.ti-info:before:hover {  
+  color: white !important;
+}
 .ti-mail:before {
   content: "\e911";
 }
@@ -127,6 +133,9 @@ i {
 }
 .ti-location:before {
   content: "\e914";
+}
+.ti-location-full:before {
+  content: "\e930";
 }
 .ti-instagram:before {
   content: "\e915";

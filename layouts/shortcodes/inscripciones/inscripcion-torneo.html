@@ -1,0 +1,19 @@
+{{ $premioImagen        := .Get "premioImagen" }}
+{{ $premioCampeones     := .Get "premioCampeones" }}
+{{ $premioCategoria     := .Get "premioCategoria" }}
+{{ $premioPala          := .Get "premioPala" }}
+{{ $premioNombrePala    := .Get "premioNombrePala" }}
+{{ $premioPrecio        := .Get "premioPrecio" }}
+{{ $premioTipoCategoria := .Get "premioTipoCategoria" }}
+
+<div class="swiper-slide">
+    <div class="wrapper-inscripciones">
+        <img class="wrapper-inscripciones-img" src="{{ .Get 2 }}" alt="" />
+        <p>{{ .Get 0}}</p>
+        <p>{{ .Inner }}</p>
+        <p>{{ .Get 1 }}</p>
+    </div>
+        
+    
+    {{/*  <div class="premio-categoria-tipo">{{ $premioTipoCategoria }}<div>  */}}
+</div>

@@ -1,0 +1,83 @@
+{{ define "ranking" }}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ $file := .Params.datafile}}
+{{ $data := getJSON $file }}
+
+
+<!-- Ranking -->
+<section class="section bg-gray" id="pmba">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="section-title">{{ i18n "contact_us" }}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-7 mb-4 mb-lg-0">
+
+        {{/*  <table
+          id="table"
+          data-toggle="table"
+          data-flat="true"
+          data-search="true"
+          data-url="{{$data}}">
+          <thead>
+            <tr>
+              <th data-field="id">ID</th>
+              <th data-field="name">Item Name</th>
+              <th data-field="price">Item Price</th>
+            </tr>
+          </thead>
+        </table>  */}}
+
+        <style type="text/css">
+          table.tableizer-table {
+            font-size: 12px;
+            border: 1px solid #CCC; 
+            font-family: Arial, Helvetica, sans-serif;
+          } 
+          .tableizer-table td {
+            padding: 4px;
+            margin: 3px;
+            border: 1px solid #CCC;
+          }
+          .tableizer-table th {
+            background-color: #104E8B; 
+            color: #FFF;
+            font-weight: bold;
+          }
+        </style>
+        <table class="tableizer-table">
+        <thead><tr class="tableizer-firstrow"><th>Nombre</th><th>Apellidos</th><th>Nº de puntos</th><th>Torneo PadelMBA 22/23</th></tr></thead><tbody>
+         <tr><td>Marcos Antonio</td><td>Leiva</td><td>100</td><td>22/23</td></tr>
+         <tr><td>Juliana</td><td>Yanez</td><td>98</td><td>22/23</td></tr>
+         <tr><td>Lorenzo</td><td>Toledo</td><td>95</td><td>22/23</td></tr>
+         <tr><td>Maria</td><td>Sanchez</td><td>94</td><td>22/23</td></tr>
+         <tr><td>Carlos</td><td>Romero</td><td>90</td><td>22/23</td></tr>
+         <tr><td>Bea</td><td>Fernandez</td><td>85</td><td>22/23</td></tr>
+         <tr><td>Pedro</td><td>Alberto</td><td>82</td><td>22/23</td></tr>
+         <tr><td>Eva</td><td>Longoria</td><td>80</td><td>22/23</td></tr>
+         <tr><td>Luis</td><td>Pepe</td><td>75</td><td>22/23</td></tr>
+         <tr><td>Elena</td><td>Flores</td><td>60</td><td>22/23</td></tr>
+        </tbody></table>
+
+        <br /><br />
+
+
+        <iframe style="height: 50vh; width: 50vh;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQJ4oNZ-UVRlpvt_QIkuPZ125hWnVLCJeCHbqGcyZ2Qg_59WgxB8lU0ca3NUpUsoqJ1zgXCOXSZgIiY/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+      </div>
+      <div class="col-lg-5 content">
+        {{ .Content }}
+        <a href="tel:{{ site.Params.mobile }}" class="text-color h5 d-block">{{ site.Params.mobile }}</a>
+        <a href="mailto:{{ site.Params.email }}" class="mb-5 text-color h5 d-block">{{ site.Params.email }}</a>
+        <p>{{ site.Params.address | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /Ranking -->
+
+
+{{ end }}

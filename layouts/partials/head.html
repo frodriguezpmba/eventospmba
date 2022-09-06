@@ -2,6 +2,12 @@
   <meta charset="utf-8">
   <title>{{ .Title }}</title>
 
+  {{/*  Block index SEO Google (only DEV)  */}}
+  {{/*  https://discourse.gohugo.io/t/ho-to-add-noindex-nofollow/27327/2  */}}
+  {{ if site.Params.noindex }}
+    <meta name="robots" content="noindex" /> 
+  {{ end }}
+
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description"

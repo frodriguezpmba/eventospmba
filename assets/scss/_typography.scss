@@ -19,12 +19,12 @@ body {
   font-family: $primary-font;
   -webkit-font-smoothing: antialiased;
   font-size: $size_text_p;
-  color: $text-color;
+  color: $text-color-body;
 }
 
 p, .paragraph {
   font-weight: 400;
-  color: $text-color;
+  color: $black;
   font-size: $size_text_p;
   line-height: 1.9;
   font-family: $primary-font;
@@ -33,9 +33,9 @@ p, .paragraph {
 }
 
 h1,h2,h3,h4,h5,h6 {
-  color: $text-color-dark;
-  font-family: $secondary-font;
-  font-weight: 700;
+  color: $secondary-color;
+  font-family: $primary-font;
+  font-weight: bold;
   line-height: 1.2;
 }
 

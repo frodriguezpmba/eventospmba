@@ -1,0 +1,205 @@
+(function ($) {
+  'use strict';
+
+  // Preloader js    
+  $(window).on('load', function () {
+    $('.preloader').fadeOut(500);
+  });
+
+  $(window).on('load', function () {
+    $('.preloader-white').fadeOut(850);
+  });
+
+  // Personalizado automático altura para las TABS Sticky
+  // y que así, se queden fijas siempre a la altura del menú superior
+  // de navegación.
+  // document.querySelector(".fixed-top.header").offsetHeight
+  $(document).scroll(function(){
+    var distancia_scroll = $(this).scrollTop();
+    var distancia_tabs =  $('.sticky-pmba-tabs').offsetHeight;
+
+    if (distancia_scroll > 100){
+      var altura_menu_superior = document.querySelector(".fixed-top.header").offsetHeight;
+      $('.sticky-pmba-tabs').css("top",altura_menu_superior - 1);
+      // $('.sticky-pmba-tabs').css("top",0);
+    }
+    
+    // if (distancia_tabs < distancia_scroll){
+    //   $('.fixed-top').css("z-index",10);
+    //   $('.fixed-top').css("position","fixed");
+    // }
+  });
+
+  // Mostrar/Ocultar tickets boton comprar
+  $(document).scroll(function () {
+    var y = $(this).scrollTop();
+    var t = $('.sticky-pmba-tabs').parent().offset().top;
+    var block_tickets_bottom_pmba = $('.info-bottom-tickets-pmba');
+    var row_tickets = $('.row-tickets');
+    
+    if( screen.width <= 991 ) {
+      if (y > t) {
+        block_tickets_bottom_pmba.fadeIn(600);
+        block_tickets_bottom_pmba.css("display", "flex");
+        // $('.fixed-top').fadeOut(600);
+        // $('.fixed-top').css("z-index",0);
+        // $('.fixed-top').css("position","sticky");
+      } else {
+        block_tickets_bottom_pmba.fadeOut(600);
+      }
+    }else{
+      block_tickets_bottom_pmba.fadeOut(600);
+      row_tickets.css("display", "none");
+    }
+  });
+
+  // Para inyectar dinámicamente el alto del menu superior y 
+  // mover el alto en el tickets modal "div#ticketsTorneoPMBA"
+  // Importante: la clase es el nombre del boton de abajo,
+  // dentro del <div class="tickets-cta2"> en footer2.html
+  $("a.btn.btn-primary.btn-lg.tickets-cta2-classes").click(function(){
+    var menu_altura = document.querySelector("body > header").offsetHeight;
+    // console.log("menu altura = "+menu_altura);
+    if( screen.width <= 991 ) {
+      $(".fixed-top").css("z-index", 1);
+      // $("div#ticketsTorneoPMBA").css("top", menu_altura);
+      // En mobile molaría también que se ocultara el menu superior con zindex
+      // $(".navigation").css("z-index", 5);
+    }
+  });
+
+  // Para controlar que cuando se cierra el modal, vuelve el zindex al valor original
+  $("button.close").click(function(){
+    $(".fixed-top").css("z-index", 5);
+  });
+
+  // Para el boton de comprar del SIDEBAR
+  $("a.btn.btn-primary.btn-lg.mt-2.efecto-boton-pmba").click(function(){
+    var menu_altura = document.querySelector("body > header").offsetHeight;
+    // console.log("menu altura = "+menu_altura);
+
+    // fijamos dinamicamente el header del modal siempre.
+    // screen.width > 991) para que se quede fijo el header-modal en escritorio, pero oculta el boton de comprar...
+    // if (( screen.width <= 991 )  || ( screen.width > 991))  {
+
+    // Fix para ocultar temporalmente el menu superior para que se vea 100% alto el iframe
+    if ((screen.width > 991) || ( screen.width <= 991 ))  {
+      $(".fixed-top").css("z-index", 1);
+    }
+
+    // if (( screen.width <= 991 ))  {
+    //   $("div#ticketsTorneoPMBA").css("top", menu_altura);
+    // }
+  });
+
+  // Background-images
+  $('[data-background]').each(function () {
+    $(this).css({
+      'background-image': 'url(' + $(this).data('background') + ')'
+    });
+  });
+
+  //  Scroll to top of tab-pane with a sticky Nav
+  // https://stackoverflow.com/a/57337113
+  $("div#nav-tab > a").click(function() {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#nav-tab-content").offset().top-240
+    }, 300);
+  });
+
+  // Change Icon Menu Hamburguer Mobile
+  // https://stackoverflow.com/a/28250768
+  $('#navigation')
+    .on('shown.bs.collapse', function() {
+      // $('.navbar-toggler-icon').fadeOut(200);
+      $('.navbar-toggler-icon').addClass('hidden');
+      // $('#navbar-close').fadeIn(200);
+      $('#navbar-close').removeClass('hidden');
+    })
+    .on('hidden.bs.collapse', function() {
+      // $('.navbar-toggler-icon').fadeIn(600);
+      // $('#navbar-close').fadeOut(200);
+      $('#navbar-close').addClass('hidden');
+      $('span.navbar-toggler-icon').removeClass('hidden');
+      // $('span.navbar-toggler-icon').fadeIn(200);
+      // $('#navbar-close').fadeOut(600);
+      
+  });
+
+  // $(".col-lg-3.second-column").stick_in_parent({
+  //     parent: ".row.margin-pmba",
+  //     offset_top: 200
+  //   });
+
+  // $(".row.margin-pmba").stick_in_parent({
+  //   stickTo: '.col-lg-3.second-column'
+  // });
+
+  // $(".col-lg-3.second-column").stick_in_parent({
+  //   offset_top: 10
+  // });
+
+  // $('.second-column').hcSticky();
+
+  // var socialFloat = document.querySelector('.col-lg-3.second-column');
+  // var footer = document.querySelector('.carousel-patrocinadores');
+
+  // function checkOffset() {
+  //   function getRectTop(el){
+  //     var rect = el.getBoundingClientRect();
+  //     return rect.top;
+  //   }
+    
+  //   if((getRectTop(socialFloat) + document.body.scrollTop) + socialFloat.offsetHeight >= (getRectTop(footer) + document.body.scrollTop) - 10)
+  //     socialFloat.style.position = 'absolute';
+  //   if(document.body.scrollTop + window.innerHeight < (getRectTop(footer) + document.body.scrollTop))
+  //     socialFloat.style.position = 'fixed'; // restore when you scroll up
+    
+  //   socialFloat.innerHTML = document.body.scrollTop + window.innerHeight;
+  // }
+
+  // document.addEventListener("scroll", function(){
+  //   checkOffset();
+  // });
+
+
+  // $(".row.margin-pmba").stick_in_parent({
+  //   stickTo: '.col-lg-3.second-column'
+  // });
+  // http://jsfiddle.net/gmolop/y3tdL9wd/
+  // https://somewebmedia.github.io/hc-sticky/
+
+
+  // $('.row.margin-pmba').hcSticky({stickyClass: '.col-lg-3.second-column', innerTop: -71});
+
+
+  // var Sticky = new hcSticky('section', {
+  //   stickTo: '.container-fluid',
+  //   innerSticker: '.col-lg-3.second-column',
+  //   responsive: {
+  //     980: {
+  //       disable: true
+  //     }
+  //   }
+  // });
+
+
+  // $(".row.margin-pmba").stick_in_parent();
+  // $(".col-lg-3.second-column").stick_in_parent({ offset_top: $(".section-sm").height() });
+  // $(".col-lg-3.second-column").stick_in_parent({offset_top:e+350});
+
+  // Sticky Menu
+  // $(window).scroll(function () {
+  //   var height = $('.top-header').innerHeight();
+  //   if ($('header').offset().top > 10) {
+  //     $('.top-header').addClass('hide');
+  //     $('.navigation').addClass('nav-bg');
+  //     $('.navigation').css('margin-top','-'+height+'px');
+  //   } else {
+  //     $('.top-header').removeClass('hide');
+  //     $('.navigation').removeClass('nav-bg');
+  //     $('.navigation').css('margin-top','-'+0+'px');
+  //   }
+  // });
+
+})(jQuery);

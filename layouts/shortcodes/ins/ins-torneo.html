@@ -1,0 +1,22 @@
+{{/*  <style>
+    .cat-torneo{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 1px;
+    }
+    .cat-tipo{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        text-transform: uppercase;
+    }
+</style>  */}}
+
+<div class="wrapper-ins">
+    <img src="{{ .Get 0 }}" alt="" class="inscripcion {{ .Get 1 | lower }} ">
+    <span class="ins-tipo {{ .Get 1 | lower }} mt-4">{{ .Get 1 }}</span>
+    <span class="ins-content">{{ .Inner }}</span>
+    <span class="ins-price mt-4">{{ .Get 2 }} &euro;</span>
+</div>

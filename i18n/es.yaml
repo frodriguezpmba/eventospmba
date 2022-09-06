@@ -1,0 +1,119 @@
+- id: read_more
+  translation: Leer más
+
+- id: contact_form
+  translation: Formulario de Contacto
+
+- id: send
+  translation: Enviar mensaje
+
+- id: contact_info
+  translation: Información de Contacto
+
+- id: subscribe_newsletter
+  translation: Suscribirse a la Newsletter
+
+- id: subscribe
+  translation: Suscribirse
+
+- id: contact_us
+  translation: Contacta con nosotros
+
+- id: latest_article
+  translation: Últimos artículos
+
+- id: categories
+  translation: Categorías
+
+- id: tags
+  translation: Etiquetas
+
+- id: see_all
+  translation: Ver todo
+
+- id: apply_now
+  translation: ¡Inscríbete!
+
+- id: posted_by
+  translation: Escrito por
+
+- id: date
+  translation: Fecha
+
+- id: time
+  translation: Horario
+
+- id: category
+  translation: Categoría
+
+- id: related_course
+  translation: Cursos relacionados
+
+- id: duration
+  translation: Duración
+
+- id: weekly
+  translation: Semana
+
+- id: fee
+  translation: tasa
+
+- id: teacher
+  translation: profesor
+
+- id: location
+  translation: Localización
+
+- id: entry_fee
+  translation: Inscripción al Torneo
+
+- id: event_speaker
+  translation: Ponentes del torneo
+
+- id: more_event
+  translation: Torneos disponibles
+
+- id: join
+  translation: Unirte
+  
+- id: enter_email
+  translation: Introduce tu email...
+
+- id: company
+  translation: Compañia
+
+- id: links
+  translation: enlaces
+
+- id: courses
+  translation: Cursos
+
+- id: new_notice
+  translation: nueva noticia
+
+- id: call
+  translation: llamar
+
+- id: email
+  translation: email
+
+- id: all
+  translation: Todos
+
+- id: interest
+  translation: RESUMEN DE ACTIVIDADES/INTERESES
+
+- id: our_teachers
+  translation: Nuestros profesores
+
+- id: download
+  translation: Descargar
+
+- id: scroll-up
+  translation: Sección principal del Torneo
+
+- id: tournament
+  translation: Torneo
+
+- id: proximo_torneos
+  translation: Ver todos los Próximos Torneos

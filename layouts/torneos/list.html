@@ -3,48 +3,113 @@
 {{ $data := index site.Data site.Language.Lang }}
 
 {{/*  En List de root/torneos/  */}}
-<section class="section-first" id="torneo-padelmba">
+{{/*  <section class="section-first" id="torneo-padelmba">
 <div class="container">
   <div class="row">
-    {{/*  Contenido del _index.md   */}}
+    <!--  Contenido del _index.md  -->
     {{ .Content | safeHTML }}
   </div>
 </div>
-</section>
+</section>  */}}
 
 <!-- Listing Torneos PadelMBA -->
-<section class="section">
+<section class="section-new-bg pt-4">
   <div class="container">
-    {{/*  <div class="row">  */}}
-      <!-- Torneo -->            
-      {{/*  Paginacion de Torneos PadelMBA  */}}
-      {{/*  {{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "torneos") }}  */}}
+    <div class="row">
       
-      {{/*  {{ $paginator := .Paginate (where .Data.Pages.GroupByDate "Type" "torneos") }}  */}}
+      <div class="col-lg-3 mt-4 first-column">
+        {{/*  Filtros:  */}}
 
-      {{/*  {{ range .Data.Pages.GroupByDate "2006-01" }}
-      <h3>{{ .Key }}</h3>
-      {{ range .Pages }}  */}}
+        {{/*  Busqueda??  */}}
+        {{/*  <input type="search" class="form-control ds-input" id="search-input" placeholder="Buscar Torneo..." aria-label="Buscar por..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">  */}}
 
-      {{/*  {{ range .Site.RegularPages.GroupByDate "2006-01" }}  */}}
-      {{/*  https://github.com/gohugoio/hugo/commit/1a94148d062beb6e45d5eeef3447d0308e496718  */}}
-      {{/*  https://digitaldrummerj.me/hugo-view-post-grouped-by-month/  */}}
-      {{/*  Funciona con el GroupByDate  */}}
-      {{/*  {{ range .Data.Pages.GroupByDate "January 2006" "Type" "torneos" }}  */}}
-      {{/*  https://github.com/gohugoio/hugo/issues/6992#issuecomment-713100986  */}}
-      {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "Type" "torneos") 6 ).PageGroups }}
-      <h3 class="mes-pmba">{{ .Key }}</h3>
-      <div class="row">
-          {{/*  {{ range .Paginator.Pages }}        */}}        
-          {{ range .Pages }}
-          <div class="col-lg-3 col-sm-6 mb-4 mt-4">            
-              {{ .Render "torneos" }}
+        <div class="col-md-6 mt-2" data-mdb-filter="size">
+          <strong>Categoría</strong>
+          <div class="form-check mt-3">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="Masculino">
+            <label class="form-check-label" for="inlineCheckbox1">Masculino</label>
           </div>
-          {{ end }}
-        {{ end }}
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="Femenino">
+            <label class="form-check-label" for="inlineCheckbox2">Femenino</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="Mixto">
+            <label class="form-check-label" for="inlineCheckbox3">Mixto</label>
+          </div>
+        </div>
 
-        <div class="col-12 mt-5 mb-3">{{ template "_internal/pagination.html" . }}</div>
+        <div class="col-md-6 mt-5" data-mdb-filter="size">
+          <strong>Niveles</strong>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="Bajo">
+            <label class="form-check-label" for="inlineCheckbox4">Bajo</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="Medio - bajo">
+            <label class="form-check-label" for="inlineCheckbox5">Medio - bajo</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="Medio">
+            <label class="form-check-label" for="inlineCheckbox6">Medio</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="Medio - alto">
+            <label class="form-check-label" for="inlineCheckbox7">Medio - alto</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="Alto">
+            <label class="form-check-label" for="inlineCheckbox8">Alto</label>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-5" data-mdb-filter="size">
+          <strong>Clubes</strong>
+          <div class="form-check mt-2">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="Padel Training">
+            <label class="form-check-label" for="inlineCheckbox9">Padel Training</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox10" value="Madrid Central Padel">
+            <label class="form-check-label" for="inlineCheckbox10">Madrid Central Padel</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox11" value="Mixto">
+            <label class="form-check-label" for="inlineCheckbox11">Vita 10</label>
+          </div>
+        </div>
+
+
+
+
       </div>
+      <div class="col-lg-9 second-column" id="torneo-padelmba">
+        {{/*  https://github.com/gohugoio/hugo/commit/1a94148d062beb6e45d5eeef3447d0308e496718  */}}
+        {{/*  https://digitaldrummerj.me/hugo-view-post-grouped-by-month/  */}}
+        {{/*  Funciona con el GroupByDate  */}}
+        {{/*  {{ range .Data.Pages.GroupByDate "January 2006" "Type" "torneos" }}  */}}
+        {{/*  https://github.com/gohugoio/hugo/issues/6992#issuecomment-713100986  */}}
+        <div class="row">
+        {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "Type" "torneos") 6 ).PageGroups }}
+        {{/*  {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "Type" "torneos") 6 ) }}  */}}
+        {{/*  <h3 class="mes-pmba">{{ .Key }}</h3>  */}}
+        {{/*  <div class="row">  */}}
+            {{/*  {{ range .Paginator.Pages }}                */}}
+            {{ range .Pages }}
+            <div class="col-lg-4 col-sm-6 mb-4 mt-4">            
+                {{ .Render "torneos2" }}
+                {{/*  Apunta a este template --> layouts\_default\torneos2.html  */}}
+            </div>
+            {{ end }}
+          {{ end }}
+
+          <div class="col-12 mt-5 mb-5">{{ template "_internal/pagination.html" . }}</div>
+
+        {{/*  </div><!-- .row -->  */}}
+
+      </div>
+
+    </div>
   </div>
 </section>
 <!-- /Torneo -->
