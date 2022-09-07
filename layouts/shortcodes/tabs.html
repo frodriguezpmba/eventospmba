@@ -5,16 +5,9 @@
 		{{ $tabName := .Scratch.Get "tabName" }}
 		{{ $tabID := .Scratch.Get "tabID" }}
 
-		{{/*  Funciona bien  */}}
-		{{/*  {{ range $i, $sequence := (seq $tabTotal) }}
-		<a class="nav-item-tab nav-link {{ if eq $i 0 }} active {{ end }}{{ if in $tabRightAlign (add 1 $i) }} ml-auto {{ end }}" id="nav-{{ (index $tabID $i) }}" data-toggle="tab" href="#{{ (index $tabID $i) }}" data-target="#{{if eq $sequence 1}}informacion{{end}}{{if eq $sequence 2}}premios{{end}}{{if eq $sequence 3}}multimedia{{end}}" role="tab" aria-controls="nav-home" aria-selected="true">{{ (replaceRE "(\\s)" "" (index $tabName $i)) }}</a>
-		{{ end }}  */}}
 		{{ range $i, $sequence := (seq $tabTotal) }}
-		<a class="nav-item-tab nav-link {{ if eq $i 0 }} active {{ end }}{{ if in $tabRightAlign (add 1 $i) }} ml-auto {{ end }}" id="nav-{{ (index $tabID $i) }}" data-toggle="tab" href="#{{ (index $tabID $i) }}" role="tab" aria-controls="nav-home" aria-selected="true">{{ (replaceRE "(\\s)" "" (index $tabName $i)) }}</a>
+		<a class="nav-item-tab nav-link {{ if eq $i 0 }} active {{ end }}" id="nav-{{ (index $tabID $i) }}" data-toggle="tab" href="#{{ (index $tabID $i) }}" role="tab" aria-controls="nav-home" aria-selected="true">{{ (replaceRE "(\\s)" "" (index $tabName $i)) }}</a>
 		{{ end }}
-
-
-
 	</div>
 </nav>
 

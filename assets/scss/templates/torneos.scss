@@ -27,8 +27,8 @@
   // height: auto;  
   // height: 400px;
     
-  @include tablet { align-content: center; height: 22vh; }
-  @include mobile { height: 24vh; }
+  @include tablet { align-content: center; height: 30vh; }
+  @include mobile { height: 40vh; }
 }
 
 .imagen-torneo-top {
@@ -713,6 +713,8 @@ span.date-tournament-pmba {
   height: 100%;
 }
 
+.swiper:not(:last-child) { margin-bottom: 50px; margin-top: 20px; }
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -742,6 +744,9 @@ span.date-tournament-pmba {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  @include tablet {width: 65%;}
+  @include mobile {}
 }
 
 
@@ -787,8 +792,8 @@ img.wrapper-inscripciones-img{width: 20%;}
 
 .premio-imagen { 
   width: 40vh; 
-  @include tablet { width: 20vh; }
-  @include tablet { width: 20vh; }
+  @include tablet { width: 50vw; }
+  @include mobile { width: 70vw; }
 }
 .premio-descripcion {
   display: flex;
@@ -959,7 +964,7 @@ ul.list-formato-juego {
 }
 
 img.imagen-sorteo, img.catering-padelmba {
-  width: 20%; 
+  width: 15%; 
   @include tablet { width: 40%; margin: 30px 0; }
   @include mobile { width: 50%; margin: 30px 0; }
 }

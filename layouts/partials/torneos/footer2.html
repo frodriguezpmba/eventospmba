@@ -3,7 +3,7 @@
   <!-- copyright -->
   {{/*  Custom footer del copyright SI NO hay ticket-cta bottom  */}}
   
-  {{ if and (not .Params.torneo_suspendido) (not (.Date.Before now)) (ne .RelPermalink "/es/torneos/")  }}
+  {{ if and (not .Params.torneo_suspendido) (not (.Date.Before now)) (ne .RelPermalink "/torneos/")  }}
   <div class="copyright bg-footer">
   {{else}}
   <div class="copyright2 bg-footer">

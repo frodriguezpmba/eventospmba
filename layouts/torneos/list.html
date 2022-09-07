@@ -84,7 +84,7 @@
 
       </div>
       {{/*  <div class="col-lg-9 second-column" id="torneo-padelmba">  */}}
-      <div class="col-lg-12 second-column" id="torneo-padelmba"></div>
+      <div class="col-lg-12 second-column" id="torneo-padelmba">
         {{/*  https://github.com/gohugoio/hugo/commit/1a94148d062beb6e45d5eeef3447d0308e496718  */}}
         {{/*  https://digitaldrummerj.me/hugo-view-post-grouped-by-month/  */}}
         {{/*  Funciona con el GroupByDate  */}}
@@ -97,7 +97,8 @@
         {{/*  <div class="row">  */}}
             {{/*  {{ range .Paginator.Pages }}                */}}
             {{ range .Pages }}
-            <div class="col-lg-4 col-sm-6 mb-4 mt-4">            
+            {{/*  <div class="col-lg-4 col-sm-6 mb-4 mt-4">  */}}
+            <div class="col-lg-3 col-sm-6 mb-4 mt-4">
                 {{ .Render "torneos2" }}
                 {{/*  Apunta a este template --> layouts\_default\torneos2.html  */}}
             </div>
