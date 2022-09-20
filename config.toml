@@ -180,10 +180,10 @@ name = "Campus de Competición"
 url = "#"
 weight = 4
 
-# [[Languages.es.menu.main]]
-# name = "Ranking"
-# url = "ranking/"
-# weight = 6
+[[Languages.es.menu.main]]
+name = "Ranking"
+url = "ranking/"
+weight = 6
 
 
 ################################### English language #####################################

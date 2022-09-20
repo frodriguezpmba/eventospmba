@@ -204,6 +204,7 @@ div#nav-tab-content { padding-top: 15px; }
     // padding: 10px;
     // border-radius: 1rem;
     text-align: center;
+    text-transform: uppercase;
   
   @include tablet { max-width:fit-content; width: 80%; }
   @include mobile { max-width:fit-content; width: 80%; } 
@@ -211,13 +212,13 @@ div#nav-tab-content { padding-top: 15px; }
 
 .pmba-torneo { font-weight: 700; font-size: 18px; }
 .pmba-torneo.abierto { float:right; color: $estado-torneo-abierto; }
-.pmba-torneo-abierto { color: $estado-torneo-abierto; border: 2px $estado-torneo-abierto solid; padding: 10px; border-radius: 10px; }
+.pmba-torneo-abierto { color: $estado-torneo-abierto; border: 3px $estado-torneo-abierto solid; padding: 10px; border-radius: 10px; }
 
 .pmba-torneo.cerrado { float:right; color: $estado-torneo-cerrado; }
-.pmba-torneo-cerrado { color: $estado-torneo-cerrado; border: 2px $estado-torneo-cerrado solid; padding: 10px; border-radius: 10px; }
+.pmba-torneo-cerrado { color: $estado-torneo-cerrado; border: 3px $estado-torneo-cerrado solid; padding: 10px; border-radius: 10px; }
 
 .pmba-torneo.suspendido { float:right; color: $estado-torneo-suspendido; }
-.pmba-torneo-suspendido { color: $estado-torneo-suspendido; border: 2px $estado-torneo-suspendido solid; padding: 10px; border-radius: 10px; }
+.pmba-torneo-suspendido { color: $estado-torneo-suspendido; border: 3px $estado-torneo-suspendido solid; padding: 10px; border-radius: 10px; }
 
 
 .col-lg-7.first-column  { 
@@ -436,8 +437,8 @@ ul.list-inline.date {
 i.ti-info.align-middle.icon-md.mr-2:hover { color: white; }
 
 img.logo-padel-manager { width: 20%; 
-  @include tablet { width: 30%; margin-bottom: 30px; }
-  @include mobile { width: 30%; margin-bottom: 30px; }
+  @include tablet { width: 30%; margin-bottom: 30px; margin-top: 30px; }
+  @include mobile { width: 30%; margin-bottom: 30px; margin-top: 30px; }
 }
 
 // https://codepen.io/jpost-design/pen/EKZLzK
