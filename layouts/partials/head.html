@@ -34,7 +34,10 @@
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="shortcut icon" href="{{ `images/padelmba-favicon.png` | absURL }}" type="image/x-icon">
   <link rel="icon" href="{{ `images/padelmba-favicon.png` | absURL }}" type="image/x-icon">
-  {{/*  <link rel="shortcut icon" href="https://www.padelmba.com/wp-content/uploads/2020/04/favico.png" type="image/x-icon">
-  <link rel="icon" href="https://www.padelmba.com/wp-content/uploads/2020/04/favico.png" type="image/x-icon">  */}}
+
+  {{/*  https://answers.netlify.com/t/common-issue-netlify-cms-git-gateway-email-not-confirmed/10690/6  */}}
+  {{ if .IsHome }}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  {{ end }}
 
 </head>
