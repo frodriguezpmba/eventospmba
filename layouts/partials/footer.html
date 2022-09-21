@@ -157,6 +157,7 @@
 
 {{/*  https://www.netlifycms.org/docs/add-to-your-site/#add-the-netlify-identity-widget  */}}
 {{/*  https://answers.netlify.com/t/common-issue-netlify-cms-git-gateway-email-not-confirmed/10690/6  */}}
+{{ if .IsHome }}
 <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {
@@ -168,6 +169,7 @@
     });
   }
 </script>
+{{ end }}
 
 <!-- cookie style -->
 <style>
