@@ -78,19 +78,21 @@
 </footer>
 <!-- /footer -->
 
-<link rel="stylesheet" href="/plugins/carousel/carousel.css">
+{{ $version_css_carousel := delimit (shuffle (split (md5 "carouselcss") "" )) "" }}
+<link rel="stylesheet" href="/plugins/carousel/carousel.css?v={{ $version_css_carousel }}">
+<!-- <link rel="stylesheet" href="/plugins/carousel/carousel.css?v={{ now.Unix }}"> -->
 
 <!--  weemss integration code -->
 {{/*  <script src="https://cdn.weemss.com/compiled/js/integration-embed.js?v1.7"></script>  */}}
 
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range site.Params.plugins.js}}
-<script src="{{ .link | absURL }}"></script>
+<script src="{{ .link | absURL }}?v={{ now.Unix }}"></script>
 {{ end }}
 
 {{ "<!-- Main Script -->" | safeHTML }}
 {{ $script := resources.Get "js/scroll-to-sticky-tabs.js" | minify}}
-<script src="{{ $script.Permalink }}"></script>
+<script src="{{ $script.Permalink }}?v={{ now.Unix }}"></script>
 
 {{ "<!-- google analitycs -->" | safeHTML }}
 {{ with site.Params.google_analitycs_id}}
@@ -114,7 +116,7 @@
 
 <!-- cookie -->
 {{ if site.Params.cookies.enable }}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js?v={{ now.Unix }}"></script>
 <div id="js-cookie-box" class="cookie-box cookie-box-hide">
 	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
 </div>

@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    background-color: #faf9f9;
+    color: #9d4e48;
+}
+.frame-content {
+    margin: 1rem;
+}
+.frame-content > div > div + div {
+    margin-top: 0.5rem;
+    border-top: 1px dashed #dfdfe3;
+    padding-top: 0.5rem;
+}

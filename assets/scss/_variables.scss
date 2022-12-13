@@ -34,18 +34,24 @@ $size-text-h6: 16px;
 $categorias-text-size: 15px;
 
 // Figma new variables
-$color-texto-genero-masculino: #269CDE;
-$color-texto-genero-femenino: #EE3074;
-$color-texto-genero-mixto: #2BD78F;
+// $color-texto-genero-masculino: #269CDE; // antiguo cesar
+$color-texto-genero-masculino: #1B7DB6;
+$color-texto-genero-femenino: #E7135D;
+//$color-texto-genero-mixto: #2BD78F;  // antiguo cesar
+$color-texto-genero-mixto: #28816A;
+
 
 // Card-date bg color disponible/finalizado
 $finalizado-bg-color: rgb(192, 1, 1);
 $disponible-bg-color: rgb(3, 110, 3);
 
 // Colores estado del torneo
-$estado-torneo-abierto: #5EF268;
-$estado-torneo-cerrado: #F20519;
-$estado-torneo-suspendido: #B7B9BB;
+// $estado-torneo-abierto: #5EF268; // antiguo cesar
+$estado-torneo-abierto: #0D8715;
+// $estado-torneo-cerrado: #F20519; // antiguo cesar
+$estado-torneo-cerrado: #EB0518;
+// $estado-torneo-suspendido: #B7B9BB; // antiguo cesar
+$estado-torneo-suspendido: #74767B;
 
 // Torneos Tipo de Categoria para Premios
 $color-categoria-premio-torneo-masculino: $primary-color;

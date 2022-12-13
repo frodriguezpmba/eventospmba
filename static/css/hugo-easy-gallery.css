@@ -85,7 +85,7 @@ figure {
 img / a styles
 */
 
-.gallery .img {
+.gallery .img, .gallery .lozad {
     position: absolute;
     left: 0;
     right: 0;

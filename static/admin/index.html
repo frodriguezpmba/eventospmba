@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="https://i.im.ge/2022/09/27/1t6Akf.favicon-eventos-padelmba-1.png" type="image/x-icon">
+    <link rel="icon" href="https://i.im.ge/2022/09/27/1t6Akf.favicon-eventos-padelmba-1.png" type="image/x-icon">
     <title>Editor Eventos PadelMBA - Backend</title>
     <!-- Include the script that enables Netlify Identity on this page. -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> -->
+    <script src="../admin/js/netlify-identity-widget.js"></script>
   </head>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-
+    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+    
+    <!-- https://answers.netlify.com/t/change-admin-css-to-tweak-a-bit-the-cms-ui-defaults/17835/5 -->
+    <script>CMS.registerPreviewStyle("/admin/admin.css");</script>
     <!-- https://www.netlifycms.org/docs/add-to-your-site/#add-the-netlify-identity-widget -->
     <script>
       if (window.netlifyIdentity) {
@@ -22,6 +27,10 @@
           }
         });
       }
+    </script>
+    <!-- https://www.netlifycms.org/docs/custom-widgets/#registereditorcomponent -->
+    <script src="../admin/js/blocks-editor-netlify.js">
+      // HECHO: Movido la lógica de bloques custom a un fichero externo js para el admin de Netlify Editor
     </script>
   </body>
 </html>

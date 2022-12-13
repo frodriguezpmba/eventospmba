@@ -1,0 +1,104 @@
+{{ define "copy-circuito" }}
+  {{ template "circuito/copy-circuito.html" }}
+{{ end }}
+
+{{ define "faqs-circuito" }}
+  {{ template "circuito/faqs-circuito.html" }}
+{{ end }}
+
+{{ define "listado-circuito" }}
+{{ $data := index site.Data site.Language.Lang }}
+<!-- Listing Torneos Circuito PadelMBA -->
+<section class="section-new-bg pt-4" id="listado-circuito-pmba">
+  <div class="container">
+    <div class="row">
+
+      {{/*  <div class="col-lg-9 second-column" id="torneo-padelmba">  */}}
+      <div class="col-lg-12 second-column" id="torneo-padelmba">
+        {{/*  TODO: Hacer aqui unas tabs mostrar en cada una de ellas, los torneos finalizados/abiertos, prox.... 
+          https://getbootstrap.com/docs/4.4/components/navs/#tabs  */}}
+
+          <nav class="nav sticky-pmba-tabs-circuito nav-tabs flex flex-row" id="nav-tab-circuito" role="tablist">
+              <a class="flex-fill text-center nav-link active" id="abierto-tab" data-toggle="tab" href="#abierto" role="tab" aria-controls="abierto" aria-selected="true">Abiertos</a>
+              <a class="flex-fill text-center nav-link" id="proximo-tab" data-toggle="tab" href="#proximo" role="tab" aria-controls="proximo" aria-selected="false">Próximos</a>
+              <a class="flex-fill text-center nav-link" id="finalizado-tab" data-toggle="tab" href="#finalizado" role="tab" aria-controls="finalizado" aria-selected="false">Finalizados</a>
+          </nav>
+
+          <div class="tab-content" id="nav-tab-circuitos-listado">
+            <div class="tab-pane fade show active" id="abierto" role="tabpanel" aria-labelledby="abierto-tab">
+
+              {{/*  {{ template "circuito/abiertos-circuito.html" }}  */}}
+              {{/*  TAB 1, abiertos  */}}
+              <div class="row">
+                {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "asc" "Type" "circuito") 29 ).PageGroups }}
+                  {{ range .Pages }}
+                  {{/*  NO mostramos los circuitos finalizados asi, por fecha  */}}
+                    {{ if and (not (.Date.Before now)) (eq (.Params.torneo_proximamente) false) }}
+                    <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mt-4">
+                      {{ .Render "circuito" }}
+                      {{/*  Apunta a este template: layouts\_default\circuito.html  */}}
+                    </div>
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+                {{/*  <div class="col-12 mt-5 mb-5">{{ template "_internal/pagination.html" . }}</div>  */}}
+              </div>
+
+            </div>
+
+            {{/*  TAB 2, proximos  */}}
+            <div class="tab-pane fade" id="proximo" role="tabpanel" aria-labelledby="proximo-tab">
+              <div class="row">
+                {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "asc" "Type" "circuito") 29 ).PageGroups }}
+                  {{ range .Pages }}
+                  {{/*  NO mostramos los circuitos finalizados asi, por fecha  */}}
+                  {{ if and (not (.Date.Before now)) (eq (.Params.torneo_proximamente) true) }}
+                  <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mt-4">
+                    {{ .Render "circuito" }}
+                    {{/*  Apunta a este template: layouts\_default\circuito.html  */}}
+                  </div>
+                  {{end}}
+                  {{ end }}
+                {{ end }}
+                {{/*  <div class="col-12 mt-5 mb-5">{{ template "_internal/pagination.html" . }}</div>  */}}
+              </div>
+
+            </div>
+
+            {{/*  TAB 3, finalizado  */}}
+            <div class="tab-pane fade" id="finalizado" role="tabpanel" aria-labelledby="finalizado-tab">
+              <div class="row">
+                {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "desc" "Type" "circuito") 29 ).PageGroups }}
+                  {{ range .Pages }}
+                  {{/*  NO mostramos los circuitos finalizados asi, por fecha  */}}
+                  {{ if and (.Date.Before now) (eq (.Params.torneo_proximamente) false) }}
+                  <div class="col-lg-3 col-md-6 col-sm-6 mb-4 mt-4">
+                    {{ .Render "circuito" }}
+                    {{/*  Apunta a este template: layouts\_default\circuito.html  */}}
+                  </div>
+                  {{end}}
+                  {{ end }}
+                {{ end }}
+                <div class="col-12 mt-5 mb-5">{{ template "_internal/pagination.html" . }}</div>
+              </div>
+
+            </div>
+          </div>
+
+
+        {{/*  https://github.com/gohugoio/hugo/commit/1a94148d062beb6e45d5eeef3447d0308e496718  */}}
+        {{/*  https://digitaldrummerj.me/hugo-view-post-grouped-by-month/  */}}
+        {{/*  Funciona con el GroupByDate  */}}
+        {{/*  {{ range .Data.Pages.GroupByDate "January 2006" "Type" "torneos" }}  */}}
+        {{/*  https://github.com/gohugoio/hugo/issues/6992#issuecomment-713100986  */}}
+        {{/*  https://github.com/gohugoio/hugo/blob/3d5dbdcb1a11b059fc2f93ed6fadb9009bf72673/resources/page/pagegroup_test.go#L290  */}}
+        {{/*  pasando el parametro "asc" a GroupByDate, convertimos como ascendente el filtrado de torneos del circuito  */}}
+        
+      {{/*  TODO: Ponerle al <a href de la pagination #listado-circuito-pmba para que cuando se haga click
+      en la siguiente pagina, se posicione ahí.  */}}
+
+    </div>
+  </div>
+</section>
+<!-- /Torneo -->
+{{ end }}

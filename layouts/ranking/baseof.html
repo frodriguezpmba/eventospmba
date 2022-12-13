@@ -1,10 +1,11 @@
+{{/*  Plantilla (layout) Base para Ranking (misma que torneos)  */}}
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 {{- partial "head.html" . -}}
 <body>
-	{{- partial "preloader-white.html" . -}}
+	{{/*  {{- partial "preloader-white.html" . -}}  */}}
 	{{- partial "header.html" . -}}
-	{{- partial "contacto/page-header-contacto.html" . -}}	
+	{{- partial "ranking/page-header-ranking.html" . -}}	
 	{{- block "ranking" . }}{{- end }}
 	{{- partial "ranking/footer.html" . -}}
 </body>

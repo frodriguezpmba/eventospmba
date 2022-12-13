@@ -37,7 +37,7 @@ genero: "Mixto"
 # Ciudad del Torneo
 ciudad_torneo: "Madrid"
 # Nombre del Torneo
-nombre_torneo: "Torneo Padel Vip"
+nombre_torneo: "Padel Vip"
 # Club nombre del Torneo
 club_nombre_torneo: "Madrid Central Padel"
 # Precio desde del Torneo

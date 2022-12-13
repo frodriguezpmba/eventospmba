@@ -29,7 +29,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="{{ site.BaseURL | relLangURL }}"><img class="img-fluid"
-            src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" width="300px" ></a>
+            src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" width="250px" height="75px"></a>
         <button class="navbar-toggler navbar-light rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -59,10 +59,18 @@
             {{ else }}
             {{/*  Menu active item: https://discourse.gohugo.io/t/another-way-to-make-a-menu-item-active/17029/17  */}}
               {{ $active := eq $.RelPermalink (.URL | relLangURL) }}
-              {{ $active = or $active (eq $.Section (lower .Name)) }}
+              {{ $active = or $active (eq $.Section (replace (lower .URL) "/" "")) }}
+              {{/*  Con la funcion replace, sustituimos el nombre de la sección, tipo de datos, con la URL quitando el caracter "/"
+              https://gohugo.io/functions/replace/  */}}
+              {{/*  {{ $active = or $active (eq $.Section (lower .Name)) }}  */}}
                 <li class="nav-item-menu">
                   <a class="nav-link-menu {{ if $active }}active{{ end }}" title="{{ .Name }} | PadelMBA" href="{{ .URL | absLangURL }}">{{ .Name }}</a>
                 </li>
+                {{/*  Trazas para ver si poner la linea debajo del menu, dependa de la URL del menu, y no del nombre
+                "permalink: "  {{ $.RelPermalink }}
+                "rellang: "    {{ (.URL) }}
+                "section: "    {{ $.Section }}
+                "lower name: " {{ replace (lower .URL) "/" "" }}  */}}
             {{ end }}
             {{ end }}
           </ul>

@@ -120,7 +120,7 @@ a h4{
   &-sm {
     // padding: 25px;
     // padding: 0 25px 25px 25px;
-    padding: 0 45px;
+    padding: 0 50px;
     background-color: #F5F5F5;
 
     @include desktop { padding: 0 20px 25px; }
@@ -322,6 +322,13 @@ a h4{
   @include mobile {padding: 120px 0 80px;}
 }
 
+.page-title-section-circuito {
+  padding: 200px 0 80px;
+
+  @include tablet {padding: 130px 0 40px;}
+  @include mobile {padding: 120px 0 40px;}
+}
+
 .custom-breadcrumb {
   li {
     &.nasted {
@@ -431,20 +438,20 @@ textarea.form-control{
 
     li {
       position: relative;
-      padding-left: 20px;
+      padding-left: 10px;
       margin-bottom: 10px;
-      list-style-type: none;
+      list-style-type: square;
 
-      &::before {
-        position: absolute;
-        content: "\e65d";
-        font-family: $icon-font;
-        font-size: 14px;
-        left: 0;
-        top: 1px;
-        color: $primary-color;
-        transition: .3s ease;
-      }
+      // &::before {
+      //   position: absolute;
+      //   content: "\e65d";
+      //   font-family: $icon-font;
+      //   font-size: 14px;
+      //   left: 0;
+      //   top: 1px;
+      //   color: $primary-color;
+      //   transition: .3s ease;
+      // }
     }
   }
 

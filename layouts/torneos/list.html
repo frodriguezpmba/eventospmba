@@ -16,12 +16,15 @@
 <section class="section-new-bg pt-4">
   <div class="container">
     <div class="row">
-      
-      <div style="display: none;" class="col-lg-3 mt-4 first-column">
+
+      {{/*  {{- block "search" . }}{{- end }}	  */}}
+
+      <div class="col-lg-3 mt-4 first-column">
         {{/*  Filtros:  */}}
+        {{/*  {{- block "torneos" . }}{{- end }}  */}}
 
         {{/*  Busqueda??  */}}
-        {{/*  <input type="search" class="form-control ds-input" id="search-input" placeholder="Buscar Torneo..." aria-label="Buscar por..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">  */}}
+        <input type="search" class="form-control ds-input" id="search-input" placeholder="Buscar Torneo..." aria-label="Buscar por..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" style="position: relative; vertical-align: top;">
 
         <div class="col-md-6 mt-2" data-mdb-filter="size">
           <strong>Categoría</strong>
@@ -84,7 +87,7 @@
 
       </div>
       {{/*  <div class="col-lg-9 second-column" id="torneo-padelmba">  */}}
-      <div class="col-lg-12 second-column" id="torneo-padelmba">
+      <div class="col-lg-9 second-column" id="torneo-padelmba">
         {{/*  https://github.com/gohugoio/hugo/commit/1a94148d062beb6e45d5eeef3447d0308e496718  */}}
         {{/*  https://digitaldrummerj.me/hugo-view-post-grouped-by-month/  */}}
         {{/*  Funciona con el GroupByDate  */}}
@@ -98,7 +101,7 @@
             {{/*  {{ range .Paginator.Pages }}                */}}
             {{ range .Pages }}
             {{/*  <div class="col-lg-4 col-sm-6 mb-4 mt-4">  */}}
-            <div class="col-lg-3 col-sm-6 mb-4 mt-4">
+            <div class="col-lg-4 col-sm-6 mb-4 mt-4">
                 {{ .Render "torneos2" }}
                 {{/*  Apunta a este template --> layouts\_default\torneos2.html  */}}
             </div>

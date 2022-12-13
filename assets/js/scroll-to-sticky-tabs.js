@@ -1,3 +1,42 @@
+
+  // mapboxgl.accessToken = 'pk.eyJ1IjoiZmVsaXBlcG1iYSIsImEiOiJjbGFheXh3dTQwZDFmM3BsbWczZndxb2lpIn0.Wheh275FZEnEH3540LHbpQ';
+  // const map = new mapboxgl.Map({
+  //     container: 'mapapmba', // container ID
+  //     style: 'mapbox://styles/mapbox/streets-v11', // style URL
+  //     center: [-74.5, 40], // starting position [lng, lat]
+  //     zoom: 9, // starting zoom
+  //     projection: 'globe', // display the map as a 3D globe
+  //     //cooperativeGestures: true
+  // });
+
+  // map.addControl(new mapboxgl.FullscreenControl());
+
+  //     map.on('style.load', () => {
+  //       map.setFog({}); // Set the default atmosphere style
+  // });
+
+
+// https://community.algolia.com/instantsearch.js/v2/getting-started.html#initialization
+const search = instantsearch({
+  appId: '9LUJWUPLSY',
+  apiKey: 'e45863830a48d9c34cd158a1c234fa2d',
+  indexName: 'dev_algolia_eventspmba',
+  routing: true
+});
+
+// search.addWidget(
+//   instantsearch.widgets.hits({
+//     container: '#hits'
+//   })
+// );
+
+search.start();
+
+
+// lazy loads elements with default selector as '.lozad'
+const observer = lozad(); 
+observer.observe();
+
 (function ($) {
   'use strict';
 
@@ -17,11 +56,12 @@
   $(document).scroll(function(){
     var distancia_scroll = $(this).scrollTop();
     var distancia_tabs =  $('.sticky-pmba-tabs').offsetHeight;
+    var distancia_tabs_circuito = $('.sticky-pmba-tabs-circuito').offsetHeight;
 
     if (distancia_scroll > 100){
       var altura_menu_superior = document.querySelector(".fixed-top.header").offsetHeight;
       $('.sticky-pmba-tabs').css("top",altura_menu_superior - 1);
-      // $('.sticky-pmba-tabs').css("top",0);
+      $('.sticky-pmba-tabs-circuito').css("top",altura_menu_superior - 1);
     }
     
     // if (distancia_tabs < distancia_scroll){
@@ -29,6 +69,7 @@
     //   $('.fixed-top').css("position","fixed");
     // }
   });
+
 
   // Mostrar/Ocultar tickets boton comprar
   $(document).scroll(function () {
@@ -99,13 +140,27 @@
     });
   });
 
-  //  Scroll to top of tab-pane with a sticky Nav
+  // Efecto click en la Tabs: Scroll to top of tab-pane with a sticky Nav
   // https://stackoverflow.com/a/57337113
+  // Fixed altura exacta de las tabs al hacer click
   $("div#nav-tab > a").click(function() {
+    var menu_altura = document.querySelector("body > header").offsetHeight;
     $([document.documentElement, document.body]).animate({
-        scrollTop: $("#nav-tab-content").offset().top-240
+        //scrollTop: $("#nav-tab-content").offset().top-240
+        scrollTop: $("#nav-tab-content").offset().top-menu_altura-80
     }, 300);
   });
+
+  $("nav#nav-tab-circuito > a").click(function() {
+    var menu_altura = document.querySelector("body > header").offsetHeight;
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#nav-tab-circuitos-listado").offset().top-menu_altura-40
+    }, 300);
+  });
+
+
+
+  
 
   // Change Icon Menu Hamburguer Mobile
   // https://stackoverflow.com/a/28250768

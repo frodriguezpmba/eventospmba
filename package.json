@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "atomic-algolia": "^0.3.19",
+    "jquery-sticky-bootstrap-tabs": "^1.2.6"
+  },
+  "scripts": {
+    "algolia": "atomic-algolia"
+  }
+}

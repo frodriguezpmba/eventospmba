@@ -1,0 +1,13 @@
+<!-- page title ranking -->
+<section class="page-title-section overlay" style="background:linear-gradient(107.47deg, hsl(192deg 100% 28% / 80%) 1.16%, #141414 100%), url('{{ .Params.Bg_image | relURL}}');background-position: center center; background-repeat: no-repeat; background-size: cover; {{ if .Params.torneo_suspendido }}filter: grayscale(100%);{{ end }}">
+  <div class="container header">
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="list-inline custom-breadcrumb">
+          <h1 class="list-inline-item text-white"><i style="font-size: 40px" class="ti-award2 text-white"></i> {{ .Title }}</h1>
+        </ul>
+        <p class="text-white">{{ .Params.Description | markdownify }}</p>
+      </div>
+    </div>
+  </div>
+</section>

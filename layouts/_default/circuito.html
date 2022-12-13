@@ -1,0 +1,63 @@
+{{/*  https://github.com/gohugoio/hugoDocs/commit/07f49875567e38bd6209b311615bfda6e8cb6242  */}}
+{{/*  https://gohugo.io/functions/cond/  */}}
+{{ $enlace_circuito := cond (eq (.Params.torneo_proximamente) true) "#" .Permalink }}
+{{ $proximamente := .Params.torneo_proximamente }}
+
+
+<div class="card border-1 sombra-rounded">
+  {{ if $proximamente }}
+  <div style="filter:brightness(0.4)" class="card-img border-imagen-torneo position-relative">
+  {{else}}
+  <div class="card-img border-imagen-torneo position-relative">
+    {{/*  <a href="{{ $enlace_circuito }}" title="{{ .Title }}"></a>  */}}
+  {{end}}
+    <a href="{{ $enlace_circuito }}" title="{{ .Title }}">
+        {{/*  Se pone en gris la imagen SI la fecha ya es pasado, es decir, circuito cerrado/finalizado  */}}
+        {{ if .Date.Before now }}
+          <div style="filter:grayscale(1);" class="border-imagen-torneo imagen-torneo">
+            <img src="{{ .Params.imagen_torneo_bottom | relURL }}" alt="logo club torneo circuito" class="imagen-torneo-bottom" />
+          </div>
+        {{ else }}
+            <div class="border-imagen-torneo imagen-torneo">
+              <img src="{{ .Params.imagen_torneo_bottom | relURL }}" alt="logo club torneo circuito" class="imagen-torneo-bottom" />
+            </div>
+        {{ end }}
+    {{/*  {{ if not (eq $proximamente false) }}</a>{{end}}  */}}
+    {{/*  https://discourse.gohugo.io/t/dates-only-in-english/1317/4  */}}
+    {{/*  Compare time in Hugo -> https://gohugohq.com/howto/compare-date-strings-in-hugo/  */}}
+    <div class="card-date2"><span class="date-day">{{ .Date.Day }}</span><br />{{ .Date.Format "Jan" }}.</div>
+    <div class="genero-torneo {{ .Params.genero | lower }}">{{ .Params.genero }}</div>    
+  </div> 
+  <div class="card-body">
+    <!-- Marcar el evento como finalizado automaticamente cuando llegue la fecha -->
+    {{ if .Params.torneo_suspendido }}
+      <div class="pmba-circuito suspendido">&times; Suspendido</div>
+    {{ else }}
+      {{ if .Date.Before now }}
+        <div class="pmba-circuito cerrado">&times; Cerrado</div>
+      {{else}}
+        {{ if $proximamente }}
+        <div class="pmba-circuito suspendido">&empty; Próximamente</div>
+        {{ else }}
+          <div class="pmba-circuito abierto">&check; Abierto</div>
+        {{ end }}
+      {{end}}
+    {{end}}
+
+    <!-- location -->
+    <p><i class="ti-location-full text-primary mr-2"></i>{{ .Params.ciudad_torneo | markdownify }}</p>
+    <a href="{{ $enlace_circuito }}" title="{{ .Title }}"><span class="card-title">Torneo PadelMBA <br />by {{ .Params.nombre_torneo }}</span></a>
+    <div class="mb-5 mt-2">{{ .Params.club_nombre_torneo | title }}</div>
+
+    {{/*  Si el circuito se celebra próximamente, no se pone el precio desde, ni el boton del enlace al circuito  */}}
+    {{ if not ($proximamente) }}
+    <a href="{{ $enlace_circuito }}" title="{{ .Title }}"><button type="button" class="btn btn-outline-primary btn-sm">Ver detalles</button></a>
+      <div class="show-precio-torneo">
+        <div>Desde:</div>
+        <div class="precio-torneo">{{ .Params.precio_desde_torneo }} &euro;</div>
+      </div>
+    {{ else }}
+      <button type="button" class="btn btn-outline-primary btn-sm">Próximamente...</button>
+    {{ end }}
+  </div>
+</div>

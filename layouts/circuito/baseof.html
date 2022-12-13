@@ -1,0 +1,18 @@
+{{/*  Plantilla (layout) Base para TORNEOS  */}}
+<!DOCTYPE html>
+<html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+{{- partial "torneos/head.html" . -}}
+<body>
+	{{/*  {{- partial "preloader-white.html" . -}}  */}}
+	{{- partial "header.html" . -}}
+	{{- partial "circuito/page-header-circuito.html" . -}}
+	{{/*  Se apoya en los bloques --> layouts\circuito\list.html  */}}
+	{{- block "copy-circuito" . }}{{- end }}
+	{{- block "faqs-circuito" . }}{{- end }}
+	{{/*  Engloba el layouts\circuito\list.html, layouts\circuito\single.html
+		Tiene que ser este mismo nombre para el BLOCK  */}}
+	{{- block "listado-circuito" . }}{{- end }}
+	{{/*  {{- block "circuito" . }}{{- end }}  */}}
+	{{- partial "circuito/footer2.html" . -}}
+</body>
+</html>

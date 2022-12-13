@@ -5,7 +5,7 @@
   </div>
   <div class="card-body">
     <!-- location -->
-    <p><i class="ti-location-pin text-primary mr-2"></i>{{ .Params.Location | markdownify }}</p>
-    <h4 class="card-title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h4>
+    <p><i class="ti-location-pin text-primary mr-2"></i>{{ .Params.club_nombre_torneo | title }} ({{ .Params.ciudad_torneo | title }})</p>
+    <span class="card-title"><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></span>
   </div>
 </div>

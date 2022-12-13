@@ -5,7 +5,7 @@
         {{/*  Nos recorremos la carpeta externa buscando imágenes de los patrocinadores y listo  */}}
         {{/*  {{ range $index, $slide := .Resources.ByType "image" }}  */}}
         {{ range $index, $slide := .Resources.Match "patrocinadores/*" }}
-        <li id="c10_slide{{ add $index 1}}">        
+        <li id="patrocinador_slide{{ add $index 1}}">        
           <img src="{{ .RelPermalink }}" alt="imagen patrocinador {{ $index }}" />
         </li>
         {{ end }}      
@@ -14,7 +14,7 @@
       {{/*  {{ range $index, $slide := .Resources.ByType "image" }}  */}}
       {{ range $index, $slide := .Resources.Match "patrocinadores/*" }}
         {{/*  {{if gt $index 1}}  */}}
-          <li><a href="#c10_slide{{ add $index 1 }}"></a></li>
+          <li><a aria-label="patrocinador_slide{{ add $index 1 }}" href="#patrocinador_slide{{ add $index 1 }}"></a></li>
         {{/*  {{end}}  */}}
       {{ end }}
     </ol>

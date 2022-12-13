@@ -33,7 +33,7 @@ genero: "Masculino"
 # Ciudad del Torneo
 ciudad_torneo: "Madrid"
 # Nombre del Torneo
-nombre_torneo: "Torneo Monkey Padel"
+nombre_torneo: "Monkey Padel"
 # Club nombre del Torneo
 club_nombre_torneo: "Seven Padel"
 # Precio desde del Torneo

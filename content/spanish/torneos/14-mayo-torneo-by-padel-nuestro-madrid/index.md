@@ -33,7 +33,7 @@ genero: "Femenino"
 # Ciudad del Torneo
 ciudad_torneo: "Rivas Vaciamadrid"
 # Nombre del Torneo
-nombre_torneo: "Torneo Padel Nuestro"
+nombre_torneo: "Padel Nuestro"
 # Club nombre del Torneo
 club_nombre_torneo: "Padel Training"
 # Precio desde del Torneo

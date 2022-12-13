@@ -4,6 +4,8 @@ title: "Torneos de Pádel | PadelMBA"
 # meta description
 description : "Encuentra tu torneo de pádel e inscríbete, por participar podrás entrar en sorteos y premios. ¡Haz tu inscripción! PadelMBA, líder en formación y eventos de pádel online."
 draft: false
+# Imagen del Background Torneos PadelMBA
+bg_image: "images/backgrounds/torneos-padelmba.jpg"
 # layout: torneos
 ---
 

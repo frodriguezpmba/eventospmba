@@ -33,7 +33,7 @@ genero: "Mixto"
 # Ciudad del Torneo
 ciudad_torneo: "Valladolid"
 # Nombre del Torneo
-nombre_torneo: "Torneo Padel Nuestro"
+nombre_torneo: "Padel Nuestro"
 # Club nombre del Torneo
 club_nombre_torneo: "Club Vip Padel"
 # Precio desde del Torneo

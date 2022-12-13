@@ -29,14 +29,26 @@ enableRobotsTXT = false
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
 link = "plugins/slick/slick.css"
-[[params.plugins.css]]
-link = "plugins/animate/animate.css"
+# [[params.plugins.css]]
+# link = "plugins/animate/animate.css"
 [[params.plugins.css]]
 link = "plugins/venobox/venobox.css"
 [[params.plugins.css]] # https://swiperjs.com/get-started#use-swiper-from-cdn
 link = "plugins/swiper/swiper-bundle.min.css"
 [[params.plugins.css]] # custom icons for events.padelmba.com
 link = "plugins/events-padelmba-icons/style.css"
+# InstantSearch CSS plugin
+[[params.plugins.css]]
+link = "plugins/instantsearch/instantsearch.min.css"
+# default Algolia theme for the widgets to be effectively styled 
+[[params.plugins.css]]
+link = "plugins/instantsearch/instantsearch-theme-algolia.min.css"
+
+# CSS custom plugin for Icons PadelMBA
+[[params.icons.css]]
+link = "plugins/events-padelmba-icons/style.css"
+# [[params.plugins.css]] # custom icons for events.padelmba.com
+# link = "plugins/mapbox/mapbox-gl.css"
 # [[params.plugins.css]] # carrusel fotos patrocinadores
 # link = "plugins/carousel/carousel.css"
 # [[params.plugins.css]]
@@ -59,6 +71,11 @@ link = "plugins/venobox/venobox.min.js"
 link = "plugins/carousel/carousel.js"
 [[params.plugins.js]] # https://swiperjs.com/get-started#use-swiper-from-cdn
 link = "plugins/swiper/swiper-bundle.min.js"
+# InstantSearch JS plugin
+[[params.plugins.js]]
+link = "plugins/instantsearch/instantsearch.js"
+# [[params.plugins.js]] # https://docs.mapbox.com/mapbox-gl-js/guides/install/
+# link = "plugins/mapbox/mapbox-gl.js"
 # [[params.plugins.js]]
 # link = "plugins/google-map/gmap.js"
 
@@ -67,7 +84,7 @@ link = "plugins/swiper/swiper-bundle.min.js"
 [params]
 noindex = true
 ### Contacto email y movil fijo de PadelMBA Eventos (Aguado)
-contacto_email_eventos = "aguado@padelmba.com"
+contacto_email_eventos = "eventos@padelmba.com"
 contacto_wasap_eventos = "608545790"
 # Logotipo
 logo = "images/logo-padelmba-eventos-2022.svg"
@@ -151,8 +168,26 @@ contentDir = "content/spanish"
 weight = 1
 # home = "Inicio"
 # copyright
-copyright = "Events PadelMBA &copy; | Todos los derechos reservados."
+copyright = "Eventos PadelMBA &copy; | Todos los derechos reservados."
 
+#### Algolia Generate Search Index for this ####
+# https://forestry.io/blog/search-with-algolia-in-hugo/#2-generating-your-search-index
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params.algolia]
+# vars = ["title", "description", "date", "publishdate", "permalink"]
+vars = ["title", "date", "permalink"]
+params = ["categorias", "etiquetas", "type", "horario", "nombre_torneo", "club_nombre_torneo", "ciudad_torneo", "precio_desde_torneo", "genero", "imagen_torneo_bottom"]
+
+
+[outputs]
+home = ["HTML", "RSS", "JSON", "Algolia"]
+# page = ["HTML", "RSS", "JSON", "Algolia"]
+torneo = ["HTML", "RSS", "JSON", "Algolia"]
 
 ################### Spanish navigation ####################
 
@@ -170,20 +205,27 @@ weight = 2
 
 [[Languages.es.menu.main]]
 lang = "es"
-name = "Clinics y MasterClass"
-url = "#"
+name = "Circuito PadelMBA"
+url = "circuito/"
 weight = 3
 
 [[Languages.es.menu.main]]
 lang = "es"
-name = "Campus de Competición"
-url = "#"
-weight = 4
-
-[[Languages.es.menu.main]]
 name = "Ranking"
 url = "ranking/"
-weight = 6
+weight = 4
+
+# [[Languages.es.menu.main]]
+# lang = "es"
+# name = "Clinics y MasterClass"
+# url = "#"
+# weight = 3
+
+# [[Languages.es.menu.main]]
+# lang = "es"
+# name = "Campus de Competición"
+# url = "#"
+# weight = 4
 
 
 ################################### English language #####################################

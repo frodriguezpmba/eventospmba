@@ -7,8 +7,6 @@
     <div class="container header">
       <div class="row">
         <div class="col-md-12">
-          <ul class="list-inline custom-breadcrumb">
-            
             {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
             {{if ne .RelPermalink "/torneos/" }}
               <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Torneo PadelMBA by {{.Params.nombre_torneo}}:
@@ -20,8 +18,7 @@
             {{else}}
               <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Listado de Torneos PadelMBA</h1>
             {{ end }}
-            
-          </ul>
+          
           {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
           {{if ne .RelPermalink "/torneos/" }}
             <p class="text-white mb-4 subtitle">Torneo de pádel realizado en {{.Params.club_nombre_torneo}} ({{.Params.ciudad_torneo}}), by {{.Params.nombre_torneo}}.

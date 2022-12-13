@@ -1,0 +1,71 @@
+<!-- page title -->
+{{ $imagen_fondo := .Params.Bg_image | relURL }}
+<section class="page-title-section-circuito overlay" style="background:linear-gradient(107.47deg, hsl(192deg 100% 28% / 80%) 1.16%, #141414 100%), url('{{ $imagen_fondo }}'); background-position: center center; background-repeat: no-repeat; background-size: cover; {{ if .Params.torneo_suspendido }}filter: grayscale(100%);{{ end }}">
+
+  {{/*  antiguo felipe--> linear-gradient(0deg, rgba(0, 0, 0, 100%), rgba(0, 114, 143, 70%))  */}}
+  {{/*  linear-gradient(107.47deg, #007591 1.16%, #141414 100%)  */}}
+
+    <div class="container header">
+      <div class="row">
+        <div class="col-md-12">
+            {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
+            {{if ne .RelPermalink "/circuito/" }}
+              <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Torneo PadelMBA by {{.Params.nombre_torneo}}:
+              <span class="date-tournament-pmba">{{ .Date | time.Format "Monday" }}, {{ .Date.Day }} de {{ index .Site.Data.es.months (.Date.Format "1") | lower }} - {{ .Params.ciudad_torneo }}</span></h1>
+              {{/*  https://mertbakir.gitlab.io/hugo/convert-dates-into-your-language/  */}}
+              {{/*  {{ .Date | time.Format ":date_full" }}  */}}    
+              
+              {{/* span inside h1 sin problema -> https://webmasters.stackexchange.com/questions/6990/seo-of-span-in-h1-header  */}}
+            {{else}}
+              <h1 class="custom-h1-header-pmba text-white mb-4"><i class="ti-cup text-white mr-4"></i>Circuito de PadelMBA - 2022/2023: Temporada Octubre 2022 - Junio 2023</h1>
+            {{ end }}
+          
+          {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
+          {{if ne .RelPermalink "/circuito/" }}
+            <p class="text-white mb-4 subtitle">Torneo de pádel realizado en {{.Params.club_nombre_torneo}} ({{.Params.ciudad_torneo}}), by {{.Params.nombre_torneo}}.
+            Organizado gracias a PadelMBA, lider en formacion online de pádel.
+            ¡Inscríbete! El evento incluye sorteos y catering.</p>
+          {{ end }}
+
+          {{/*  {{.CurrentSection}} <br />
+          {{.FirstSection}}<br />
+          {{.Section}} <br />
+          {{.IsSection}} <br />
+          {{.Parent}} <br />
+          {{.Kind}} <br />
+          {{.Name}} <br />
+          {{.Permalink}} <br />  */}}
+
+          {{/*  eq .Permalink (.Permalink | relLangURL)  */}}
+          
+
+
+          {{/*  {{if ne .RelPermalink "/es/torneos/" }}  */}}
+          {{if ne .RelPermalink "/circuito/" }}
+          {{/*  {{ if ne .Section "torneos" }}  */}}
+          <div class="text-state-pmba">
+          {{/*  {{ $active := eq $.RelPermalink (.URL | relLangURL) }}
+          {{ $active = or $active (eq $.Section (lower .Name)) }}
+          {{ if not $active }}  */}}
+          
+            {{ if .Params.torneo_suspendido }}
+              <span class="pmba-circuito-suspendido">&times; Suspendido</span>
+            {{ else }}
+              {{ if .Date.Before now }}
+                <span class="pmba-circuito-cerrado">&times; Cerrado</span>
+              {{else}}
+                <span class="pmba-circuito-abierto">&check; Abierto</span>
+              {{end}}
+            {{end}}
+          
+
+          {{/*  {{ end }}  */}}
+
+          </div>
+
+          {{end}}
+
+        </div>
+      </div>
+    </div>
+</section>

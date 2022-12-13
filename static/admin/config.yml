@@ -1,35 +1,119 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
+  ## Set to false to prevent transforming images in media gallery view
+  # use_large_media_transforms_in_media_library: false
   # name: github
   # repo: frodriguezpmba/eventospmba/ # Path to your GitHub repository
 
 # when using the default proxy server port
 local_backend: true
-  # when using a custom proxy server port
-  # url: http://localhost:1313/admin/
-media_folder: "static/imgages/torneos/uploads"
-public_folder: "/images/uploads"
+  # when using a custom proxy server port --> https://answers.netlify.com/t/getting-netlify-cms-to-work-with-local-backend/14851/5
+  # loca_backend:
+  # url: http://localhost:1313/admin/api/v1
+# https://www.netlifycms.org/docs/configuration-options/#custom-logo
+logo_url: https://eventospmba.netlify.app/images/logo-padelmba-eventos-2022.svg
+locale: 'es' # https://www.netlifycms.org/docs/configuration-options/#locale
+# https://www.netlifycms.org/docs/configuration-options/#site-url
+# site_url: https://eventospmba.netlify.app/
+site_url: http://localhost:1313/
+# https://www.netlifycms.org/docs/configuration-options/#display-url
+display_url: https://eventospmba.netlify.app/
+# https://www.netlifycms.org/docs/configuration-options/#media-and-public-folders
+# https://answers.netlify.com/t/getting-the-collection-media-folder-and-public-folder-to-work/26955/15
+# media_folder tells the CMS where to put media files in the repo
+media_folder: "static/images/torneos/uploads" 
+# public_folder tells the CMS what value to use in the markdown. This is later used by Gatsby to read the media file from the file system.
+public_folder: "/images/torneos/uploads"
+# https://www.netlifycms.org/docs/configuration-options/#publish-mode
+# publish_mode: editorial_workflow
+# https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
   - name: "torneos"
-    label: "Torneos"
+    label: "Torneos by PadelMBA"
+    label_singular: "Torneo" # Used in the UI, ie: "New Post"
+    description: "Introducción de datos asociados a un nuevo Torneo de PadelMBA"
     folder: "content/spanish/torneos"
     create: true
+    # adding a nested object will show the collection folder structure
+    # https://www.netlifycms.org/docs/beta-features/#nested-collections
+    # nested:
+    #   depth: 100 # max depth to show in the collection tree
+    #   summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    # i18n: true
     slug: "{{slug}}"
+    filter: {field: "language", value: "en"}
+    delete: false # Prevent users from deleting documents in this collection
+    extension: markdown # https://www.netlifycms.org/docs/configuration-options/#extension-and-format
+    publish_mode: editorial_workflow
+    media_folder: ''
+    public_folder: ''
     editor:
       preview: false
+    # use dot notation for nested fields
+    # https://www.netlifycms.org/docs/configuration-options/#sortable_fields
+    sortable_fields: ['commit_date', 'title', 'commit_author', 'language.es']
     fields:
+    # Los 'name' son las variables del frontmatter del .md
+    # https://www.netlifycms.org/docs/widgets/#default-widgets
+      - { label: "Borrador", name: "draft", widget: "boolean", default: true, hint: "Torneo seleccionado como borrador por defecto. Click para desactivarlo"}
+      - { label: "¿ Torneo suspendido ?", name: "torneo_suspendido", widget: "boolean", default: false, hint: "Activa esta casilla si el Torneo se suspende. (Nota: desactivado por defecto, es decir, no suspendido por defecto)"}
       - { label: "Layout", name: "layout", widget: "hidden", default: "torneos" }
-      - { label: "Fecha del Torneo", name: "fecha", widget: "datetime" }
-      - { label: "Horario del Torneo", name: "horario", widget: "string" }
-      - { label: "Imagen fondo del Torneo", name: "imagen_fondo_torneo", widget: "image" }
-      - { label: "Ficha de Imagen del Torneo (top)", name: "ficha_imagen_torneo_top", widget: "image" }
-      - { label: "Ficha de Imagen del Torneo (bottom)", name: "ficha_imagen_torneo_bottom", widget: "image" }
-      - { label: "Club del Torneo", name: "club_torneo", widget: "string" }
-      - { label: "Contacto Wasap del Torneo", name: "wasap_torneo", widget: "string" }
-      - { label: "Contacto Email del Torneo", name: "email_torneo", widget: "string" }
-      - { label: "Ids de formulario de Weemss", name: "id_weemss", widget: "number" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Titulo (SEO)", name: "title", widget: "string", hint: "Introduce un titulo SEO (min. 55 caracteres y max. 65 caracteres)", pattern: ['.{55,}', 'Longitud de Titulo entre 55 caracteres y 65 caracteres'] }
+      # - { label: "Location", name: "location_map", widget: "map" }
+      - { label: "Descripcion (SEO)", name: "description", widget: "string", hint: "Introduce una descripcion SEO entre 150-155 caracteres", pattern: ['.{150,}', 'Longitud de Description entre 150-155 caracteres']}
+      - { label: "Fecha del Torneo", name: "date", widget: "datetime", date_format: "DD.MM.YYYY", time_format: false, hint: "Selecciona la fecha de cuando se realiza el Torneo" }
+      # - { label: "Horario comienzo del Torneo", name: "horario", widget: "string", hint: "Selecciona el horario de comienzo del Torneo"}
+      # - { label: "Horario finalización del Torneo", required: false, name: "horario_salida", widget: "string", hint: "Selecciona el horario de finalización del Torneo" }
+      - { label: "Horario comienzo del Torneo", name: "horario", widget: "datetime", date_format: false, time_format: "HH:mm", format: "HH:mm", hint: "Selecciona el horario de comienzo del Torneo"}
+      - { label: "Horario finalización del Torneo", required: false, name: "horario_salida", widget: "datetime", default: "", date_format: false, time_format: "HH:mm", format: "HH:mm", hint: "Selecciona el horario de finalización del Torneo" }
+      - { label: "Logo del Club en Blanco (Listado general)", name: "imagen_torneo_bottom", widget: "image", hint: "Sube o selecciona una imagen del Club con logo en blanco (para mostrarse bien en el listado de torneos)" }
+      - { label: "Logo del Club a Color (Sidebar derecho)", name: "imagen_club_torneo", widget: "image", hint: "Sube o selecciona una imagen del Club con las letras del logo a COLOR (sidebar derecho)" }
+      - { label: "Imagen del Background Pistas del Club", name: "bg_image", widget: "image", hint: "Sube o selecciona una una imagen de fondo del Club donde se celebra el Torneo" }
+      - { label: "URL Google Maps del Club (url corta)", name: "location_url", widget: "string", hint: "URL corta de Google Maps de esa direccion. Ej: https://g.page/madridcentralpadel" }
+      # Poner mejor para escribir nombre del club, no URL como tal mientras tanto se hace la cuota de Google Maps.
+      - { label: "Nombre del Torneo", name: "nombre_torneo", widget: "string", hint: "Escribe el nombre que tiene este Torneo. Ej: Torneo by PadelVip" }
+      # Hacer un listado de los clubs por nombre, y si hay uno nuevo, lo añado yo y listo.
+      - { label: "Nombre del Club del Torneo", name: "club_nombre_torneo", widget: "string" }
+      - { label: "Ciudad del Torneo", name: "ciudad_torneo", widget: "string", hint: "Escribe la ciudad donde se realiza este Torneo" }
+      - { label: "Precio del Torneo", name: "precio_desde_torneo", widget: "number", value_type: "int", step: 1, min: 20, max: 150}
+      - { label: "Genero del Torneo (LISTADO)", name: "genero_list", widget: "select", options: ["masculino", "femenino", "mixto"] }
+      # Aqui usar mejor el listado los 3 valores válidos (masculino, femenino, mixto) https://www.netlifycms.org/docs/widgets/#select
+      # - { label: "Genero del Torneo", name: "genero", widget: "string" }
+      - { label: "Contacto Wasap del Torneo", required: false, name: "contacto_wasap", widget: "string" }
+      - { label: "Contacto Email del Torneo", required: false, name: "contacto_email", widget: "string" }
+      - { label: "PadelManager ID del Torneo", name: "padelmanager_id", widget: "number" }
+      # Enlace QR del Torneo a PadelManager (construido por url + url de la imagen del qr)
+      - { label: "URL del QR del torneo al que se apunta en padelmanager", required: false, name: "qr_torneo_padelmanager", widget: "string", hint: "Introduce la URL del codigo QR del torneo que apunta al torneo en padelmanager (ej: padelmanager.com/app-link/tournament/numero_torneo/) Ejemplo QR: me-qr.com/ABCDEfgh" }
+      - { label: "Imagen del QR del torneo al que se apunta en padelmanager", required: false, name: "qr_torneo_padelmanager_imagen_url", widget: "string", hint: "Introduce la URL de la imagen del codigo QR. Ejemplo: cdn.me-qr.com/qr/abcdefgh.png" }
+
+      # TODO: Hacer que en la seccion de PATROCINADORES, se puedan incluir, subir y/o seleccionar imágenes de los mismos, para que
+      # se pongan en la carpeta de content\spanish\torneos\nombre_path_torneo\patrocinadores
+      # DE ESTA FORMA, se pintan automáticamente todos los patrocinadores asociados al torneo
+
+      # TODO: Hacer un widget de tipo listado para construir de otra forma las tabs:
+      # https://www.netlifycms.org/docs/widgets/#list
+      - label: "Contenido del Torneo (Tabs develop.)"
+        name: "tabs_torneos_body"
+        widget: "list"
+        fields:
+          - { label: "Nombre", name: "nombre_tab", widget: "string" }          
+          - { label: "Apellidos", name: "apellidos_tab", widget: "string" }
+          - { label: "Contenido body markdown", name: "contenido_tab", widget: "markdown" }
+
+
+      # Aqui, es la seccion del documento, donde tengo que construir el cuerpo con los widgets + tabs + shortcodes
+      # De momento, funciona bien e inserta desde el editor de markdown, el shortcode llamado "tabs-pmba"
+      - { label: "TABs del Torneo", name: "body", widget: "markdown", hint: "Contenido del Torneo dentro de las tabs. Insertar shortcode de Tab para construir la informacion relevante a cada sección." }
+    # https://www.netlifycms.org/docs/configuration-options/#view_groups
+    view_groups:
+      - label: Año
+        field: date
+        pattern: \d{4}
+      - label: Borradores
+        field: draft
+    comment: 'Rellena los datos requeridos del Torneo, gracias.'
+# https://www.netlifycms.org/docs/beta-features/#i18n-support
 i18n:
   # Required and can be one of multiple_folders, multiple_files or single_file
   # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`

@@ -50,8 +50,8 @@
 
     <!-- location -->
     <p><i class="ti-location-full text-primary mr-2"></i>{{ .Params.ciudad_torneo | markdownify }}</p>
-    <a href="{{ .Permalink }}" title="{{ .Title }}"><h4 class="card-title">{{ .Params.nombre_torneo }}</h4></a>
-    <div class="mb-5 mt-2">{{ .Params.club_nombre_torneo }}</div>
+    <a href="{{ .Permalink }}" title="{{ .Title }}"><span class="card-title">Torneo {{ .Params.nombre_torneo }}</span></a>
+    <div class="mb-5 mt-2">{{ .Params.club_nombre_torneo | title }}</div>
 
     <a href="{{ .Permalink }}" title="{{ .Title }}"><button type="button" class="btn btn-outline-primary btn-sm">Ver detalles</button></a>
 

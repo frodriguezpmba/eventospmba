@@ -1,5 +1,5 @@
 /*  typography */
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,600');
+@import url('https://fonts.bunny.net/css?family=montserrat:300,600&display=swap');
 
 html { 
   scroll-behavior: smooth;
@@ -28,7 +28,8 @@ p, .paragraph {
   font-size: $size_text_p;
   line-height: 1.9;
   font-family: $primary-font;
-  white-space: pre-wrap;
+  // white-space: pre-wrap;
+  white-space: inherit;
   text-align: justify;
 }
 

@@ -7,9 +7,10 @@
   {{ if site.Params.noindex }}
     <meta name="robots" content="noindex" /> 
   {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <meta name="description"
     content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
   {{ with site.Params.author }}

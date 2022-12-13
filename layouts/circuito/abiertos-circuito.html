@@ -1,0 +1,16 @@
+Hola layout de tab de Abiertos!! No renderiza bien el paginate... :(
+
+<div class="row">
+  {{ range (.Paginate (.Data.Pages.GroupByDate "January 2006" "asc" "Type" "circuito") 15 ).PageGroups }}
+    {{ range .Pages }}
+    {{/*  NO mostramos los circuitos finalizados asi, por fecha  */}}
+		{{/*  {{ if not (.Date.Before now) }}  */}}
+    <div class="col-lg-3 col-sm-6 mb-4 mt-4">
+      {{ .Render "circuito" }}
+      {{/*  Apunta a este template: layouts\_default\circuito.html  */}}
+    </div>
+    {{/*  {{end}}  */}}
+    {{ end }}
+  {{ end }}
+  <div class="col-12 mt-5 mb-5">{{ template "_internal/pagination.html" . }}</div>
+</div>

@@ -44,7 +44,7 @@
                 <div class="item-date-pmba">
                   <i class="ti-calendar text-negro icon-sd mr-2"></i>
                   <div class="item-date-pmba2">
-                    <h6 class="mb-0">{{ i18n "date" | upper}}</h6>
+                    <p class="mb-0">{{ i18n "date" | upper}}</p>
                     <p class="mb-0">{{ .Date | time.Format ":date_short" }}</p>
                   </div>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="item-date-pmba">
                   <i class="ti-clock text-negro icon-sd mr-2"></i>
                   <div class="item-date-pmba2">
-                    <h6 class="mb-0">{{ i18n "time" | upper }}</h6>                    
+                    <p class="mb-0">{{ i18n "time" | upper }}</p>                    
                     <p class="horario-torneo mb-0">{{ .Params.horario }}<br />{{ .Params.horario_salida }}</p>
                   </div>
                 </div>
@@ -87,11 +87,23 @@
               </div>
             </div>
 
-            <div class="mapa mt-3">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.1978504373187!2d-3.589175884106173!3d40.40446757936652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42254e6ff95af9%3A0x36e60066afb7a045!2sMadrid%20Central%20Padel!5e0!3m2!1ses!2ses!4v1658909949012!5m2!1ses!2ses" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {{/*  TODO: Solucionar el iframe de google maps (o hacerlo con openstreetsmaps)  */}}
+            <div id="mapa" class="mapa mt-3">
+                {{/*  Nombre gMaps --> {{ replace .Params.nombre_gmaps " " "+" }}
+                Nombre gMaps --> {{ replace .Params.nombre_gmaps " " "%20" }}  */}}
+                {{/*  Funciona bien, pero hace que cargue net::ERR_BLOCKED_BY_CLIENT etc de Google Maps al no usar la API suya  */}}
+                {{/*  <iframe src="{{ .Params.enlace_club_gmaps | safeURL }}" width="300" height="200" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" style="border:0;" ></iframe>  */}}
+                {{/*  {{ $club_gmaps = replace .Params.nombre_gmaps " " "%20" }}  */}}
+                <iframe title="Mapa ubicacion {{ .Params.club_nombre_torneo | lower }}" src="https://maps.google.com/maps?q={{ .Params.club_nombre_torneo | title }}&t=&z=14&ie=UTF8&iwloc=&output=embed" width="300" height="200" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" style="border:0;" ></iframe>
+
             </div>
 
-            <p class="mb-0"><a title="Como llegar al club de {{ .Params.Location }}" href="{{ .Params.location_url | safeURL }}" target="_blank" rel="noopener">¿Cómo llegar al club?</a></p>
+            {{/*  TODO: Rehaciendo el mapa usando MapBox https://docs.mapbox.com/mapbox-gl-js/example/simple-map/  */}}
+            {{/*  <div id="mapapmba" class="mapa mt-3" style='width: 300px; height: 200px;'></div>  */}}
+
+            {{/*  <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/search?q=Madrid%20Central%20Padel&key=..."></iframe>   */}}
+
+            <p class="mb-0"><a title="Indicaciones de como llegar al club {{ .Params.club_nombre_torneo | title }} ({{ .Params.ciudad_torneo }})" href="{{ .Params.location_url | safeURL }}" target="_blank" rel="noopener">¿Cómo llegar al club?</a></p>
 
             {{/*  BOTON abajo del mapa Figma  */}}
             {{/*  <a href="#" class="btn btn-primary btn-lg mt-3" role="button" aria-pressed="true">Comprar Inscripciones</a>  */}}
@@ -148,8 +160,8 @@
         </div>
 
         <!-- seccion contacto del torneo -->
-        <div class="align-items-center text-center">
-          <h5 id="necesitas-más-información">¿Necesitas más información?</h5>
+        <div class="align-items-center text-center more-info">
+          <p id="necesitas-más-información">¿Necesitas más información?</p>
           <p class="align-items-center text-center mb-1"><i class="ti-mail"></i> <a title="Email sobre {{ .Title }}" href="mailto:{{ if .Params.contacto_email}}{{ .Params.contacto_email }} {{else}}{{.Site.Params.contacto_email_eventos}}{{end}}">{{ if .Params.contacto_email}} {{ .Params.contacto_email }} {{else}}{{.Site.Params.contacto_email_eventos}}{{end}}</a></p>
           <p class="align-items-center text-center mb-1"><a title="Whatsapp sobre {{ .Title }}" href="https://wa.me/34{{ if .Params.contacto_wasap }}{{ .Params.contacto_wasap }}{{else}}{{.Site.Params.contacto_wasap_eventos}}{{end}}?text=Duda%20del%20{{ .Title }}"><i class="ti-whatsapp"></i> +34 {{ if .Params.contacto_wasap }} {{ .Params.contacto_wasap }} {{else}}{{.Site.Params.contacto_wasap_eventos}}{{end}}</a></p>
 
@@ -161,8 +173,8 @@
 
         <!-- Compartir en redes el torneo -->
         <div class="border-top mt-3 mb-3 border-secondary"></div>
-        <div class="align-items-center text-center">
-          <h5 id="comparte-torneo">Comparte este torneo</h5>
+        <div class="align-items-center text-center more-info">
+          <p id="comparte-torneo">Comparte este torneo</p>
           {{- partial "torneos/share-buttons.html" . -}}
         </div>
 
@@ -217,7 +229,7 @@
   <div class="stack-padel-manager">
     <img class="logo-padel-manager" src="/images/torneos/logo/padel-manager/padel-manager-logo.svg" alt="padel manager logo" />
     <div class="stack-padel-manager2 ml-4">
-      <h3 id="sigue-tu-partido-en-directo">Sigue tu partido en directo</h3>
+      <p id="sigue-tu-partido-en-directo">Sigue tu partido en directo</p>
       <p class="text-padel-manager">Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder conocer a tus contrincantes y consultar los resultados del torneo.</p>
     </div>
   </div>

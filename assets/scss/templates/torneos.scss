@@ -124,11 +124,13 @@ li.page-item.disabled { display: none; }
 h3.mes-pmba { text-transform: capitalize; }
 h4.card-title { font-size: 24px; }
 
+span.card-title { font-size: 24px; margin-bottom: 0.75rem; transition: .2s ease; color: #141414; font-weight: 700; line-height: 1.2; }
+
 
 
 /** Torneos v2 Figma CSS **/
 .sombra-rounded {
-  box-shadow: 0px 0px 16px -4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 16px -4px rgba(0, 0, 0, 0.45);
   border-radius: 15px;
 }
 
@@ -210,16 +212,20 @@ div#nav-tab-content { padding-top: 15px; }
   @include mobile { max-width:fit-content; width: 80%; } 
 }
 
+.pmba-circuito { font-weight: 700; font-size: 18px;}
+.pmba-circuito-abierto, .pmba-torneo-abierto    { background-color: $estado-torneo-abierto; color: white; padding: 10px; border-radius: 10px; border: 2px solid white; }
+.pmba-circuito-cerrado, .pmba-torneo-cerrado    { background-color: $estado-torneo-cerrado; color: white; padding: 10px; border-radius: 10px; border: 2px solid white; }
+.pmba-circuito-suspendido, .pmba-torneo-suspendido { background-color: $estado-torneo-suspendido; color: white; padding: 10px; border-radius: 10px; border: 2px solid white; }
+
 .pmba-torneo { font-weight: 700; font-size: 18px; }
-.pmba-torneo.abierto { float:right; color: $estado-torneo-abierto; }
-.pmba-torneo-abierto { color: $estado-torneo-abierto; border: 3px $estado-torneo-abierto solid; padding: 10px; border-radius: 10px; }
+.pmba-torneo.abierto, .pmba-circuito.abierto { float:right; color: $estado-torneo-abierto; }
+// .pmba-torneo-abierto { color: $estado-torneo-abierto; border: 3px $estado-torneo-abierto solid; padding: 10px; border-radius: 10px; }
 
-.pmba-torneo.cerrado { float:right; color: $estado-torneo-cerrado; }
-.pmba-torneo-cerrado { color: $estado-torneo-cerrado; border: 3px $estado-torneo-cerrado solid; padding: 10px; border-radius: 10px; }
+.pmba-torneo.cerrado, .pmba-circuito.cerrado { float:right; color: $estado-torneo-cerrado; }
+// .pmba-torneo-cerrado { color: $estado-torneo-cerrado; border: 3px $estado-torneo-cerrado solid; padding: 10px; border-radius: 10px; }
 
-.pmba-torneo.suspendido { float:right; color: $estado-torneo-suspendido; }
-.pmba-torneo-suspendido { color: $estado-torneo-suspendido; border: 3px $estado-torneo-suspendido solid; padding: 10px; border-radius: 10px; }
-
+.pmba-torneo.suspendido, .pmba-circuito.suspendido { float:right; color: $estado-torneo-suspendido; }
+// .pmba-torneo-suspendido { color: $estado-torneo-suspendido; border: 3px $estado-torneo-suspendido solid; padding: 10px; border-radius: 10px; }
 
 .col-lg-7.first-column  { 
   margin-right: 10%; 
@@ -275,9 +281,10 @@ div#nav-tab-content{
 
 .modal-backdrop {z-index:unset;}
 
-.sticky-pmba-tabs {
+.sticky-pmba-tabs, .sticky-pmba-tabs-circuito {
   position: sticky;
   background-color: $bg-color-gris-pmba;
+  //background-color: $body-color;
   z-index: 4;
 
   // @include desktop { top: 110px; }
@@ -291,6 +298,7 @@ div#nav-tab-content{
   width: 33.3%;
   text-align: center;
   border-color: #e9ecef #e9ecef #dee2e6;
+  background-color: $body-color;
   border-top-left-radius: 0;
   border-top-right-radius: 0; 
 
@@ -319,6 +327,7 @@ div#nav-tab-content{
   @include mobile {padding: 40px 10px;}
 }
 
+span.info-padelmanager { text-align: justify; }
 .padel-manager {
   display: flex;
   align-items: center;
@@ -327,13 +336,14 @@ div#nav-tab-content{
   justify-content: space-evenly;
   flex-direction: row;
   background-color: white;
+  column-gap: 25px;
 
   @include desktop { display: flex; flex-direction: column; padding: 0 20px; padding-top: 0 !important; }
-  @include tablet  { display: flex; flex-direction: column; padding: 0 20px; padding-top: 0 !important; }
-  @include mobile { display: flex; flex-direction: column; padding: 0 20px; padding-top: 0 !important; }
+  @include tablet  { display: flex; flex-direction: column; padding: 0; padding-top: 0 !important; row-gap: 20px; padding-bottom: 1rem; }
+  @include mobile  { display: flex; flex-direction: column; padding: 0; padding-top: 0 !important; row-gap: 20px; padding-bottom: 1rem; }
 }
 
-.logos-padel-manager { padding: 30px; display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: center;
+.logos-padel-manager { padding: 0; display: flex; flex-direction: column; row-gap: 20px; flex-wrap: nowrap; align-items: center; justify-content: center;
 
   @include tablet { padding: 0; }
 }
@@ -343,10 +353,10 @@ div#nav-tab-content{
   @include tablet {width: 95%;}
 }
 
-.logos-padel-manager > a:first-child { padding-right: 30px; 
+// .logos-padel-manager > a:nth-child(1), a:nth-child(2) { padding-right: 30px;
 
-  @include tablet { padding-right: 25px; }
-}
+//   @include tablet { padding-right: 25px; }
+// }
 
 .stack-padel-manager {
   width: 65%;
@@ -364,7 +374,16 @@ div#nav-tab-content{
   flex-wrap: wrap;
 
   @include desktop { display: flex; flex-direction: column; align-items: center; width: 100%; }
-  @include tablet { display: flex; flex-direction: column; align-items: center; width: 100%; }
+  @include tablet { display: flex; flex-direction: column; align-items: center; width: 100%;  }
+}
+
+.stack-padel-manager2 > p:first-child { 
+  font-size: 25px;
+  color: #141414;
+  font-weight: bold;
+  line-height: 1.2;
+  @include tablet { font-size: 22px; }
+  @include mobile { font-size: 15px; }
 }
 
 p.text-padel-manager { text-align: left; 
@@ -427,6 +446,13 @@ ul.list-inline.date {
   align-items: center;
 }
 
+.item-date-pmba2 > p:first-child {
+  font-size: 16px;
+  color: #141414;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
 .col-lg-9.first-column { padding-right: 3%; 
   @include tablet  {padding: 0;}
   @include mobile  {padding: 0;}
@@ -436,9 +462,9 @@ ul.list-inline.date {
 .btn {white-space: break-spaces; text-transform: none;}
 i.ti-info.align-middle.icon-md.mr-2:hover { color: white; }
 
-img.logo-padel-manager { width: 20%; 
-  @include tablet { width: 30%; margin-bottom: 30px; margin-top: 30px; }
-  @include mobile { width: 30%; margin-bottom: 30px; margin-top: 30px; }
+img.logo-padel-manager { width: 15%; 
+  @include tablet { width: 30%; margin: 0; }
+  @include mobile { width: 30%; margin: 0; }
 }
 
 // https://codepen.io/jpost-design/pen/EKZLzK
@@ -972,12 +998,23 @@ img.imagen-sorteo, img.catering-padelmba {
 
 span.info-padelmanager {
 
-  @include tablet { margin-bottom: 35px;}
-  @include mobile { margin-bottom: 35px;}
+  @include tablet { text-align: center; }
+  @include mobile { text-align: center; }
 }
+
+/* more-info styles */
+.more-info > p:first-child {
+  font-size: 18px;
+  color: #141414;
+  font-weight: bold;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Circuito Styles */
+.accordionFAQ { cursor: pointer; }
 
 // filetes?
 // .premios-torneos-pmba:not(:last-child) { border-bottom: 1px solid #14141473; }
-
 
 // .swiper-pagination-bullet {background: $bg-color-bullets-pmba; opacity: unset;}

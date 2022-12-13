@@ -9,8 +9,25 @@
 [[headers]]
   for = "/*" # This defines which paths this specific [[headers]] block will cover.
 
-[headers.values]
-  X-Frame-Options = "DENY"
+# https://docs.netlify.com/routing/headers/
+[headers.values]  
+  Cache-Control    = "public, s-max-age=604800"
+  X-Frame-Options  = "DENY"
   X-XSS-Protection = "1; mode=block"
-  Referrer-Policy = "same-origin"
+  Referrer-Policy  = "same-origin"
   Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+[[redirects]]
+	from = "/*"
+	to = "/404/"
+	status = 404
+
+[[redirects]]
+	from = "/es/*"
+	to = "/es/404/"
+	status = 404
+
+[[redirects]]
+	from = "/en/*"
+	to = "/en/404/"
+	status = 404

@@ -1,0 +1,233 @@
+@font-face {
+  font-family: 'events-padelmba-icons';
+  src:  url('./fonts/events-padelmba-icons.eot?1gpki1');
+  src:  url('./fonts/events-padelmba-icons.eot?1gpki1#iefix') format('embedded-opentype'),
+    url('./fonts/events-padelmba-icons.ttf?1gpki1') format('truetype'),
+    url('./fonts/events-padelmba-icons.woff?1gpki1') format('woff'),
+    url('./fonts/events-padelmba-icons.svg?1gpki1#events-padelmba-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class*=" ti-"],
+[class^="ti-"] {
+    font-family: 'events-padelmba-icons';
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 25px;
+    color: #007591;
+    /* cambia el color de TODOS los iconos */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'events-padelmba-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ti-open:before {
+  content: "\e900";
+}
+.ti-trophy:before {
+  content: "\e901";
+}
+.ti-cup:before {
+  content: "\e901";
+}
+.ti-winner:before {
+  content: "\e901";
+}
+.ti-tournament:before {
+  content: "\e901";
+}
+.ti-race:before {
+  content: "\e901";
+}
+.ti-award:before {
+  content: "\e901";
+}
+.ti-tag:before {
+  content: "\e902";
+}
+.ti-price:before {
+  content: "\e902";
+}
+.ti-world:before {
+  content: "\e903";
+}
+.ti-globe:before {
+  content: "\e903";
+}
+.ti-internet:before {
+  content: "\e903";
+}
+.ti-network:before {
+  content: "\e903";
+}
+.ti-medal:before {
+  content: "\e904";
+}
+.ti-tennis-ball:before {
+  content: "\e905";
+}
+.ti-tennis-ball1:before {
+  content: "\e906";
+}
+.ti-trophy-one:before {
+  content: "\e907";
+}
+.ti-award1:before {
+  content: "\e908";
+}
+.ti-award2:before {
+  content: "\e909";
+}
+.ti-award3:before {
+  content: "\e90a";
+}
+.ti-trophy1:before {
+  content: "\e90b";
+}
+.ti-ticket:before {
+  content: "\e90c";
+}
+.ti-gift:before {
+  content: "\e90d";
+}
+.ti-x-circle:before {
+  content: "\e90e";
+}
+.ti-shopping-cart:before {
+  content: "\e90f";
+}
+.ti-info:before {
+  content: "\e910";
+}
+.ti-info:before:hover {  
+  color: white !important;
+}
+.ti-mail:before {
+  content: "\e911";
+}
+.ti-clock:before {
+  content: "\e912";
+}
+.ti-calendar:before {
+  content: "\e913";
+}
+.ti-location:before {
+  content: "\e914";
+}
+.ti-location-full:before {
+  content: "\e930";
+}
+.ti-instagram:before {
+  content: "\e915";
+}
+.ti-monitor:before {
+  content: "\e916";
+}
+.ti-video:before {
+  content: "\e917";
+}
+.ti-play:before {
+  content: "\e918";
+}
+.ti-rss-mobile:before {
+  content: "\e919";
+}
+.ti-sports-tennis:before {
+  content: "\e91a";
+}
+.ti-movie:before {
+  content: "\e91b";
+}
+.ti-video1:before {
+  content: "\e91b";
+}
+.ti-star-empty:before {
+  content: "\e9d7";
+}
+.ti-lock:before {
+  content: "\e91c";
+}
+.ti-calendar-check-o:before {
+  content: "\e91d";
+}
+.ti-hourglass-1:before {
+  content: "\e91e";
+}
+.ti-hourglass-start:before {
+  content: "\e91e";
+}
+.ti-flag-checkered:before {
+  content: "\e91f";
+}
+.ti-user-circle-o:before {
+  content: "\e920";
+}
+.ti-user:before {
+  content: "\e921";
+}
+.ti-feed:before {
+  content: "\e922";
+}
+.ti-rss:before {
+  content: "\e922";
+}
+.ti-trophy2:before {
+  content: "\e923";
+}
+.ti-laptop:before {
+  content: "\e924";
+}
+.ti-graduation-cap:before {
+  content: "\e925";
+}
+.ti-mortar-board:before {
+  content: "\e925";
+}
+.ti-linkedin:before {
+  content: "\e926";
+}
+.ti-facebook:before {
+  content: "\e927";
+}
+.ti-youtube:before {
+  content: "\e928";
+}
+.ti-whatsapp:before {
+  content: "\e929";
+  color: #25d366;
+}
+.ti-discord:before {
+  content: "\e92a";
+}
+.ti-arrow-circle-down:before {
+  content: "\e92b";
+}
+.ti-spotify:before {
+  content: "\e92c";
+}
+.ti-angle-left:before {
+  content: "\e92d";
+}
+.ti-angle-right:before {
+  content: "\e92e";
+}

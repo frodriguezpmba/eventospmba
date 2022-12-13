@@ -3,10 +3,7 @@
     <div class="container header">
       <div class="row">
         <div class="col-md-12">
-          <ul class="list-inline custom-breadcrumb">
-            <h1 class="list-inline-item text-white"><i class="ti-cup text-white"></i> {{ .Title }}</h1>
-            {{/*  <li class="list-inline-item text-white h2 font-secondary"></li>  */}}
-          </ul>
+          <h1 class="list-inline-item text-white"><i class="ti-cup text-white"></i> {{ .Title }}</h1>
           <p class="text-white">{{ .Params.Description | markdownify }}</p>
         </div>
       </div>

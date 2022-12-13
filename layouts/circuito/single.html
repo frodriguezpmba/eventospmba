@@ -1,0 +1,243 @@
+{{ define "listado-circuito" }}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+<!-- Migas de pan -->
+<!-- breadcrumb -->
+{{/*  <nav aria-label="breadcrumb" id="torneo-padelmba">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ site.BaseURL | relLangURL }}" title="PadelMBA Eventos">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="{{ site.BaseURL | relLangURL }}/torneos" title="Torneos de Pádel | PadelMBA">Torneos</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ .Title }} | {{ .Params.horario }}</li>
+  </ol>
+</nav>  */}}
+
+<!-- Torneo 2cols single -->
+<section class="section-sm" id="torneo-padelmba">
+  {{/*  {{ template "shortcodes/tabs.html" }}  */}}
+  <div class="container-fluid">
+    <div class="row margin-pmba">
+      <div class="col-lg-9 first-column order-1">
+        <!-- contenido markdown bien, columna 1 izquierda -->
+        {{ .Content }}
+      </div>
+      {{/*  <div class="col-lg-3 second-column mt-5">  */}}
+      <div class="col-lg-3 second-column order-3">
+        <!-- Torneo info. principal row -->
+        <div class="row align-items-center mb-2 mt-2">
+          <div class="col-lg-12">
+            
+            <div class="block-info-torneo-padelmba">
+            <img src="/images/torneos/logo/club/{{ .Params.imagen_club_torneo }}" alt="logo club {{ .Params.club_nombre_torneo | lower }}" class="logo-club" />
+            
+            {{/*  Marta Figma  */}}
+            {{/*  <div>
+              <h6 class="mb-0"><i class="ti-calendar text-primary icon-md mr-2"></i> {{ i18n "date" | upper}}</h6><p class="mb-0">{{ .Date | time.Format ":date_full" }}</p>
+              <h6 class="mb-0"><i class="ti-clock text-primary icon-md mr-2"></i> {{ i18n "time" | upper }}</h6><p class="mb-0">{{ .Params.horario }}</p>
+            </div>  */}}
+            {{/*  TODO: Hacer efecto popup al pulsar y cargar iframe ahi dentro  */}}
+            {{/*  <a href="#" class="btn btn-primary btn-lg mt-4" role="button" aria-pressed="true">Comprar Inscripciones</a>  */}}
+
+            {{/*  Felipe listado info  */}}
+            <ul class="list-inline date">
+              <li class="list-inline-item">
+                <div class="item-date-pmba">
+                  <i class="ti-calendar text-negro icon-sd mr-2"></i>
+                  <div class="item-date-pmba2">
+                    <p class="mb-0">{{ i18n "date" | upper}}</p>
+                    <p class="mb-0">{{ .Date | time.Format ":date_short" }}</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item">
+                <div class="item-date-pmba">
+                  <i class="ti-clock text-negro icon-sd mr-2"></i>
+                  <div class="item-date-pmba2">
+                    <p class="mb-0">{{ i18n "time" | upper }}</p>                    
+                    <p class="horario-torneo mb-0">{{ .Params.horario }}<br />{{ .Params.horario_salida }}</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+            {{/*  Boton de comprar tickets solo cuando está abierto el estado.
+                  https://discourse.gohugo.io/t/if-or-and-if-and-with-section-need-help-making-this-dryer/3265/5
+            */}}
+            {{ if and (not .Params.torneo_suspendido) (not (.Date.Before now)) }}
+              <a href="#" title="Comprar inscripciones para el {{.Title}}" class="btn btn-primary btn-lg mt-2 efecto-boton-pmba" role="button" data-toggle="modal" data-target="#ticketsTorneoPMBA">💳 Inscripción al Torneo</a>
+            {{end}}
+
+            <!-- Modal -->
+            <div class="modal fade" id="ticketsTorneoPMBA" tabindex="-1" role="dialog" aria-labelledby="ticketsTorneoPMBATitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header modal-header--sticky">
+                    <h5 class="modal-title" id="ticketsTorneoPMBATitle">🎟️ Inscripciones Torneo PadelMBA by {{ .Params.nombre_torneo}} - {{ .Date | time.Format ":date_medium" }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
+                  </div>
+                  <div class="modal-body">
+                    {{ partial "padelmanager.html" . }}
+                    {{/*  {{ partial "weemss.html" . }}  */}}
+                    {{/*  <script type="text/javascript" src="https://l.oveit.com/embed/4db70e4ae3.js?l=es" data-eventid="4db70e4ae3" data-init="pending"></script>  */}}
+                    {{/*  {{ "weemss.html" .Params.weemss_id }}  */}}
+                    {{/*  {{ partial "weemss.html" .Params.weemss_id }}  */}}
+                    {{/*  {{< weemss .Params.weemss_id >}}  */}}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {{/*  TODO: Solucionar el iframe de google maps (o hacerlo con openstreetsmaps)  */}}
+            <div id="mapa" class="mapa mt-3">
+                {{/*  Nombre gMaps --> {{ replace .Params.nombre_gmaps " " "+" }}
+                Nombre gMaps --> {{ replace .Params.nombre_gmaps " " "%20" }}  */}}
+                {{/*  Funciona bien, pero hace que cargue net::ERR_BLOCKED_BY_CLIENT etc de Google Maps al no usar la API suya  */}}
+                {{/*  <iframe src="{{ .Params.enlace_club_gmaps | safeURL }}" width="300" height="200" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" style="border:0;" ></iframe>  */}}
+                {{/*  {{ $club_gmaps = replace .Params.nombre_gmaps " " "%20" }}  */}}
+                <iframe title="Mapa ubicacion {{ .Params.club_nombre_torneo | lower }}" src="https://maps.google.com/maps?q={{ .Params.club_nombre_torneo | title }}&t=&z=14&ie=UTF8&iwloc=&output=embed" width="300" height="200" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen="" style="border:0;" ></iframe>
+
+            </div>
+
+            {{/*  TODO: Rehaciendo el mapa usando MapBox https://docs.mapbox.com/mapbox-gl-js/example/simple-map/  */}}
+            {{/*  <div id="mapapmba" class="mapa mt-3" style='width: 300px; height: 200px;'></div>  */}}
+
+            {{/*  <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/search?q=Madrid%20Central%20Padel&key=..."></iframe>   */}}
+
+            <p class="mb-0"><a title="Indicaciones de como llegar al club {{ .Params.club_nombre_torneo | title }} ({{ .Params.ciudad_torneo }})" href="{{ .Params.location_url | safeURL }}" target="_blank" rel="noopener">¿Cómo llegar al club?</a></p>
+
+            {{/*  BOTON abajo del mapa Figma  */}}
+            {{/*  <a href="#" class="btn btn-primary btn-lg mt-3" role="button" aria-pressed="true">Comprar Inscripciones</a>  */}}
+            
+            
+            {{/*  <ul class="list-inline">
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-location text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "location" | upper}}</h6>
+                    <p class="mb-0"><a title="Localización de {{ .Params.Location }}" href="{{ .Params.location_url | safeURL }}" target="_blank" rel="noopener">{{ .Params.Location | markdownify }} &raquo;</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-calendar text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "date" | upper}}</h6>
+                    <p class="mb-0">{{ .Date | time.Format ":date_full" }}</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-clock text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">{{ i18n "time" | upper }}</h6>
+                    
+                    <p class="mb-0">{{ .Params.horario }}</p>
+                    
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-inline-item mb-3 mb-lg-3">
+                <div class="d-flex align-items-center">
+                  <i class="ti-info text-primary icon-md mr-2"></i>
+                  <div class="text-left">
+                    <h6 class="mb-0">NORMATIVA</h6>                    
+                    <p class="mb-0"><a title="Normativa del {{ .Title }}" href="/normativa/normativa-torneos-padelmba.pdf">Normativa del Torneo &raquo;</a></p>
+                  </div>
+                </div>
+              </li>
+            </ul>  */}}
+
+            </div><!-- ./block-info-torneo-padelmba -->
+
+            
+          </div>
+          <!-- border-bottom -->
+          <div class="col-12 mt-2 mb-2"><div class="border-bottom border-secondary"></div></div>
+        </div>
+
+        <!-- seccion contacto del torneo -->
+        <div class="align-items-center text-center more-info">
+          <p id="necesitas-más-información">¿Necesitas más información?</p>
+          <p class="align-items-center text-center mb-1"><i class="ti-mail"></i> <a title="Email sobre {{ .Title }}" href="mailto:{{ if .Params.contacto_email}}{{ .Params.contacto_email }} {{else}}{{.Site.Params.contacto_email_eventos}}{{end}}">{{ if .Params.contacto_email}} {{ .Params.contacto_email }} {{else}}{{.Site.Params.contacto_email_eventos}}{{end}}</a></p>
+          <p class="align-items-center text-center mb-1"><a title="Whatsapp sobre {{ .Title }}" href="https://wa.me/34{{ if .Params.contacto_wasap }}{{ .Params.contacto_wasap }}{{else}}{{.Site.Params.contacto_wasap_eventos}}{{end}}?text=Duda%20del%20{{ .Title }}"><i class="ti-whatsapp"></i> +34 {{ if .Params.contacto_wasap }} {{ .Params.contacto_wasap }} {{else}}{{.Site.Params.contacto_wasap_eventos}}{{end}}</a></p>
+
+          <!-- Normativa -->
+          <div style="color: #141414; font-weight: 600;" class="text-center align-middle">
+            <p class="align-items-center text-center mb-0"><a target="_blank" title="Ver Normativa del {{ .Title }}" href="/normativa/normativa-torneos-padelmba.pdf"><i class="ti-info icon-sd mr-1"></i> Normativa de torneos</a></p>
+          </div>
+        </div>
+
+        <!-- Compartir en redes el torneo -->
+        <div class="border-top mt-3 mb-3 border-secondary"></div>
+        <div class="align-items-center text-center more-info">
+          <p id="comparte-torneo">Comparte este torneo</p>
+          {{- partial "torneos/share-buttons.html" . -}}
+        </div>
+
+
+
+
+
+        <!-- Patrocinadores -->
+        {{/*  <div class="border-top mt-4 mb-4 border-primary"></div>
+        <li class="list-inline-item mb-3 mb-lg-0">
+          <div class="carousel-patrocinadores">
+              <h5 id="patrocinadores-torneo"><i class="ti-award1 text-primary icon-md mr-2"></i> Patrocinadores</h5>  */}}
+              {{/*  Listo, funciona bien, cogiendo de la carpeta de cada "page" torneos "patrocinadores", 
+              solo buscando imagenes dentro de esa carpeta  */}}
+              {{/*  {{- partial "torneos/carousel_new.html" . -}}
+          </div>
+        </li>  */}}
+
+
+        
+        {{/*  <ul class="list-inline text-center">
+          <li class="list-inline-item mb-3 mb-lg-3">
+            <div class="d-flex align-items-center">
+              <i class="ti-info text-primary icon-md mr-2"></i>
+                <p class="mb-0"><a title="Ver Normativa del {{ .Title }}" href="/normativa/normativa-torneos-padelmba.pdf">Ver Normativa del Torneo &raquo;</a></p>
+            </div>
+          </li>
+        </ul>  */}}
+
+
+        <!-- Categorias -->
+        {{/*  {{- partial "torneos/categorias.html" . -}}  */}}
+
+      </div>
+    </div>
+</div>
+
+{{/*  {{- partial "torneos/share-buttons.html" . -}}  */}}
+
+</section>
+<!-- /Torneo 2cols single -->
+
+
+<div class="carousel-patrocinadores">
+  {{/*  Listo, funciona bien, cogiendo de la carpeta de cada "page" torneos "patrocinadores", solo buscando imagenes dentro de esa carpeta  */}}
+  {{/*  <h5 id="patrocinadores-torneo"><i class="ti-award1 text-primary icon-md mr-2"></i> Patrocinadores</h5>  */}}
+  {{- partial "torneos/carousel_new.html" . -}}
+</div>
+
+<!-- padel manager -->
+<div class="padel-manager pt-5 py-5">
+  <div class="stack-padel-manager">
+    <img class="logo-padel-manager" src="/images/torneos/logo/padel-manager/padel-manager-logo.svg" alt="padel manager logo" />
+    <div class="stack-padel-manager2 ml-4">
+      <p id="sigue-tu-partido-en-directo">Sigue tu partido en directo</p>
+      <p class="text-padel-manager">Recuerda descargar la aplicación de Padel Manager en tu smartphone para poder conocer a tus contrincantes y consultar los resultados del torneo.</p>
+    </div>
+  </div>
+  <div class="logos-padel-manager">
+    <a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager Android" href="https://play.google.com/store/apps/details?id=com.padelmanager.padelmanager&amp;hl=es"><img src="/images/torneos/logo/padel-manager/padel-manager-google-play-pmba.svg" alt="padel manager android"></a>
+    <a target="_blank" rel="nofollow" rel="noopener" title="Padel Manager iOS" href="https://apps.apple.com/es/app/padel-manager/id1084646571?l=es"><img src="/images/torneos/logo/padel-manager/padel-manager-apple-store-pmba.svg" alt="padel manager iphone"></a>
+  </div>
+</div>
+
+
+{{ end }}

@@ -7,9 +7,10 @@
   {{ if site.Params.noindex }}
     <meta name="robots" content="noindex" /> 
   {{ end }}
+  <link rel="canonical" href="{{ .Permalink }}" />
 
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
   <meta name="description"
     content="{{ with .Params.Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
   {{ with site.Params.author }}
@@ -22,14 +23,44 @@
   {{ end }}
   {{ end }}
 
-  {{ "<!-- plugins -->" | safeHTML }}
-  {{ range site.Params.plugins.css }}
-  <link rel="stylesheet" href="{{ .link | absURL }}">
+  {{ $seed := "foo" }}
+  {{ $random := delimit (shuffle (split (md5 $seed) "" )) "" }}
+  {{/*  {{ $random }}  */}}
+
+  {{/*  Combinacion de todos los plugins de CSS en uno  */}}
+  {{/*  Importante saber que para poder hacer esto, coge las rutas de assets\plugins  */}}
+  {{ "<!-- plugins css -->" | safeHTML }}
+  {{ $plugin_css_1 := resources.Get "plugins/bootstrap/bootstrap.min.css" }}
+  {{/*  {{ $plugin_css_2 := resources.Get "plugins/events-padelmba-icons/style.css" }}  */}}
+  {{ $plugin_css_3 := resources.Get "plugins/slick/slick.css" }}
+  {{ $plugin_css_4 := resources.Get "plugins/swiper/swiper-bundle.min.css" }}
+  {{ $plugin_css_5 := resources.Get "plugins/venobox/venobox.css" }}
+  {{ $plugin_css_6 := resources.Get "plugins/instantsearch/instantsearch.min.css" }}
+  {{ $plugin_css_7 := resources.Get "plugins/instantsearch/instantsearch-theme-algolia.min.css" }}
+  {{ $plugin_css_all := (slice $plugin_css_1 $plugin_css_4 $plugin_css_5 $plugin_css_6 $plugin_css_7) | resources.Concat "plugins/plugins.css" | minify | fingerprint "sha512" }}
+  {{ $version_css_plugins := delimit (shuffle (split (md5 $plugin_css_all) "" )) "" }}
+  <link rel="stylesheet" href="{{ $plugin_css_all.Permalink }}?v={{ $version_css_plugins }}" type="text/css" media="screen" integrity="{{ $plugin_css_all.Data.Integrity }}">
+  {{/*  AQUI ESTA EL ERROR!  */}}
+
+  {{/*  ESTO SI FUNCIONA  */}}
+  {{ "<!-- icons custom padelmba -->" | safeHTML }}
+  {{ range site.Params.icons.css }}
+    {{ $version_css_icons := delimit (shuffle (split (md5 .link) "" )) "" }}
+    <link rel="stylesheet" href="{{ .link | absURL }}?v={{ $version_css_icons }}">
   {{ end }}
 
+  {{/*  <script>console.log({{ $styles }});</script>  */}}
+  {{/*  {{ partial "console-log" $styles }}  */}}
+  {{/*  {{ printf "%#v" $styles }}  */}}
+  {{/*  {{ $styles := $styles | toCSS }}  */}}
+  {{/*  <link rel="stylesheet" href="{{ $styles }}">  */}}
+
   {{ "<!-- Main Stylesheet -->" | safeHTML }}
-  {{ $styles := resources.Get "scss/main.scss" | toCSS | fingerprint "sha512" }}
-  <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
+  {{ $styles := slice }}
+  {{ $styles := $styles | append (resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "main.scss" . | toCSS) }}
+  {{ $styles := $styles | resources.Concat "/css/style.css" | minify | fingerprint "sha512"}}
+  
+  <link rel="stylesheet" href="{{ $styles.Permalink }}?v={{ now.Unix }}" type="text/css" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="shortcut icon" href="{{ `images/padelmba-favicon.png` | absURL }}" type="image/x-icon">
@@ -37,4 +68,7 @@
   {{/*  <link rel="shortcut icon" href="https://www.padelmba.com/wp-content/uploads/2020/04/favico.png" type="image/x-icon">
   <link rel="icon" href="https://www.padelmba.com/wp-content/uploads/2020/04/favico.png" type="image/x-icon">  */}}
 
+  {{/*  https://github.com/ApoorvSaxena/lozad.js#install  */}}
+  {{/*  TODO: Revisar si esto funciona o no lo de carga lazy usando background-image, ya que NO lo hace bien... :(  */}}
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js?v={{ now.Unix }}"></script>
 </head>

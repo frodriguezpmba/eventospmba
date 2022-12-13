@@ -32,7 +32,7 @@ genero: "Femenino"
 # Ciudad del Torneo
 ciudad_torneo: "Pozuelo de Alarcón"
 # Nombre del Torneo
-nombre_torneo: "Torneo Padel Nuestro"
+nombre_torneo: "Padel Nuestro"
 # Club nombre del Torneo
 club_nombre_torneo: "Pozuelo Padel Club"
 # Precio desde del Torneo

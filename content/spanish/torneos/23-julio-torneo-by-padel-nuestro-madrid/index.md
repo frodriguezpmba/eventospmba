@@ -36,7 +36,7 @@ genero: "Masculino"
 # Ciudad del Torneo
 ciudad_torneo: "Boadilla del Monte"
 # Nombre del Torneo
-nombre_torneo: "Torneo Padel Nuestro"
+nombre_torneo: "Padel Nuestro"
 # Club nombre del Torneo
 club_nombre_torneo: "Vita 10"
 # Precio desde del Torneo
