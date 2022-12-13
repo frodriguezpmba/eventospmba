@@ -41,8 +41,9 @@ link = "plugins/events-padelmba-icons/style.css"
 [[params.plugins.css]]
 link = "plugins/instantsearch/instantsearch.min.css"
 # default Algolia theme for the widgets to be effectively styled 
-[[params.plugins.css]]
-link = "plugins/instantsearch/instantsearch-theme-algolia.min.css"
+# TODO: Arreglar Algolia Search
+# [[params.plugins.css]]
+# link = "plugins/instantsearch/instantsearch-theme-algolia.min.css"
 
 # CSS custom plugin for Icons PadelMBA
 [[params.icons.css]]
@@ -72,8 +73,9 @@ link = "plugins/carousel/carousel.js"
 [[params.plugins.js]] # https://swiperjs.com/get-started#use-swiper-from-cdn
 link = "plugins/swiper/swiper-bundle.min.js"
 # InstantSearch JS plugin
-[[params.plugins.js]]
-link = "plugins/instantsearch/instantsearch.js"
+# TODO: Arreglar Algolia Search
+# [[params.plugins.js]]
+# link = "plugins/instantsearch/instantsearch.js"
 # [[params.plugins.js]] # https://docs.mapbox.com/mapbox-gl-js/guides/install/
 # link = "plugins/mapbox/mapbox-gl.js"
 # [[params.plugins.js]]

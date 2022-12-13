@@ -27,7 +27,7 @@
         <div class="col-md-5 text-md-right text-center">
           <ul class="list-inline">
             {{ range site.Params.social }}
-            <li class="list-inline-item"><a title="{{ .title }} PadelMBA" class="d-inline-block p-2" href="{{ .link | safeURL }}" target="_blank"><i class="footer-icons {{ .icon }} text-white"></i></a></li>
+            <li class="list-inline-item"><a title="{{ .title }} | PadelMBA" aria-label="{{.title}} | PadelMBA" class="d-inline-block p-2" href="{{ .link | safeURL }}" target="_blank"><i class="footer-icons {{ .icon }} text-white"></i></a></li>
             {{ end }}
           </ul>
         </div>

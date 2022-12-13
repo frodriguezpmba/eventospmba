@@ -42,8 +42,8 @@
     infinite: true,
     arrows: true,
     fade: true,
-    prevArrow: '<button type=\'button\' class=\'prevArrow\'><i class=\'ti-angle-left\'></i></button>',
-    nextArrow: '<button type=\'button\' class=\'nextArrow\'><i class=\'ti-angle-right\'></i></button>',
+    prevArrow: '<button type=\'button\' aria-labelledby=\'previous slide\' aria-label=\'Previous Slide\' class=\'prevArrow\'>P.<i class=\'ti-angle-left\'></i></button>',
+    nextArrow: '<button type=\'button\' aria-labelledby=\'next slide\' aria-label=\'Next Slide\' class=\'nextArrow\'><i class=\'ti-angle-right\'></i>N.</button>',
     dots: true
   });
   $('.hero-slider').slickAnimation();
