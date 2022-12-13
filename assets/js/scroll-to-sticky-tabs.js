@@ -17,22 +17,20 @@
 
 
 // https://community.algolia.com/instantsearch.js/v2/getting-started.html#initialization
-// https://blog.gitguardian.com/leaking-secrets-on-github-what-to-do/#step-1-revoke-the-secret-and-remove-the-risk
-const search = instantsearch({
-  appId: '',
-  apiKey: '',
-  indexName: '',
-  routing: true
-});
-
+// TODO: Arreglar Algolia Search
+// const search = instantsearch({
+//   appId: '',
+//   apiKey: '',
+//   indexName: '',
+//   routing: true
+// });
 // search.addWidget(
 //   instantsearch.widgets.hits({
 //     container: '#hits'
 //   })
 // );
-
-search.start();
-
+// search.start();
+// esta ultima linea, hacia que se "rompiera" el preloder-white
 
 // lazy loads elements with default selector as '.lozad'
 const observer = lozad(); 

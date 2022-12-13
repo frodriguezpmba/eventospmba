@@ -7,7 +7,7 @@
   {{ if site.Params.noindex }}
     <meta name="robots" content="noindex" /> 
   {{ end }}
-  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="canonical" href="{{ .Permalink | absURL }}" />
 
   {{ "<!-- mobile responsive meta -->" | safeHTML }}
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">

@@ -2,8 +2,9 @@
 <!DOCTYPE html>
 <html lang="{{ with site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
 {{- partial "torneos/head.html" . -}}
+{{/*  {{- partial "head.html" . -}}  */}}
 <body>
-	{{/*  {{- partial "preloader-white.html" . -}}  */}}
+	{{- partial "preloader-white.html" . -}}
 	{{- partial "header.html" . -}}
 	{{- partial "circuito/page-header-circuito.html" . -}}
 	{{/*  Se apoya en los bloques --> layouts\circuito\list.html  */}}
