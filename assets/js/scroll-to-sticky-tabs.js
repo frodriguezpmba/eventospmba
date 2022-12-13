@@ -17,10 +17,11 @@
 
 
 // https://community.algolia.com/instantsearch.js/v2/getting-started.html#initialization
+// https://blog.gitguardian.com/leaking-secrets-on-github-what-to-do/#step-1-revoke-the-secret-and-remove-the-risk
 const search = instantsearch({
-  appId: '9LUJWUPLSY',
-  apiKey: 'e45863830a48d9c34cd158a1c234fa2d',
-  indexName: 'dev_algolia_eventspmba',
+  appId: '',
+  apiKey: '',
+  indexName: '',
   routing: true
 });
 
