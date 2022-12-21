@@ -89,7 +89,7 @@
         <div class="col-md-5 text-md-right text-center">
           <ul class="list-inline">
             {{ range site.Params.social }}
-            <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }} text-white"></i></a></li>
+            <li class="list-inline-item"><a title="{{ .title }} | PadelMBA" aria-label="{{.title}} | PadelMBA" class="d-inline-block p-2" href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }} text-white"></i></a></li>
             {{ end }}
           </ul>
         </div>
@@ -122,7 +122,7 @@
       (i[r].q = i[r].q || []).push(arguments)
     }, i[r].l = 1 * new Date();
     a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0];
+      m = s.getElementsByTagName(o)[0]; //pepiyo
     a.async = 1;
     a.src = g;
     m.parentNode.insertBefore(a, m)
@@ -137,7 +137,7 @@
 {{ if site.Params.cookies.enable }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 <div id="js-cookie-box" class="cookie-box cookie-box-hide">
-	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-outline-primary ml-2">I Accept</span>
+	This site uses cookies. By continuing to use this website, you agree to their use. <span id="js-cookie-button" class="btn btn-sm btn-primary ml-2">I Accept</span>
 </div>
 <script>
 	(function ($) {
