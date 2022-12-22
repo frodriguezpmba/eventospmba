@@ -1,11 +1,12 @@
 <div class="padel-manager py-5">
     <img class="logo-padel-manager" src="/images/torneos/logo/padel-manager/padel-manager-logo.svg" alt="imagen padelmanager logo">
-    <span class="info-padelmanager">Recuerda que debes tener instalada la <strong>App de PadelManager</strong> para poder <strong>inscribirte al torneo.</strong> {{ if and (.Params.qr_torneo_padelmanager) (.Params.qr_torneo_padelmanager_imagen_url) }}<br /><br />Si ya la tienes instalada en tu móvil, escanea el código QR desde un ordenador o si no, haz click en el boton de "Inscripción al Torneo"{{end}}</span>
+    <span class="info-padelmanager">Recuerda que debes tener instalada la <strong>App de PadelManager</strong> para poder <strong>inscribirte al torneo.</strong> {{ if (.Params.qr_torneo_padelmanager_imagen_url) }}<br /><br />Si ya la tienes instalada en tu móvil, escanea el código QR desde un ordenador o si no, haz click en el boton de "Inscripción al Torneo"{{end}}</span>
     <div class="logos-padel-manager">
         <a target="_blank" rel="nofollow" title="Padel Manager Android" href="https://play.google.com/store/apps/details?id=com.padelmanager.padelmanager&amp;hl=es"><img src="/images/torneos/logo/padel-manager/padel-manager-google-play-pmba.svg" alt="padel manager android"></a>
         <a target="_blank" rel="nofollow" title="Padel Manager iOS" href="https://apps.apple.com/es/app/padel-manager/id1084646571?l=es"><img src="/images/torneos/logo/padel-manager/padel-manager-apple-store-pmba.svg" alt="padel manager iphone"></a>
     </div>
-    {{ if and (.Params.qr_torneo_padelmanager) (.Params.qr_torneo_padelmanager_imagen_url) }}
+    {{/*  {{ if and (.Params.qr_torneo_padelmanager) (.Params.qr_torneo_padelmanager_imagen_url) }}  */}}
+    {{ if (.Params.qr_torneo_padelmanager_imagen_url) }}
     <div class="logos-padel-manager">
         <img width="135px" height="135px" src="{{ .Params.qr_torneo_padelmanager_imagen_url }}" alt="padelmanager qr code torneo {{ .Params.club_nombre_torneo | lower }}">
         {{/*  <a target="_blank" rel="nofollow" title="QR Code Torneo {{ .Params.club_nombre_torneo | title }}" href="{{ .Params.qr_torneo_padelmanager }}"><img width="135px" height="135px" src="{{ .Params.qr_torneo_padelmanager_imagen_url }}" alt="padelmanager qr code torneo {{ .Params.club_nombre_torneo | lower }}"></a>  */}}
