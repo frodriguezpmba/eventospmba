@@ -98,7 +98,7 @@ type: "circuito"
 {{< /tab >}}
 {{< tab tabName="Multimedia">}}
 
-Próximamente... 📸
+{{< gallery dir="images/circuito/multimedia/3-diciembre-2022/" />}} {{< load-photoswipe >}}
 
 {{< /tab >}}
 {{< /tabs >}}
