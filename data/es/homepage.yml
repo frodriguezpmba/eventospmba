@@ -4,6 +4,17 @@ slider:
   bg_image : "images/torneos/background-torneos-padelmba.jpg"
   slider_item:
     # slider item loop
+    - title : "Circuito PadelMBA 22/23"
+      content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exer"
+      animation_in : "left"
+      animation_out : "right"
+      # available animation : left, right, up, down
+      button:
+        enable : true
+        label : "¡Circuito PadelMBA!"
+        link : "#"
+
+    # slider item loop
     - title : "Torneos de Pádel con PadelMBA"
       content : "Torneos de competición en Clubs de pádel por toda España. Adaptado a varios niveles, masculino, femenino y mixto. Buen rollo, partidos de calidad, sorteos y premios asegurados en cada evento."
       animation_in : "left"
