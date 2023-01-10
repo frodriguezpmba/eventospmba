@@ -118,5 +118,8 @@
 - id: proximo_torneos
   translation: Ver todos los Próximos Torneos
 
+- id: proximo_circuito
+  translation: Ver todo el Circuito
+
 - id: ranking
   translation: Resultados del Ranking PadelMBA
