@@ -115,6 +115,12 @@ torneo:
   title : "Torneos próximos"
   # event item comes from "content/**/torneos" folder.
 
+############################# Circuito PMBA Proximos ################################
+circuito:
+  enable : true
+  title : "Circuito próximos torneos"
+  # event item comes from "content/**/circuito" folder.
+
 
 ############################# Clinics Proximos ################################
 clinic:
@@ -125,6 +131,6 @@ clinic:
 
 ############################# blog ################################
 blog:
-  enable : true
+  enable : false
   title : "Latest News"
   # blog item comes from "content/**/blog" folder.
