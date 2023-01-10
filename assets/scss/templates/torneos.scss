@@ -747,7 +747,7 @@ span.date-tournament-pmba {
   font-size: 18px;
   background: none;
   // background: #fff;
-  height: 400px;
+  height: fit-content;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -763,8 +763,8 @@ span.date-tournament-pmba {
   -webkit-align-items: center;
   align-items: center;
 
-  @include tablet { height: 450px; }
-  @include mobile { height: 420px;}
+  @include tablet { height: fit-content; }
+  @include mobile { height: fit-content; }
 }
 
 .swiper-slide img {
