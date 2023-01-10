@@ -13,7 +13,7 @@ torneo_proximamente: true
 
 # Schedule page publish date
 # Con esto, lo que se hace es que se puede ver la URL "publicado", pero no sale en el listado de Torneos hasta ese día!
-publishDate: "2022-11-19T00:00:00Z"
+publishDate: "2023-01-10T00:00:00Z"
 # Fecha del Torneo
 date: "2023-01-28"
 # Horario del Torneo
