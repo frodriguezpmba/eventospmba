@@ -36,15 +36,15 @@
 <section class="bg-white overflow-md-hidden">
   <div class="container-fluid p-0">
     <div class="row no-gutters">
-      <div class="col-xl-4 col-lg-5 align-self-end">
-        <img class="img-fluid w-100 custom-border-image" loading="lazy" type="image/jpg" src="{{ .image | absURL }}" alt="padel mba eventos padel torneos clinics campus">
+      <div class="col-xl-4 col-lg-5 d-flex align-self-center justify-content-center">
+        <img width="250px" height="250px" class="img-fluid w-75 custom-border-image" loading="lazy" type="image/jpg" src="{{ .image | absURL }}" alt="padel mba eventos padel torneos clinics campus">
       </div>
       <div class="col-xl-8 col-lg-7">
         <div class="row feature-blocks bg-white justify-content-between">
           {{ range .feature_item }}
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
             <i class="{{ .icon }} mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-            <h3 class="mb-xl-4 mb-lg-3 mb-4">{{ .name | markdownify }}</h3>
+            <p class="h3 font-weight-bold mb-xl-4 mb-lg-3 mb-4">{{ .name | markdownify }}</p>
             <p>{{ .content | markdownify }}</p>
           </div>
           {{ end }}
