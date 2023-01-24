@@ -9,7 +9,7 @@ draft: false
 torneo_suspendido: false
 
 #Check a TRUE (verdadero) si el Torneo del Circuito se podrá acceder a la URL proximamente...
-torneo_proximamente: true
+torneo_proximamente: false
 
 # Schedule page publish date
 # Con esto, lo que se hace es que se puede ver la URL "publicado", pero no sale en el listado de Torneos hasta ese día!
@@ -45,7 +45,7 @@ contacto_wasap: ""
 contacto_email: ""
 
 # PadelManager ID del torneo
-padelmanager_id: xxxx
+padelmanager_id: 7211
 
 # Enlace QR del Torneo a PadelManager
 qr_torneo_padelmanager: ""
